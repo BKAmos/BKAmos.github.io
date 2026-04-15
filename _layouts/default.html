@@ -15,14 +15,28 @@
   <body>
     <a id="skip-to-content" href="#content">Skip to the content.</a>
 
-    <header class="page-header" role="banner">
+    <header class="page-header{% if page.banner_logo_right %} page-header--logo-right{% endif %}" role="banner">
+      {% if page.banner_logo_right and site.logo %}
+      <div class="page-header-primary">
+        {% unless page.hide_banner_titles %}
+        <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+        <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+        {% endunless %}
+      </div>
+      <a href="{{ "/" | absolute_url }}" class="site-logo-link" aria-label="Home">
+        <img src="{{ site.logo | relative_url }}" alt="" />
+      </a>
+      {% else %}
       {% if site.logo %}
         <a href="{{ "/" | absolute_url }}" class="site-logo-link" aria-label="Home">
           <img src="{{ site.logo | relative_url }}" alt="" />
         </a>
       {% endif %}
+      {% unless page.hide_banner_titles %}
       <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+      {% endunless %}
+      {% endif %}
       {% if site.github.is_project_page %}
         <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
       {% endif %}
