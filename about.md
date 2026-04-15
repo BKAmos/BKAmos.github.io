@@ -5,6 +5,6 @@ title: About
 
 # About
 
-SciAna Consultancy provides focused scientific and analytical support. This site is built to stay fast and easy to maintain.
+SciAna Consultancy provides data analysis, visualization, and consulting such that business decisions can be grounded in metrics.
 
 [Back to home]({{ '/' | relative_url }})
