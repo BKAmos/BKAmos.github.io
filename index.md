@@ -2,8 +2,6 @@
 layout: default
 ---
 
-![SciAna Consultancy logo](/assets/logo.png)
-
 # SciAna Consultancy
 
 Welcome. This is the homepage for SciAna Consultancy—project updates and information will appear here.
