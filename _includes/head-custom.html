@@ -1,0 +1,31 @@
+<style>
+  .site-logo-link {
+    display: inline-block;
+    margin-bottom: 1rem;
+    border: none;
+  }
+  .site-logo-link img {
+    display: block;
+    max-height: 12rem;
+    width: auto;
+  }
+
+  /* About (and similar): title + tagline left, logo right */
+  .page-header--logo-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    text-align: left;
+  }
+  .page-header--logo-right .page-header-primary {
+    flex: 1 1 12rem;
+    min-width: 0;
+  }
+  .page-header--logo-right .site-logo-link {
+    flex: 0 0 auto;
+    margin-bottom: 0;
+  }
+</style>
