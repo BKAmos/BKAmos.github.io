@@ -2,6 +2,7 @@
 layout: default
 title: About
 description: Data analysis, visualization, and consulting for decisions grounded in metrics.
+banner_logo_right: true
 ---
 
 ## Overview
