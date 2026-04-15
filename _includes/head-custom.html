@@ -1,13 +1,16 @@
 <style>
   .site-logo-link {
     display: inline-block;
+    max-width: 100%;
+    /* Intrinsic image is 200px; percentage width on the img resolved against this shrink-wrapped
+       box and stayed ~200px. Size the link, then let the img fill it. */
+    width: min(100%, clamp(14rem, 42vw, 36rem));
     margin-bottom: 1rem;
     border: none;
   }
-  /* Logo asset is small (200px wide); max-* alone won't upscale — use width + height:auto */
   .site-logo-link img {
     display: block;
-    width: min(100%, clamp(14rem, 42vw, 36rem));
+    width: 100%;
     height: auto;
   }
 
@@ -26,7 +29,8 @@
     min-width: 0;
   }
   .page-header--logo-right .site-logo-link {
-    flex: 0 0 auto;
+    flex: 0 1 auto;
+    min-width: 0;
     margin-bottom: 0;
   }
 </style>
