@@ -4,11 +4,10 @@
     margin-bottom: 1rem;
     border: none;
   }
+  /* Logo asset is small (200px wide); max-* alone won't upscale — use width + height:auto */
   .site-logo-link img {
     display: block;
-    max-height: 32rem;
-    max-width: 100%;
-    width: auto;
+    width: min(100%, clamp(14rem, 42vw, 36rem));
     height: auto;
   }
 
