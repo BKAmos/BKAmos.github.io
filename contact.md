@@ -9,8 +9,6 @@ banner_logo_right: true
 
 ## Connect with us
 
-#### We will share our expertise and knowledge to help your business attain its goals.
-
 <p class="home-cta">
   <a href="https://scianaconsultancy.com/contact/" class="btn">Get quote</a>
 </p>
