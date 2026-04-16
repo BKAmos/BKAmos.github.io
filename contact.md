@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Contact
-description: Get in touch with SciAna Consultancy.
+description: Reach out for a consultation to determine how we can best serve you.
 banner_logo_right: true
 ---
 
