@@ -5,8 +5,6 @@ description: Grounded scientific guidance and statistically rigorous data analys
 banner_logo_right: true
 ---
 
-#### Grounded scientific guidance and statistically rigorous data analysis
-
 ## Scientific expertise and data analysis
 
 If you are looking for scientific strategy or data analysis you have come to the right place.
