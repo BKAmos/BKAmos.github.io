@@ -62,10 +62,7 @@ We focus on:
 ## Connect with us
 
 <p class="home-cta">
-  <a href="https://scianaconsultancy.com/contact/" class="btn">Get quote</a>
-  <a href="{% link contact.md %}" class="btn">Contact</a>
-  <a href="{% link about.md %}" class="btn">About</a>
-  <a href="{% link services.md %}" class="btn">Services</a>
+  <a href="{% link contact.md %}#contact" class="btn">Get quote</a>
 </p>
 
 ## Navigation
