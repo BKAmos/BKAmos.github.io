@@ -5,9 +5,9 @@ description: Reach out for a consultation to determine how we can best serve you
 banner_logo_right: true
 ---
 
-<section id="contact" markdown="0">
-
 ## Connect with us
+
+<section id="contact" markdown="0">
 
 <form action="https://formspree.io/f/xojyejpl" method="POST" class="contact-form">
   <div class="contact-form-row">
