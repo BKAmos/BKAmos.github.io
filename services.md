@@ -1,13 +1,11 @@
 ---
 layout: default
 title: Services
-description: Come to us with scientific questions and data analysis needs.
+description: Grounded scientific guidance and statistically rigorous data analysis.
 banner_logo_right: true
 ---
 
-#### Come to us with scientific questions and data analysis needs
-
-###### Grounded scientific guidance and statistically rigorous data analysis
+#### Grounded scientific guidance and statistically rigorous data analysis
 
 ## Scientific expertise and data analysis
 
@@ -47,11 +45,8 @@ If you are looking for scientific strategy or data analysis you have come to the
   <footer>— <a href="https://www.bluedotconsulting.us/">Blue Dot Consulting</a></footer>
 </blockquote>
 
-###### Looking for a first-class consultant?
-
 ## Connect with us
 
-#### We will share our expertise and knowledge to help your business attain its goals.
 
 <p class="home-cta">
   <a href="https://scianaconsultancy.com/contact/#contact" class="btn">Get quote</a>
