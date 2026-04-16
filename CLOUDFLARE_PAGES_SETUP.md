@@ -16,7 +16,17 @@ Use these settings in Cloudflare Pages:
 - **Build command**: `bundle exec jekyll build`
 - **Build output directory**: `_site`
 
-## 3) Environment variable
+## 3) Gem dependencies for Cloudflare
+
+This repo includes a `Gemfile` with Cloudflare-required runtime gems for this
+theme/layout stack:
+
+- `jekyll`
+- `jekyll-remote-theme`
+- `jekyll-seo-tag` (used by `{% seo %}` in `_layouts/default.html`)
+- `kramdown-parser-gfm` (required for GFM markdown parsing in current build image)
+
+## 4) Environment variable
 
 Add this environment variable in Cloudflare Pages project settings:
 
@@ -24,7 +34,7 @@ Add this environment variable in Cloudflare Pages project settings:
 
 This skips local-only gems and speeds up builds.
 
-## 4) Formspree
+## 5) Formspree
 
 The contact form endpoint is configured in `contact.md`:
 
@@ -32,7 +42,7 @@ The contact form endpoint is configured in `contact.md`:
 
 If you rotate or replace your Formspree form, update the `action` URL in `contact.md`.
 
-## 5) Optional custom domain
+## 6) Optional custom domain
 
 After first successful deployment:
 
