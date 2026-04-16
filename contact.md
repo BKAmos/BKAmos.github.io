@@ -24,7 +24,7 @@ banner_logo_right: true
     How can we help?
     <textarea name="message" rows="5" required></textarea>
   </label>
-  <button type="submit" class="btn">Get quote</button>
+  <button type="submit" class="btn">Submit inquiry</button>
 </form>
 
 </section>
