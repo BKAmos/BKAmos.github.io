@@ -59,11 +59,6 @@ We focus on:
 - Repeatability
 - Return on investment
 
-## Connect with us
-
-<p class="home-cta">
-  <a href="{% link contact.md %}#contact" class="btn">Get quote</a>
-</p>
 
 ## Navigation
 

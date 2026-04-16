@@ -43,13 +43,6 @@ If you are looking for scientific strategy or data analysis you have come to the
   <footer>— <a href="https://www.bluedotconsulting.us/">Blue Dot Consulting</a></footer>
 </blockquote>
 
-## Connect with us
-
-
-<p class="home-cta">
-  <a href="https://scianaconsultancy.com/contact/#contact" class="btn">Get quote</a>
-  <a href="{% link contact.md %}" class="btn">Contact</a>
-</p>
 
 ## Navigation
 
