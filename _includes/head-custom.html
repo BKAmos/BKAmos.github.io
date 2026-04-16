@@ -33,4 +33,55 @@
     min-width: 0;
     margin-bottom: 0;
   }
+
+  /* Home: service cards (legacy page used multiple section headings) */
+  .home-industries {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .home-industry {
+    margin: 0;
+    padding: 1rem 1.1rem;
+    border: 1px solid rgba(21, 120, 120, 0.2);
+    border-radius: 0.35rem;
+    background: rgba(255, 255, 255, 0.04);
+  }
+  .home-industry .home-industry-title {
+    margin-top: 0;
+    font-size: 1.15rem;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .home-industry p:last-child {
+    margin-bottom: 0;
+  }
+
+  .home-skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    list-style: none;
+    padding-left: 0;
+    margin: 1rem 0 1.5rem;
+  }
+  .home-skill-list li {
+    margin: 0;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    border: 1px solid rgba(21, 120, 120, 0.35);
+    font-size: 0.9rem;
+  }
+
+  .home-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    margin-top: 1.25rem;
+  }
+  .home-cta .btn {
+    margin: 0;
+  }
 </style>
