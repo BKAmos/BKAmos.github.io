@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Services
-description: Scientific strategy, data analytics, and related consulting services.
+description: Grounded scientific guidance and statistically rigorous data analysis.
 banner_logo_right: true
 ---
 
