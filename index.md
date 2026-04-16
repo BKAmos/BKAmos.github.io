@@ -2,6 +2,8 @@
 layout: default
 title: SciAna Consultancy
 description: Guiding business to successful outcomes through scientific strategy and data analytics
+hide_banner_titles: true
+header_logo_only: true
 ---
 
 ###### Simplified scientific strategy and data analysis
