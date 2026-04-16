@@ -6,6 +6,8 @@ description: Guiding business to successful outcomes through scientific strategy
 
 ###### Simplified scientific strategy and data analysis
 
+<p class="home-intro-nav">New here? Read the <a href="{% link about.md %}">About</a> page for an overview, browse <a href="{% link services.md %}">Services</a>, or <a href="{% link contact.md %}">Contact</a> us.</p>
+
 ## 20+ years combined experience
 
 We have been in the field of R&D in academic, government, and private entities encompassing biology, chemistry, engineering, and data science. Let our experience aid you in deciding how to run your business, explain your product, and pitch your position successfully.
@@ -77,5 +79,7 @@ We focus on:
 
 <p class="home-cta">
   <a href="https://scianaconsultancy.com/contact/" class="btn">Get quote</a>
+  <a href="{% link contact.md %}" class="btn">Contact</a>
   <a href="{% link about.md %}" class="btn">About</a>
+  <a href="{% link services.md %}" class="btn">Services</a>
 </p>

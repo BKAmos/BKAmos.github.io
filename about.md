@@ -11,4 +11,6 @@ SciAna Consultancy provides data analysis, visualization, and consulting such th
 
 ## Navigation
 
-<a href="{{ '/' | relative_url }}" class="btn">Back to home</a>
+<a href="{{ '/' | relative_url }}" class="btn">Home</a>
+<a href="{% link services.md %}" class="btn">Services</a>
+<a href="{% link contact.md %}" class="btn">Contact</a>
