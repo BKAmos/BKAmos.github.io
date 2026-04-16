@@ -1,17 +1,13 @@
 ---
 layout: default
 title: Contact
-description: Reach out for a consultation to determine how we can best serve you.
+description: Reach out to SciAna Consultancy.
 banner_logo_right: true
 ---
 
-#### Reach out for a consultation to determine how we can best serve you
-
-###### Have a question? Drop us a line.
-
 <section id="contact" markdown="1">
 
-## Let's connect
+## Looking for a first-class consultant?
 
 This GitHub Pages site does not include the former WordPress contact form. To start a conversation or request a consultation, use the link below—we will follow up with you from there.
 
@@ -19,8 +15,6 @@ This GitHub Pages site does not include the former WordPress contact form. To st
   <a href="https://scianaconsultancy.com/contact/" class="btn">Send a message</a>
   <a href="{{ '/' | relative_url }}" class="btn">Back to home</a>
 </p>
-
-###### Looking for a first-class consultant?
 
 ## Connect with us
 
