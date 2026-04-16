@@ -1,25 +1,14 @@
 ---
 layout: default
 title: About
-description: Helping companies achieve outcomes through grounded scientific advice and data analytics.
 banner_logo_right: true
 ---
-
-## Helping companies achieve outcomes through grounded scientific advice and data analytics
-
-### Helping companies achieve their goals
 
 ## SciAna Consultancy vision
 
 Scientific rigor ensures reproducible results. Data is the lifeblood of modern decision-making. Let us consult with you on how to best generate data to answer a pertinent question, analyze data to derive insight, or use data to make predictions.
 
 Customer service is essential. Bringing value to the customer is the keystone to success in our business. We plan to help you through pain points with grounded advice.
-
-### Kirtley Amos
-
-<p class="about-signature">
-  <img src="{{ '/assets/signature.png' | relative_url }}" width="205" height="48" alt="Signature" />
-</p>
 
 ## Skills & expertise
 
