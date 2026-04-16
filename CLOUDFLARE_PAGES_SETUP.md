@@ -26,11 +26,11 @@ This skips local-only gems and speeds up builds.
 
 ## 4) Formspree
 
-The contact form currently uses:
+The contact form endpoint is configured in `contact.md`:
 
-`https://formspree.io/f/YOUR_FORM_ID`
+`https://formspree.io/f/xojyejpl`
 
-Replace `YOUR_FORM_ID` in `contact.md` with your actual Formspree endpoint ID.
+If you rotate or replace your Formspree form, update the `action` URL in `contact.md`.
 
 ## 5) Optional custom domain
 
