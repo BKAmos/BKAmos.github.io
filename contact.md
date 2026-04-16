@@ -5,13 +5,27 @@ description: Reach out for a consultation to determine how we can best serve you
 banner_logo_right: true
 ---
 
-<section id="contact" markdown="1">
+<section id="contact" markdown="0">
 
 ## Connect with us
 
-<p class="home-cta">
-  <a href="https://scianaconsultancy.com/contact/" class="btn">Get quote</a>
-</p>
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+  <div class="contact-form-row">
+    <label>
+      Name
+      <input type="text" name="name" required>
+    </label>
+    <label>
+      Email
+      <input type="email" name="email" required>
+    </label>
+  </div>
+  <label>
+    How can we help?
+    <textarea name="message" rows="5" required></textarea>
+  </label>
+  <button type="submit" class="btn">Get quote</button>
+</form>
 
 </section>
 
