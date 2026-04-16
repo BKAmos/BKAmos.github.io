@@ -9,7 +9,7 @@ banner_logo_right: true
 
 ## Connect with us
 
-<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+<form action="[https://formspree.io/f/YOUR_FORM_ID](https://formspree.io/f/xojyejpl)" method="POST" class="contact-form">
   <div class="contact-form-row">
     <label>
       Name
