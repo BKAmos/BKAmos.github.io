@@ -66,5 +66,6 @@ We focus on:
   <a href="{{ '/' | relative_url }}" class="btn">Home</a>
   <a href="{% link about.md %}" class="btn">About</a>
   <a href="{% link services.md %}" class="btn">Services</a>
+  <a href="{% link portfolio/index.md %}" class="btn">Portfolio</a>
   <a href="{% link contact.md %}" class="btn">Contact</a>
 </p>
