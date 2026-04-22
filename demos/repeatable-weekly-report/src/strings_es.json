@@ -1,0 +1,12 @@
+{
+  "html_lang": "es",
+  "doc_title_suffix": "Informe semanal de operaciones",
+  "heading_main": "Informe semanal de operaciones",
+  "report_week_label": "Semana del informe",
+  "synthetic_note": "Datos de demostración sintéticos",
+  "highlights_heading": "Destacados",
+  "kpis_heading": "Indicadores semanales",
+  "incidents_heading": "Incidentes",
+  "no_incidents": "No hay incidentes registrados en este periodo.",
+  "footer": "Generado con Python (pandas + Jinja2). Origen: demos/repeatable-weekly-report/"
+}
