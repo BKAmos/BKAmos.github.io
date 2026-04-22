@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Services
-description: Grounded scientific guidance and statistically rigorous data analysis.
+description: Consulting for scientific strategy, statistical data analysis, machine learning, and visualization—rigorous methods for product and business decisions.
 banner_logo_right: true
 ---
 

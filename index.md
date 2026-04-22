@@ -1,7 +1,7 @@
 ---
 layout: default
 title: SciAna Consultancy
-description: Guiding business to successful outcomes through scientific strategy and data analytics
+description: Scientific strategy and data analytics consulting—machine learning, forecasting, experiments, and visualization for clearer business decisions.
 hide_banner_titles: true
 header_logo_only: true
 ---

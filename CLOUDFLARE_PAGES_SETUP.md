@@ -24,6 +24,7 @@ theme/layout stack:
 - `jekyll`
 - `jekyll-remote-theme`
 - `jekyll-seo-tag` (used by `{% seo %}` in `_layouts/default.html`)
+- `jekyll-sitemap` (generates `/sitemap.xml` for crawlers)
 - `kramdown-parser-gfm` (required for GFM markdown parsing in current build image)
 
 ## 4) Environment variable
