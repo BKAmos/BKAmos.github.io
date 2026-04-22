@@ -19,11 +19,15 @@ Two CSVs: **weekly KPIs** (revenue, orders, returns) and a small **incidents** t
 
 ## Approach
 
-`pandas` loads the CSVs; **Jinja2** renders `src/report.html.j2` into `outputs/report.html` (self-contained HTML suitable to open locally or publish as an artifact).
+`pandas` loads the CSVs; **Jinja2** renders `src/report.html.j2` using string tables in `src/strings_en.json` and `src/strings_es.json`. The script writes **English** and **Spanish** variants plus a default `report.html` (English copy).
 
 ## Key outputs
 
-Open the generated file in a browser: [sample report HTML]({{ '/demos/repeatable-weekly-report/outputs/report.html' | relative_url }}) (static file in this repo).
+Open the generated files in a browser:
+
+- [Report (English)]({{ '/demos/repeatable-weekly-report/outputs/report_en.html' | relative_url }})
+- [Report (Spanish)]({{ '/demos/repeatable-weekly-report/outputs/report_es.html' | relative_url }})
+- [Report (default)]({{ '/demos/repeatable-weekly-report/outputs/report.html' | relative_url }}) — same content as English
 
 ## Reproduce
 

@@ -29,5 +29,6 @@ Modern results demand modern approaches. Let us help you get up to speed using d
 <p class="about-page-nav">
   <a href="{{ '/' | relative_url }}" class="btn">Home</a>
   <a href="{% link services.md %}" class="btn">Services</a>
+  <a href="{% link portfolio/index.md %}" class="btn">Portfolio</a>
   <a href="{% link contact.md %}" class="btn">Contact</a>
 </p>

@@ -1,0 +1,1201 @@
+week_index,theme,subject,body,product_line,channel,attachment_kb
+2,how_to,[how_to] Reset SSO for contractor #1,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Bravo,chat,0
+20,performance,[performance] Dashboard loads slowly #2,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Charlie,chat,0
+17,account,[account] Cannot add new seat #3,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Alpha,email,0
+11,performance,[performance] Dashboard loads slowly #4,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Alpha,email,0
+11,account,[account] Cannot add new seat #5,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Charlie,email,120
+22,performance,[performance] Dashboard loads slowly #6,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Bravo,chat,0
+2,account,[account] Cannot add new seat #7,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Bravo,chat,450
+18,billing,[billing] Invoice total mismatch #8,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Bravo,chat,0
+5,performance,[performance] Dashboard loads slowly #9,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Charlie,email,0
+2,bug,[bug] Export fails intermittently #10,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Bravo,phone,0
+13,how_to,[how_to] Reset SSO for contractor #11,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Bravo,phone,0
+25,performance,[performance] Dashboard loads slowly #12,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Alpha,email,0
+19,account,[account] Cannot add new seat #13,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Alpha,email,120
+19,account,[account] Cannot add new seat #14,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Charlie,email,0
+18,bug,[bug] Export fails intermittently #15,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Alpha,phone,0
+20,performance,[performance] Dashboard loads slowly #16,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Bravo,email,0
+13,performance,[performance] Dashboard loads slowly #17,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Bravo,chat,0
+3,bug,[bug] Export fails intermittently #18,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Charlie,chat,120
+21,billing,[billing] Invoice total mismatch #19,The amount charged does not match our purchase order for last cycle. Blocking our release.,Charlie,phone,0
+11,billing,[billing] Invoice total mismatch #20,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Alpha,email,0
+13,performance,[performance] Dashboard loads slowly #21,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Bravo,phone,900
+9,how_to,[how_to] Reset SSO for contractor #22,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Bravo,chat,450
+4,account,[account] Cannot add new seat #23,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Charlie,email,0
+24,how_to,[how_to] Reset SSO for contractor #24,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Charlie,email,0
+20,account,[account] Cannot add new seat #25,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Charlie,phone,450
+16,bug,[bug] Export fails intermittently #26,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Charlie,email,0
+10,performance,[performance] Dashboard loads slowly #27,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Bravo,chat,0
+21,billing,[billing] Invoice total mismatch #28,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Bravo,email,0
+14,how_to,[how_to] Reset SSO for contractor #29,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Bravo,email,0
+11,performance,[performance] Dashboard loads slowly #30,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Alpha,phone,0
+11,account,[account] Cannot add new seat #31,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Alpha,chat,0
+5,performance,[performance] Dashboard loads slowly #32,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Alpha,email,0
+2,billing,[billing] Invoice total mismatch #33,The amount charged does not match our purchase order for last cycle. Blocking our release.,Bravo,email,0
+14,bug,[bug] Export fails intermittently #34,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Alpha,chat,0
+23,billing,[billing] Invoice total mismatch #35,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,email,0
+1,billing,[billing] Invoice total mismatch #36,The amount charged does not match our purchase order for last cycle. Priority high.,Bravo,email,0
+22,performance,[performance] Dashboard loads slowly #37,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Charlie,phone,0
+21,performance,[performance] Dashboard loads slowly #38,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Alpha,phone,0
+7,performance,[performance] Dashboard loads slowly #39,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Alpha,email,0
+16,account,[account] Cannot add new seat #40,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Charlie,chat,900
+4,performance,[performance] Dashboard loads slowly #41,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Bravo,email,0
+19,performance,[performance] Dashboard loads slowly #42,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Bravo,email,0
+18,billing,[billing] Invoice total mismatch #43,The amount charged does not match our purchase order for last cycle. Priority high.,Bravo,chat,0
+9,billing,[billing] Invoice total mismatch #44,The amount charged does not match our purchase order for last cycle. Blocking our release.,Bravo,chat,0
+1,how_to,[how_to] Reset SSO for contractor #45,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Charlie,phone,0
+25,account,[account] Cannot add new seat #46,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Alpha,chat,0
+11,billing,[billing] Invoice total mismatch #47,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Alpha,email,0
+23,how_to,[how_to] Reset SSO for contractor #48,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Bravo,email,0
+17,performance,[performance] Dashboard loads slowly #49,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Charlie,phone,0
+20,billing,[billing] Invoice total mismatch #50,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Charlie,email,450
+19,bug,[bug] Export fails intermittently #51,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Charlie,email,120
+5,account,[account] Cannot add new seat #52,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Charlie,phone,900
+9,performance,[performance] Dashboard loads slowly #53,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Bravo,email,120
+12,bug,[bug] Export fails intermittently #54,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Bravo,chat,0
+12,performance,[performance] Dashboard loads slowly #55,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Bravo,email,0
+1,bug,[bug] Export fails intermittently #56,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Alpha,chat,120
+14,performance,[performance] Dashboard loads slowly #57,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Bravo,chat,0
+4,bug,[bug] Export fails intermittently #58,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Charlie,chat,0
+19,how_to,[how_to] Reset SSO for contractor #59,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Alpha,email,0
+17,bug,[bug] Export fails intermittently #60,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Charlie,chat,0
+23,bug,[bug] Export fails intermittently #61,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Charlie,email,450
+19,account,[account] Cannot add new seat #62,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Alpha,chat,450
+9,billing,[billing] Invoice total mismatch #63,The amount charged does not match our purchase order for last cycle. Priority high.,Alpha,chat,900
+25,billing,[billing] Invoice total mismatch #64,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Alpha,email,0
+10,bug,[bug] Export fails intermittently #65,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Bravo,email,0
+8,performance,[performance] Dashboard loads slowly #66,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Charlie,email,0
+23,performance,[performance] Dashboard loads slowly #67,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Charlie,chat,120
+9,account,[account] Cannot add new seat #68,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Bravo,phone,0
+1,bug,[bug] Export fails intermittently #69,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Alpha,phone,0
+12,bug,[bug] Export fails intermittently #70,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Alpha,email,0
+20,billing,[billing] Invoice total mismatch #71,The amount charged does not match our purchase order for last cycle. Priority high.,Alpha,email,0
+4,how_to,[how_to] Reset SSO for contractor #72,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Bravo,email,0
+12,account,[account] Cannot add new seat #73,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Alpha,email,0
+3,performance,[performance] Dashboard loads slowly #74,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Bravo,chat,0
+17,how_to,[how_to] Reset SSO for contractor #75,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Alpha,email,0
+12,bug,[bug] Export fails intermittently #76,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Bravo,phone,0
+8,account,[account] Cannot add new seat #77,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Bravo,chat,0
+5,how_to,[how_to] Reset SSO for contractor #78,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Bravo,email,0
+14,billing,[billing] Invoice total mismatch #79,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Alpha,chat,450
+17,bug,[bug] Export fails intermittently #80,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Alpha,chat,120
+24,billing,[billing] Invoice total mismatch #81,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Alpha,chat,0
+11,billing,[billing] Invoice total mismatch #82,The amount charged does not match our purchase order for last cycle. Blocking our release.,Charlie,phone,0
+4,billing,[billing] Invoice total mismatch #83,The amount charged does not match our purchase order for last cycle. Blocking our release.,Bravo,chat,0
+21,how_to,[how_to] Reset SSO for contractor #84,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Bravo,phone,0
+16,performance,[performance] Dashboard loads slowly #85,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Bravo,phone,0
+18,bug,[bug] Export fails intermittently #86,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Bravo,phone,0
+2,bug,[bug] Export fails intermittently #87,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Alpha,email,450
+8,account,[account] Cannot add new seat #88,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Alpha,chat,0
+19,performance,[performance] Dashboard loads slowly #89,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Bravo,phone,0
+21,how_to,[how_to] Reset SSO for contractor #90,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Charlie,email,0
+11,bug,[bug] Export fails intermittently #91,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Charlie,email,0
+20,account,[account] Cannot add new seat #92,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Charlie,email,0
+21,bug,[bug] Export fails intermittently #93,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Charlie,email,0
+10,bug,[bug] Export fails intermittently #94,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Alpha,email,0
+23,account,[account] Cannot add new seat #95,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Charlie,email,0
+7,how_to,[how_to] Reset SSO for contractor #96,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Alpha,email,0
+6,performance,[performance] Dashboard loads slowly #97,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Charlie,chat,0
+17,how_to,[how_to] Reset SSO for contractor #98,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Charlie,chat,0
+16,performance,[performance] Dashboard loads slowly #99,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Charlie,email,0
+3,bug,[bug] Export fails intermittently #100,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Bravo,email,0
+21,bug,[bug] Export fails intermittently #101,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Charlie,email,120
+5,bug,[bug] Export fails intermittently #102,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Charlie,chat,0
+20,billing,[billing] Invoice total mismatch #103,The amount charged does not match our purchase order for last cycle. Blocking our release.,Charlie,phone,0
+0,account,[account] Cannot add new seat #104,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Alpha,chat,0
+20,bug,[bug] Export fails intermittently #105,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Alpha,chat,0
+20,how_to,[how_to] Reset SSO for contractor #106,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Charlie,email,0
+20,performance,[performance] Dashboard loads slowly #107,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Alpha,email,0
+17,performance,[performance] Dashboard loads slowly #108,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Alpha,email,0
+12,how_to,[how_to] Reset SSO for contractor #109,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Bravo,email,0
+18,how_to,[how_to] Reset SSO for contractor #110,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Alpha,email,0
+7,account,[account] Cannot add new seat #111,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Alpha,chat,900
+20,performance,[performance] Dashboard loads slowly #112,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Charlie,chat,0
+14,performance,[performance] Dashboard loads slowly #113,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Alpha,chat,120
+11,account,[account] Cannot add new seat #114,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Charlie,phone,0
+13,performance,[performance] Dashboard loads slowly #115,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Charlie,phone,0
+14,billing,[billing] Invoice total mismatch #116,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,email,900
+0,how_to,[how_to] Reset SSO for contractor #117,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Charlie,email,0
+3,billing,[billing] Invoice total mismatch #118,The amount charged does not match our purchase order for last cycle. Priority high.,Alpha,chat,120
+6,performance,[performance] Dashboard loads slowly #119,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Bravo,phone,0
+2,account,[account] Cannot add new seat #120,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Alpha,email,0
+11,how_to,[how_to] Reset SSO for contractor #121,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Bravo,email,0
+17,how_to,[how_to] Reset SSO for contractor #122,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Bravo,phone,0
+17,billing,[billing] Invoice total mismatch #123,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Charlie,email,0
+12,account,[account] Cannot add new seat #124,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Bravo,email,0
+22,billing,[billing] Invoice total mismatch #125,The amount charged does not match our purchase order for last cycle. Blocking our release.,Bravo,email,0
+14,billing,[billing] Invoice total mismatch #126,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Bravo,email,120
+2,billing,[billing] Invoice total mismatch #127,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Alpha,phone,120
+19,billing,[billing] Invoice total mismatch #128,The amount charged does not match our purchase order for last cycle. Blocking our release.,Charlie,phone,0
+14,how_to,[how_to] Reset SSO for contractor #129,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Bravo,email,120
+16,how_to,[how_to] Reset SSO for contractor #130,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Bravo,email,450
+14,bug,[bug] Export fails intermittently #131,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Alpha,chat,0
+14,billing,[billing] Invoice total mismatch #132,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,chat,120
+2,billing,[billing] Invoice total mismatch #133,The amount charged does not match our purchase order for last cycle. Priority high.,Alpha,chat,0
+14,bug,[bug] Export fails intermittently #134,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Bravo,email,450
+20,billing,[billing] Invoice total mismatch #135,The amount charged does not match our purchase order for last cycle. Blocking our release.,Charlie,email,0
+7,performance,[performance] Dashboard loads slowly #136,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Bravo,chat,0
+15,billing,[billing] Invoice total mismatch #137,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,email,900
+0,bug,[bug] Export fails intermittently #138,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Bravo,phone,0
+9,bug,[bug] Export fails intermittently #139,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Charlie,email,0
+11,bug,[bug] Export fails intermittently #140,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Charlie,phone,0
+25,billing,[billing] Invoice total mismatch #141,The amount charged does not match our purchase order for last cycle. Blocking our release.,Bravo,chat,0
+5,billing,[billing] Invoice total mismatch #142,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,phone,0
+7,account,[account] Cannot add new seat #143,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Charlie,email,0
+10,billing,[billing] Invoice total mismatch #144,The amount charged does not match our purchase order for last cycle. Priority high.,Bravo,email,0
+25,how_to,[how_to] Reset SSO for contractor #145,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Alpha,phone,0
+22,how_to,[how_to] Reset SSO for contractor #146,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Charlie,email,0
+0,bug,[bug] Export fails intermittently #147,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Bravo,chat,0
+6,bug,[bug] Export fails intermittently #148,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Alpha,email,0
+21,performance,[performance] Dashboard loads slowly #149,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Bravo,email,0
+1,performance,[performance] Dashboard loads slowly #150,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Bravo,email,0
+22,bug,[bug] Export fails intermittently #151,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Bravo,chat,0
+7,bug,[bug] Export fails intermittently #152,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Bravo,phone,0
+23,bug,[bug] Export fails intermittently #153,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Charlie,chat,0
+7,how_to,[how_to] Reset SSO for contractor #154,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Bravo,chat,900
+11,performance,[performance] Dashboard loads slowly #155,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Bravo,email,0
+17,bug,[bug] Export fails intermittently #156,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Alpha,chat,0
+3,bug,[bug] Export fails intermittently #157,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Charlie,phone,0
+14,account,[account] Cannot add new seat #158,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Bravo,chat,120
+13,billing,[billing] Invoice total mismatch #159,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Charlie,email,0
+20,how_to,[how_to] Reset SSO for contractor #160,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Alpha,phone,0
+25,performance,[performance] Dashboard loads slowly #161,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Bravo,email,0
+17,billing,[billing] Invoice total mismatch #162,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Charlie,email,0
+10,billing,[billing] Invoice total mismatch #163,The amount charged does not match our purchase order for last cycle. Blocking our release.,Charlie,chat,0
+10,billing,[billing] Invoice total mismatch #164,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,phone,0
+10,account,[account] Cannot add new seat #165,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Bravo,email,0
+21,billing,[billing] Invoice total mismatch #166,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Alpha,chat,0
+8,billing,[billing] Invoice total mismatch #167,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Alpha,chat,450
+4,billing,[billing] Invoice total mismatch #168,The amount charged does not match our purchase order for last cycle. Blocking our release.,Charlie,chat,0
+8,billing,[billing] Invoice total mismatch #169,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Bravo,email,0
+0,how_to,[how_to] Reset SSO for contractor #170,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Bravo,chat,450
+2,billing,[billing] Invoice total mismatch #171,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Charlie,email,0
+2,how_to,[how_to] Reset SSO for contractor #172,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Alpha,email,0
+20,how_to,[how_to] Reset SSO for contractor #173,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Alpha,chat,0
+18,performance,[performance] Dashboard loads slowly #174,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Charlie,email,0
+18,billing,[billing] Invoice total mismatch #175,The amount charged does not match our purchase order for last cycle. Priority high.,Bravo,email,0
+12,performance,[performance] Dashboard loads slowly #176,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Charlie,email,0
+18,performance,[performance] Dashboard loads slowly #177,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Bravo,chat,0
+4,billing,[billing] Invoice total mismatch #178,The amount charged does not match our purchase order for last cycle. Priority high.,Bravo,phone,0
+23,performance,[performance] Dashboard loads slowly #179,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Bravo,chat,450
+13,account,[account] Cannot add new seat #180,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Bravo,chat,0
+24,bug,[bug] Export fails intermittently #181,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Alpha,email,0
+3,account,[account] Cannot add new seat #182,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Alpha,chat,0
+12,how_to,[how_to] Reset SSO for contractor #183,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Charlie,phone,0
+18,how_to,[how_to] Reset SSO for contractor #184,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Alpha,email,450
+12,account,[account] Cannot add new seat #185,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Alpha,chat,0
+11,bug,[bug] Export fails intermittently #186,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Charlie,chat,0
+4,performance,[performance] Dashboard loads slowly #187,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Charlie,email,120
+9,bug,[bug] Export fails intermittently #188,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Alpha,chat,450
+6,performance,[performance] Dashboard loads slowly #189,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Bravo,chat,0
+7,how_to,[how_to] Reset SSO for contractor #190,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Bravo,email,0
+17,billing,[billing] Invoice total mismatch #191,The amount charged does not match our purchase order for last cycle. Blocking our release.,Bravo,email,0
+16,bug,[bug] Export fails intermittently #192,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Alpha,email,0
+15,bug,[bug] Export fails intermittently #193,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Charlie,chat,0
+9,billing,[billing] Invoice total mismatch #194,The amount charged does not match our purchase order for last cycle. Blocking our release.,Charlie,phone,0
+24,billing,[billing] Invoice total mismatch #195,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,email,0
+2,bug,[bug] Export fails intermittently #196,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Charlie,phone,0
+8,billing,[billing] Invoice total mismatch #197,The amount charged does not match our purchase order for last cycle. Blocking our release.,Charlie,email,0
+3,billing,[billing] Invoice total mismatch #198,The amount charged does not match our purchase order for last cycle. Blocking our release.,Charlie,email,0
+8,performance,[performance] Dashboard loads slowly #199,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Bravo,phone,0
+25,performance,[performance] Dashboard loads slowly #200,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Alpha,email,0
+9,performance,[performance] Dashboard loads slowly #201,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Bravo,chat,120
+23,bug,[bug] Export fails intermittently #202,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Charlie,phone,0
+12,account,[account] Cannot add new seat #203,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Bravo,email,0
+18,how_to,[how_to] Reset SSO for contractor #204,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Charlie,chat,900
+11,billing,[billing] Invoice total mismatch #205,The amount charged does not match our purchase order for last cycle. Blocking our release.,Bravo,chat,0
+6,billing,[billing] Invoice total mismatch #206,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,email,0
+19,performance,[performance] Dashboard loads slowly #207,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Alpha,phone,0
+25,billing,[billing] Invoice total mismatch #208,The amount charged does not match our purchase order for last cycle. Priority high.,Alpha,chat,0
+6,how_to,[how_to] Reset SSO for contractor #209,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Charlie,chat,0
+20,account,[account] Cannot add new seat #210,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Charlie,chat,120
+6,billing,[billing] Invoice total mismatch #211,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,chat,0
+18,billing,[billing] Invoice total mismatch #212,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,chat,900
+20,account,[account] Cannot add new seat #213,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Bravo,chat,0
+11,how_to,[how_to] Reset SSO for contractor #214,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Charlie,phone,0
+19,billing,[billing] Invoice total mismatch #215,The amount charged does not match our purchase order for last cycle. Priority high.,Alpha,chat,0
+7,account,[account] Cannot add new seat #216,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Bravo,email,0
+2,account,[account] Cannot add new seat #217,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Bravo,chat,0
+2,how_to,[how_to] Reset SSO for contractor #218,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Charlie,chat,120
+11,how_to,[how_to] Reset SSO for contractor #219,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Bravo,chat,0
+23,bug,[bug] Export fails intermittently #220,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Alpha,email,0
+3,billing,[billing] Invoice total mismatch #221,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Charlie,chat,0
+11,how_to,[how_to] Reset SSO for contractor #222,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Bravo,email,0
+18,bug,[bug] Export fails intermittently #223,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Charlie,chat,0
+5,performance,[performance] Dashboard loads slowly #224,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Bravo,email,450
+18,performance,[performance] Dashboard loads slowly #225,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Charlie,chat,0
+7,billing,[billing] Invoice total mismatch #226,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,email,0
+21,how_to,[how_to] Reset SSO for contractor #227,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Bravo,phone,0
+15,bug,[bug] Export fails intermittently #228,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Alpha,email,0
+14,account,[account] Cannot add new seat #229,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Charlie,email,120
+4,bug,[bug] Export fails intermittently #230,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Charlie,email,0
+12,how_to,[how_to] Reset SSO for contractor #231,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Charlie,email,0
+22,how_to,[how_to] Reset SSO for contractor #232,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Charlie,phone,0
+0,bug,[bug] Export fails intermittently #233,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Bravo,email,120
+19,performance,[performance] Dashboard loads slowly #234,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Bravo,email,0
+12,performance,[performance] Dashboard loads slowly #235,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Charlie,phone,0
+18,how_to,[how_to] Reset SSO for contractor #236,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Alpha,phone,450
+17,performance,[performance] Dashboard loads slowly #237,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Bravo,chat,0
+11,account,[account] Cannot add new seat #238,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Bravo,email,0
+8,bug,[bug] Export fails intermittently #239,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Alpha,phone,0
+16,how_to,[how_to] Reset SSO for contractor #240,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Alpha,chat,0
+3,billing,[billing] Invoice total mismatch #241,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,chat,0
+15,performance,[performance] Dashboard loads slowly #242,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Bravo,phone,0
+2,how_to,[how_to] Reset SSO for contractor #243,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Charlie,phone,120
+16,bug,[bug] Export fails intermittently #244,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Bravo,chat,0
+16,billing,[billing] Invoice total mismatch #245,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Charlie,email,900
+2,account,[account] Cannot add new seat #246,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Bravo,chat,0
+19,bug,[bug] Export fails intermittently #247,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Alpha,chat,0
+10,performance,[performance] Dashboard loads slowly #248,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Bravo,email,0
+20,billing,[billing] Invoice total mismatch #249,The amount charged does not match our purchase order for last cycle. Priority high.,Bravo,email,900
+1,account,[account] Cannot add new seat #250,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Alpha,email,0
+4,billing,[billing] Invoice total mismatch #251,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Bravo,chat,0
+12,billing,[billing] Invoice total mismatch #252,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Charlie,email,0
+4,account,[account] Cannot add new seat #253,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Alpha,email,0
+8,account,[account] Cannot add new seat #254,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Alpha,chat,0
+17,billing,[billing] Invoice total mismatch #255,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,chat,0
+3,how_to,[how_to] Reset SSO for contractor #256,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Bravo,email,0
+17,performance,[performance] Dashboard loads slowly #257,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Bravo,phone,0
+2,account,[account] Cannot add new seat #258,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Bravo,chat,120
+4,bug,[bug] Export fails intermittently #259,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Bravo,chat,0
+15,how_to,[how_to] Reset SSO for contractor #260,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Charlie,email,450
+20,performance,[performance] Dashboard loads slowly #261,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Alpha,phone,0
+4,performance,[performance] Dashboard loads slowly #262,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Alpha,email,0
+7,performance,[performance] Dashboard loads slowly #263,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Bravo,email,0
+24,how_to,[how_to] Reset SSO for contractor #264,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Bravo,chat,450
+25,billing,[billing] Invoice total mismatch #265,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Bravo,email,0
+15,account,[account] Cannot add new seat #266,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Charlie,email,0
+11,account,[account] Cannot add new seat #267,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Charlie,phone,0
+9,performance,[performance] Dashboard loads slowly #268,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Charlie,chat,120
+15,billing,[billing] Invoice total mismatch #269,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,email,0
+15,billing,[billing] Invoice total mismatch #270,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Alpha,chat,0
+7,performance,[performance] Dashboard loads slowly #271,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Charlie,phone,0
+0,billing,[billing] Invoice total mismatch #272,The amount charged does not match our purchase order for last cycle. Blocking our release.,Charlie,email,0
+3,account,[account] Cannot add new seat #273,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Alpha,phone,120
+24,bug,[bug] Export fails intermittently #274,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Charlie,phone,900
+10,performance,[performance] Dashboard loads slowly #275,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Alpha,phone,0
+12,account,[account] Cannot add new seat #276,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Bravo,chat,0
+12,bug,[bug] Export fails intermittently #277,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Alpha,email,0
+20,bug,[bug] Export fails intermittently #278,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Bravo,phone,0
+1,how_to,[how_to] Reset SSO for contractor #279,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Bravo,email,0
+2,how_to,[how_to] Reset SSO for contractor #280,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Alpha,phone,0
+7,bug,[bug] Export fails intermittently #281,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Charlie,chat,0
+12,how_to,[how_to] Reset SSO for contractor #282,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Charlie,email,450
+17,account,[account] Cannot add new seat #283,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Charlie,chat,0
+12,how_to,[how_to] Reset SSO for contractor #284,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Charlie,phone,0
+11,billing,[billing] Invoice total mismatch #285,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,chat,0
+24,bug,[bug] Export fails intermittently #286,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Charlie,email,0
+4,bug,[bug] Export fails intermittently #287,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Alpha,email,120
+14,billing,[billing] Invoice total mismatch #288,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Bravo,email,0
+14,billing,[billing] Invoice total mismatch #289,The amount charged does not match our purchase order for last cycle. Priority high.,Bravo,phone,450
+12,performance,[performance] Dashboard loads slowly #290,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Alpha,chat,0
+20,bug,[bug] Export fails intermittently #291,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Bravo,email,0
+6,account,[account] Cannot add new seat #292,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Bravo,chat,0
+24,bug,[bug] Export fails intermittently #293,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Bravo,phone,0
+8,billing,[billing] Invoice total mismatch #294,The amount charged does not match our purchase order for last cycle. Priority high.,Bravo,phone,450
+14,performance,[performance] Dashboard loads slowly #295,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Alpha,chat,0
+13,account,[account] Cannot add new seat #296,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Charlie,email,0
+22,bug,[bug] Export fails intermittently #297,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Alpha,chat,450
+11,billing,[billing] Invoice total mismatch #298,The amount charged does not match our purchase order for last cycle. Blocking our release.,Bravo,phone,900
+7,billing,[billing] Invoice total mismatch #299,The amount charged does not match our purchase order for last cycle. Blocking our release.,Charlie,email,120
+0,how_to,[how_to] Reset SSO for contractor #300,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Alpha,email,450
+9,how_to,[how_to] Reset SSO for contractor #301,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Charlie,chat,0
+21,bug,[bug] Export fails intermittently #302,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Charlie,chat,0
+0,billing,[billing] Invoice total mismatch #303,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Charlie,email,0
+23,how_to,[how_to] Reset SSO for contractor #304,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Bravo,phone,0
+14,account,[account] Cannot add new seat #305,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Alpha,email,450
+3,performance,[performance] Dashboard loads slowly #306,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Alpha,chat,900
+7,how_to,[how_to] Reset SSO for contractor #307,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Alpha,chat,0
+14,billing,[billing] Invoice total mismatch #308,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Charlie,email,0
+8,bug,[bug] Export fails intermittently #309,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Alpha,chat,120
+2,bug,[bug] Export fails intermittently #310,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Alpha,email,450
+17,performance,[performance] Dashboard loads slowly #311,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Alpha,email,0
+17,account,[account] Cannot add new seat #312,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Bravo,email,0
+3,account,[account] Cannot add new seat #313,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Alpha,chat,0
+7,account,[account] Cannot add new seat #314,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Bravo,email,120
+6,account,[account] Cannot add new seat #315,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Alpha,chat,0
+17,account,[account] Cannot add new seat #316,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Charlie,email,0
+18,billing,[billing] Invoice total mismatch #317,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Bravo,email,0
+18,billing,[billing] Invoice total mismatch #318,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,phone,0
+24,bug,[bug] Export fails intermittently #319,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Charlie,chat,450
+19,how_to,[how_to] Reset SSO for contractor #320,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Charlie,chat,0
+8,billing,[billing] Invoice total mismatch #321,The amount charged does not match our purchase order for last cycle. Blocking our release.,Bravo,phone,0
+2,performance,[performance] Dashboard loads slowly #322,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Alpha,email,450
+15,performance,[performance] Dashboard loads slowly #323,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Bravo,chat,120
+23,how_to,[how_to] Reset SSO for contractor #324,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Charlie,email,120
+25,billing,[billing] Invoice total mismatch #325,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,email,120
+5,bug,[bug] Export fails intermittently #326,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Bravo,chat,0
+6,billing,[billing] Invoice total mismatch #327,The amount charged does not match our purchase order for last cycle. Priority high.,Alpha,email,0
+0,account,[account] Cannot add new seat #328,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Alpha,chat,0
+3,how_to,[how_to] Reset SSO for contractor #329,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Alpha,chat,0
+14,performance,[performance] Dashboard loads slowly #330,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Bravo,phone,0
+14,bug,[bug] Export fails intermittently #331,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Charlie,email,0
+9,bug,[bug] Export fails intermittently #332,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Charlie,phone,0
+8,bug,[bug] Export fails intermittently #333,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Bravo,email,0
+21,performance,[performance] Dashboard loads slowly #334,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Charlie,phone,0
+11,performance,[performance] Dashboard loads slowly #335,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Alpha,chat,0
+21,billing,[billing] Invoice total mismatch #336,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,email,0
+25,account,[account] Cannot add new seat #337,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Alpha,email,0
+8,billing,[billing] Invoice total mismatch #338,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,chat,0
+5,account,[account] Cannot add new seat #339,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Alpha,chat,0
+24,billing,[billing] Invoice total mismatch #340,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Bravo,email,450
+16,bug,[bug] Export fails intermittently #341,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Alpha,chat,0
+7,performance,[performance] Dashboard loads slowly #342,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Charlie,phone,0
+16,billing,[billing] Invoice total mismatch #343,The amount charged does not match our purchase order for last cycle. Priority high.,Bravo,email,120
+13,bug,[bug] Export fails intermittently #344,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Charlie,email,0
+23,how_to,[how_to] Reset SSO for contractor #345,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Bravo,phone,0
+6,bug,[bug] Export fails intermittently #346,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Bravo,chat,0
+25,performance,[performance] Dashboard loads slowly #347,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Bravo,email,120
+24,performance,[performance] Dashboard loads slowly #348,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Bravo,email,0
+4,account,[account] Cannot add new seat #349,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Alpha,chat,0
+4,bug,[bug] Export fails intermittently #350,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Alpha,chat,0
+13,how_to,[how_to] Reset SSO for contractor #351,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Bravo,email,120
+1,billing,[billing] Invoice total mismatch #352,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,chat,450
+7,bug,[bug] Export fails intermittently #353,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Bravo,email,0
+11,billing,[billing] Invoice total mismatch #354,The amount charged does not match our purchase order for last cycle. Priority high.,Bravo,email,0
+25,account,[account] Cannot add new seat #355,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Alpha,email,0
+25,account,[account] Cannot add new seat #356,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Alpha,email,0
+3,performance,[performance] Dashboard loads slowly #357,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Charlie,email,0
+23,how_to,[how_to] Reset SSO for contractor #358,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Bravo,email,0
+2,how_to,[how_to] Reset SSO for contractor #359,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Alpha,email,0
+19,how_to,[how_to] Reset SSO for contractor #360,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Bravo,chat,0
+21,how_to,[how_to] Reset SSO for contractor #361,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Alpha,email,0
+23,how_to,[how_to] Reset SSO for contractor #362,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Alpha,chat,0
+5,billing,[billing] Invoice total mismatch #363,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,phone,0
+23,billing,[billing] Invoice total mismatch #364,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Alpha,email,900
+3,account,[account] Cannot add new seat #365,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Bravo,chat,900
+13,how_to,[how_to] Reset SSO for contractor #366,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Alpha,phone,0
+12,account,[account] Cannot add new seat #367,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Bravo,email,0
+8,billing,[billing] Invoice total mismatch #368,The amount charged does not match our purchase order for last cycle. Blocking our release.,Charlie,email,900
+0,how_to,[how_to] Reset SSO for contractor #369,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Bravo,chat,900
+20,billing,[billing] Invoice total mismatch #370,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Alpha,phone,0
+8,bug,[bug] Export fails intermittently #371,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Charlie,email,0
+17,billing,[billing] Invoice total mismatch #372,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,chat,0
+10,billing,[billing] Invoice total mismatch #373,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Alpha,phone,0
+9,account,[account] Cannot add new seat #374,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Charlie,phone,0
+23,bug,[bug] Export fails intermittently #375,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Alpha,chat,0
+2,how_to,[how_to] Reset SSO for contractor #376,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Bravo,chat,0
+19,how_to,[how_to] Reset SSO for contractor #377,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Bravo,chat,0
+19,bug,[bug] Export fails intermittently #378,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Alpha,chat,450
+9,how_to,[how_to] Reset SSO for contractor #379,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Charlie,chat,0
+6,billing,[billing] Invoice total mismatch #380,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Alpha,email,0
+0,account,[account] Cannot add new seat #381,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Charlie,email,120
+24,performance,[performance] Dashboard loads slowly #382,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Alpha,email,0
+24,performance,[performance] Dashboard loads slowly #383,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Alpha,chat,900
+6,how_to,[how_to] Reset SSO for contractor #384,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Charlie,email,120
+0,billing,[billing] Invoice total mismatch #385,The amount charged does not match our purchase order for last cycle. Priority high.,Alpha,phone,0
+3,account,[account] Cannot add new seat #386,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Bravo,email,0
+1,bug,[bug] Export fails intermittently #387,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Alpha,phone,120
+21,billing,[billing] Invoice total mismatch #388,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Charlie,email,0
+23,bug,[bug] Export fails intermittently #389,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Alpha,chat,0
+3,performance,[performance] Dashboard loads slowly #390,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Alpha,chat,0
+19,performance,[performance] Dashboard loads slowly #391,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Bravo,chat,0
+4,performance,[performance] Dashboard loads slowly #392,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Charlie,chat,120
+9,performance,[performance] Dashboard loads slowly #393,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Bravo,chat,0
+15,billing,[billing] Invoice total mismatch #394,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Charlie,chat,0
+18,account,[account] Cannot add new seat #395,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Alpha,chat,0
+22,how_to,[how_to] Reset SSO for contractor #396,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Alpha,email,0
+1,how_to,[how_to] Reset SSO for contractor #397,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Alpha,chat,120
+5,billing,[billing] Invoice total mismatch #398,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Charlie,email,0
+7,account,[account] Cannot add new seat #399,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Bravo,chat,0
+8,bug,[bug] Export fails intermittently #400,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Alpha,phone,0
+25,billing,[billing] Invoice total mismatch #401,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Charlie,chat,0
+20,how_to,[how_to] Reset SSO for contractor #402,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Charlie,email,120
+8,billing,[billing] Invoice total mismatch #403,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Bravo,email,0
+25,billing,[billing] Invoice total mismatch #404,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Charlie,email,450
+12,performance,[performance] Dashboard loads slowly #405,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Charlie,chat,0
+13,bug,[bug] Export fails intermittently #406,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Charlie,phone,0
+11,account,[account] Cannot add new seat #407,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Alpha,email,0
+3,bug,[bug] Export fails intermittently #408,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Charlie,chat,0
+24,performance,[performance] Dashboard loads slowly #409,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Alpha,email,0
+0,how_to,[how_to] Reset SSO for contractor #410,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Charlie,chat,0
+4,performance,[performance] Dashboard loads slowly #411,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Charlie,email,0
+5,how_to,[how_to] Reset SSO for contractor #412,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Alpha,phone,0
+7,how_to,[how_to] Reset SSO for contractor #413,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Bravo,email,0
+3,account,[account] Cannot add new seat #414,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Bravo,email,450
+0,bug,[bug] Export fails intermittently #415,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Charlie,email,0
+17,billing,[billing] Invoice total mismatch #416,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,chat,0
+25,performance,[performance] Dashboard loads slowly #417,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Charlie,email,450
+3,performance,[performance] Dashboard loads slowly #418,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Alpha,chat,120
+7,billing,[billing] Invoice total mismatch #419,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Bravo,chat,0
+13,how_to,[how_to] Reset SSO for contractor #420,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Alpha,email,0
+24,account,[account] Cannot add new seat #421,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Bravo,email,0
+18,performance,[performance] Dashboard loads slowly #422,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Charlie,email,0
+19,account,[account] Cannot add new seat #423,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Bravo,email,0
+15,how_to,[how_to] Reset SSO for contractor #424,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Bravo,email,900
+10,performance,[performance] Dashboard loads slowly #425,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Charlie,chat,450
+5,bug,[bug] Export fails intermittently #426,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Charlie,email,0
+22,account,[account] Cannot add new seat #427,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Bravo,email,0
+20,bug,[bug] Export fails intermittently #428,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Alpha,chat,120
+0,performance,[performance] Dashboard loads slowly #429,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Charlie,email,0
+18,bug,[bug] Export fails intermittently #430,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Bravo,chat,450
+2,how_to,[how_to] Reset SSO for contractor #431,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Charlie,phone,450
+19,performance,[performance] Dashboard loads slowly #432,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Charlie,chat,0
+21,how_to,[how_to] Reset SSO for contractor #433,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Alpha,email,0
+3,account,[account] Cannot add new seat #434,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Alpha,phone,0
+11,bug,[bug] Export fails intermittently #435,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Charlie,chat,0
+3,performance,[performance] Dashboard loads slowly #436,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Charlie,email,0
+14,bug,[bug] Export fails intermittently #437,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Alpha,phone,0
+24,how_to,[how_to] Reset SSO for contractor #438,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Alpha,chat,0
+2,bug,[bug] Export fails intermittently #439,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Bravo,chat,0
+10,billing,[billing] Invoice total mismatch #440,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Charlie,email,0
+25,billing,[billing] Invoice total mismatch #441,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Alpha,email,0
+7,performance,[performance] Dashboard loads slowly #442,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Bravo,email,0
+3,performance,[performance] Dashboard loads slowly #443,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Bravo,email,0
+12,performance,[performance] Dashboard loads slowly #444,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Charlie,email,450
+13,billing,[billing] Invoice total mismatch #445,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Alpha,email,0
+17,bug,[bug] Export fails intermittently #446,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Charlie,phone,0
+8,billing,[billing] Invoice total mismatch #447,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,email,0
+24,performance,[performance] Dashboard loads slowly #448,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Alpha,phone,0
+13,account,[account] Cannot add new seat #449,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Charlie,chat,0
+7,bug,[bug] Export fails intermittently #450,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Charlie,phone,0
+24,performance,[performance] Dashboard loads slowly #451,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Alpha,chat,0
+24,billing,[billing] Invoice total mismatch #452,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Alpha,email,0
+12,bug,[bug] Export fails intermittently #453,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Alpha,email,450
+0,billing,[billing] Invoice total mismatch #454,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,phone,900
+15,bug,[bug] Export fails intermittently #455,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Alpha,chat,0
+14,performance,[performance] Dashboard loads slowly #456,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Charlie,email,0
+3,account,[account] Cannot add new seat #457,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Alpha,chat,900
+16,billing,[billing] Invoice total mismatch #458,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Charlie,chat,900
+21,how_to,[how_to] Reset SSO for contractor #459,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Charlie,email,450
+2,performance,[performance] Dashboard loads slowly #460,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Bravo,email,0
+18,account,[account] Cannot add new seat #461,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Charlie,email,0
+3,how_to,[how_to] Reset SSO for contractor #462,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Alpha,email,0
+19,bug,[bug] Export fails intermittently #463,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Charlie,phone,0
+10,how_to,[how_to] Reset SSO for contractor #464,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Alpha,email,0
+0,bug,[bug] Export fails intermittently #465,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Bravo,chat,0
+25,account,[account] Cannot add new seat #466,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Bravo,chat,0
+4,bug,[bug] Export fails intermittently #467,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Alpha,phone,120
+15,performance,[performance] Dashboard loads slowly #468,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Charlie,phone,0
+4,billing,[billing] Invoice total mismatch #469,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Charlie,email,0
+24,bug,[bug] Export fails intermittently #470,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Alpha,email,0
+19,account,[account] Cannot add new seat #471,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Bravo,chat,120
+20,performance,[performance] Dashboard loads slowly #472,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Bravo,email,0
+11,how_to,[how_to] Reset SSO for contractor #473,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Bravo,email,0
+12,account,[account] Cannot add new seat #474,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Alpha,email,120
+16,performance,[performance] Dashboard loads slowly #475,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Charlie,chat,0
+20,bug,[bug] Export fails intermittently #476,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Charlie,chat,0
+22,how_to,[how_to] Reset SSO for contractor #477,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Bravo,chat,0
+0,how_to,[how_to] Reset SSO for contractor #478,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Alpha,chat,0
+17,performance,[performance] Dashboard loads slowly #479,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Alpha,email,900
+2,bug,[bug] Export fails intermittently #480,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Alpha,email,0
+7,bug,[bug] Export fails intermittently #481,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Charlie,chat,450
+21,account,[account] Cannot add new seat #482,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Alpha,email,0
+6,account,[account] Cannot add new seat #483,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Bravo,phone,450
+20,performance,[performance] Dashboard loads slowly #484,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Bravo,phone,0
+12,account,[account] Cannot add new seat #485,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Alpha,chat,0
+6,performance,[performance] Dashboard loads slowly #486,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Charlie,email,0
+8,performance,[performance] Dashboard loads slowly #487,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Bravo,email,0
+13,performance,[performance] Dashboard loads slowly #488,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Charlie,email,0
+19,how_to,[how_to] Reset SSO for contractor #489,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Bravo,email,0
+15,how_to,[how_to] Reset SSO for contractor #490,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Charlie,phone,0
+24,bug,[bug] Export fails intermittently #491,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Charlie,chat,0
+22,performance,[performance] Dashboard loads slowly #492,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Charlie,chat,120
+19,bug,[bug] Export fails intermittently #493,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Bravo,chat,0
+15,bug,[bug] Export fails intermittently #494,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Alpha,chat,0
+7,how_to,[how_to] Reset SSO for contractor #495,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Alpha,email,0
+10,bug,[bug] Export fails intermittently #496,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Bravo,chat,0
+3,billing,[billing] Invoice total mismatch #497,The amount charged does not match our purchase order for last cycle. Priority high.,Alpha,email,0
+9,performance,[performance] Dashboard loads slowly #498,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Charlie,chat,0
+24,account,[account] Cannot add new seat #499,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Bravo,phone,120
+11,billing,[billing] Invoice total mismatch #500,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Bravo,chat,0
+2,billing,[billing] Invoice total mismatch #501,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,email,0
+16,bug,[bug] Export fails intermittently #502,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Charlie,chat,0
+25,performance,[performance] Dashboard loads slowly #503,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Alpha,email,0
+22,performance,[performance] Dashboard loads slowly #504,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Alpha,phone,450
+7,billing,[billing] Invoice total mismatch #505,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Bravo,chat,0
+11,performance,[performance] Dashboard loads slowly #506,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Alpha,chat,0
+13,billing,[billing] Invoice total mismatch #507,The amount charged does not match our purchase order for last cycle. Priority high.,Alpha,email,0
+6,bug,[bug] Export fails intermittently #508,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Bravo,chat,120
+6,account,[account] Cannot add new seat #509,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Bravo,phone,0
+6,billing,[billing] Invoice total mismatch #510,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,chat,0
+25,billing,[billing] Invoice total mismatch #511,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,email,0
+19,how_to,[how_to] Reset SSO for contractor #512,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Alpha,email,0
+21,performance,[performance] Dashboard loads slowly #513,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Bravo,phone,0
+21,account,[account] Cannot add new seat #514,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Bravo,email,120
+24,account,[account] Cannot add new seat #515,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Alpha,email,0
+2,billing,[billing] Invoice total mismatch #516,The amount charged does not match our purchase order for last cycle. Blocking our release.,Charlie,chat,0
+22,billing,[billing] Invoice total mismatch #517,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Charlie,email,0
+1,performance,[performance] Dashboard loads slowly #518,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Alpha,email,0
+12,bug,[bug] Export fails intermittently #519,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Bravo,email,0
+15,account,[account] Cannot add new seat #520,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Bravo,chat,0
+9,performance,[performance] Dashboard loads slowly #521,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Alpha,email,0
+3,billing,[billing] Invoice total mismatch #522,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Bravo,email,0
+4,performance,[performance] Dashboard loads slowly #523,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Charlie,chat,0
+21,billing,[billing] Invoice total mismatch #524,The amount charged does not match our purchase order for last cycle. Blocking our release.,Bravo,phone,0
+8,bug,[bug] Export fails intermittently #525,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Charlie,email,0
+8,how_to,[how_to] Reset SSO for contractor #526,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Bravo,email,450
+24,how_to,[how_to] Reset SSO for contractor #527,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Bravo,phone,0
+3,performance,[performance] Dashboard loads slowly #528,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Charlie,phone,0
+23,performance,[performance] Dashboard loads slowly #529,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Alpha,chat,0
+23,account,[account] Cannot add new seat #530,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Charlie,email,0
+15,account,[account] Cannot add new seat #531,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Alpha,chat,900
+4,how_to,[how_to] Reset SSO for contractor #532,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Alpha,chat,450
+4,billing,[billing] Invoice total mismatch #533,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Alpha,email,0
+7,performance,[performance] Dashboard loads slowly #534,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Bravo,email,120
+15,account,[account] Cannot add new seat #535,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Bravo,phone,450
+3,bug,[bug] Export fails intermittently #536,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Charlie,chat,0
+11,how_to,[how_to] Reset SSO for contractor #537,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Bravo,email,0
+3,bug,[bug] Export fails intermittently #538,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Alpha,chat,0
+14,billing,[billing] Invoice total mismatch #539,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,email,0
+0,performance,[performance] Dashboard loads slowly #540,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Charlie,email,450
+18,bug,[bug] Export fails intermittently #541,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Charlie,email,0
+1,performance,[performance] Dashboard loads slowly #542,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Bravo,email,0
+5,performance,[performance] Dashboard loads slowly #543,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Alpha,phone,450
+4,performance,[performance] Dashboard loads slowly #544,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Charlie,chat,0
+21,how_to,[how_to] Reset SSO for contractor #545,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Charlie,email,0
+1,bug,[bug] Export fails intermittently #546,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Bravo,email,0
+11,performance,[performance] Dashboard loads slowly #547,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Alpha,chat,0
+15,performance,[performance] Dashboard loads slowly #548,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Alpha,email,0
+13,how_to,[how_to] Reset SSO for contractor #549,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Charlie,email,0
+17,account,[account] Cannot add new seat #550,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Charlie,email,120
+20,billing,[billing] Invoice total mismatch #551,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,chat,0
+10,account,[account] Cannot add new seat #552,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Alpha,phone,120
+21,billing,[billing] Invoice total mismatch #553,The amount charged does not match our purchase order for last cycle. Blocking our release.,Charlie,phone,0
+8,billing,[billing] Invoice total mismatch #554,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,chat,120
+25,how_to,[how_to] Reset SSO for contractor #555,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Alpha,email,120
+13,billing,[billing] Invoice total mismatch #556,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,chat,0
+19,billing,[billing] Invoice total mismatch #557,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,phone,0
+22,billing,[billing] Invoice total mismatch #558,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Bravo,chat,0
+20,how_to,[how_to] Reset SSO for contractor #559,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Bravo,email,120
+22,performance,[performance] Dashboard loads slowly #560,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Charlie,phone,0
+13,billing,[billing] Invoice total mismatch #561,The amount charged does not match our purchase order for last cycle. Blocking our release.,Bravo,chat,120
+1,performance,[performance] Dashboard loads slowly #562,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Bravo,chat,0
+12,performance,[performance] Dashboard loads slowly #563,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Charlie,chat,0
+4,billing,[billing] Invoice total mismatch #564,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Bravo,chat,0
+23,billing,[billing] Invoice total mismatch #565,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Charlie,chat,0
+6,account,[account] Cannot add new seat #566,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Charlie,chat,120
+5,performance,[performance] Dashboard loads slowly #567,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Bravo,phone,0
+6,how_to,[how_to] Reset SSO for contractor #568,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Bravo,email,0
+16,performance,[performance] Dashboard loads slowly #569,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Charlie,chat,0
+14,billing,[billing] Invoice total mismatch #570,The amount charged does not match our purchase order for last cycle. Blocking our release.,Charlie,chat,0
+24,bug,[bug] Export fails intermittently #571,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Charlie,chat,900
+10,performance,[performance] Dashboard loads slowly #572,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Charlie,phone,120
+7,bug,[bug] Export fails intermittently #573,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Bravo,email,0
+1,performance,[performance] Dashboard loads slowly #574,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Charlie,chat,450
+0,how_to,[how_to] Reset SSO for contractor #575,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Alpha,email,0
+9,performance,[performance] Dashboard loads slowly #576,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Bravo,email,0
+24,how_to,[how_to] Reset SSO for contractor #577,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Charlie,chat,0
+13,bug,[bug] Export fails intermittently #578,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Alpha,chat,0
+23,bug,[bug] Export fails intermittently #579,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Charlie,chat,0
+2,billing,[billing] Invoice total mismatch #580,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Bravo,email,0
+2,performance,[performance] Dashboard loads slowly #581,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Charlie,chat,450
+21,billing,[billing] Invoice total mismatch #582,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,email,0
+2,billing,[billing] Invoice total mismatch #583,The amount charged does not match our purchase order for last cycle. Blocking our release.,Bravo,phone,0
+1,billing,[billing] Invoice total mismatch #584,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,phone,0
+10,billing,[billing] Invoice total mismatch #585,The amount charged does not match our purchase order for last cycle. Blocking our release.,Bravo,chat,0
+24,performance,[performance] Dashboard loads slowly #586,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Charlie,chat,450
+17,bug,[bug] Export fails intermittently #587,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Bravo,chat,0
+2,account,[account] Cannot add new seat #588,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Bravo,phone,0
+21,billing,[billing] Invoice total mismatch #589,The amount charged does not match our purchase order for last cycle. Blocking our release.,Charlie,phone,450
+21,performance,[performance] Dashboard loads slowly #590,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Bravo,phone,0
+20,how_to,[how_to] Reset SSO for contractor #591,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Charlie,email,0
+23,bug,[bug] Export fails intermittently #592,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Bravo,email,0
+6,account,[account] Cannot add new seat #593,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Charlie,email,0
+25,account,[account] Cannot add new seat #594,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Alpha,chat,120
+8,account,[account] Cannot add new seat #595,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Bravo,chat,450
+20,billing,[billing] Invoice total mismatch #596,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Charlie,email,0
+15,billing,[billing] Invoice total mismatch #597,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Charlie,email,120
+20,performance,[performance] Dashboard loads slowly #598,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Alpha,phone,0
+16,bug,[bug] Export fails intermittently #599,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Alpha,phone,450
+16,performance,[performance] Dashboard loads slowly #600,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Charlie,phone,0
+16,how_to,[how_to] Reset SSO for contractor #601,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Alpha,email,0
+20,how_to,[how_to] Reset SSO for contractor #602,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Alpha,phone,0
+19,performance,[performance] Dashboard loads slowly #603,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Alpha,email,0
+3,performance,[performance] Dashboard loads slowly #604,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Alpha,chat,0
+21,billing,[billing] Invoice total mismatch #605,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Bravo,phone,0
+13,billing,[billing] Invoice total mismatch #606,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Charlie,email,0
+8,how_to,[how_to] Reset SSO for contractor #607,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Alpha,phone,0
+13,how_to,[how_to] Reset SSO for contractor #608,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Alpha,chat,120
+25,bug,[bug] Export fails intermittently #609,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Charlie,chat,450
+22,how_to,[how_to] Reset SSO for contractor #610,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Charlie,chat,0
+21,performance,[performance] Dashboard loads slowly #611,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Alpha,phone,0
+12,performance,[performance] Dashboard loads slowly #612,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Bravo,chat,0
+20,how_to,[how_to] Reset SSO for contractor #613,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Charlie,email,120
+10,bug,[bug] Export fails intermittently #614,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Bravo,email,0
+17,bug,[bug] Export fails intermittently #615,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Charlie,email,0
+16,how_to,[how_to] Reset SSO for contractor #616,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Charlie,email,0
+6,bug,[bug] Export fails intermittently #617,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Alpha,phone,0
+6,how_to,[how_to] Reset SSO for contractor #618,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Alpha,email,0
+1,performance,[performance] Dashboard loads slowly #619,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Alpha,email,0
+3,billing,[billing] Invoice total mismatch #620,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Bravo,phone,0
+11,billing,[billing] Invoice total mismatch #621,The amount charged does not match our purchase order for last cycle. Priority high.,Alpha,phone,450
+12,billing,[billing] Invoice total mismatch #622,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,email,0
+4,account,[account] Cannot add new seat #623,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Alpha,email,0
+10,performance,[performance] Dashboard loads slowly #624,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Bravo,email,0
+15,billing,[billing] Invoice total mismatch #625,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Alpha,email,120
+6,account,[account] Cannot add new seat #626,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Charlie,email,0
+8,how_to,[how_to] Reset SSO for contractor #627,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Alpha,email,0
+9,how_to,[how_to] Reset SSO for contractor #628,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Alpha,email,0
+13,account,[account] Cannot add new seat #629,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Alpha,email,0
+9,billing,[billing] Invoice total mismatch #630,The amount charged does not match our purchase order for last cycle. Blocking our release.,Charlie,chat,0
+19,billing,[billing] Invoice total mismatch #631,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Alpha,chat,0
+8,how_to,[how_to] Reset SSO for contractor #632,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Bravo,chat,0
+11,billing,[billing] Invoice total mismatch #633,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,email,0
+9,performance,[performance] Dashboard loads slowly #634,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Bravo,phone,0
+4,billing,[billing] Invoice total mismatch #635,The amount charged does not match our purchase order for last cycle. Blocking our release.,Bravo,chat,0
+17,billing,[billing] Invoice total mismatch #636,The amount charged does not match our purchase order for last cycle. Priority high.,Alpha,email,0
+6,billing,[billing] Invoice total mismatch #637,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Bravo,chat,450
+7,bug,[bug] Export fails intermittently #638,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Charlie,phone,120
+20,billing,[billing] Invoice total mismatch #639,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Charlie,phone,0
+24,billing,[billing] Invoice total mismatch #640,The amount charged does not match our purchase order for last cycle. Blocking our release.,Charlie,phone,0
+17,account,[account] Cannot add new seat #641,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Bravo,chat,450
+23,bug,[bug] Export fails intermittently #642,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Bravo,phone,120
+22,bug,[bug] Export fails intermittently #643,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Charlie,email,0
+12,billing,[billing] Invoice total mismatch #644,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,phone,450
+20,bug,[bug] Export fails intermittently #645,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Bravo,chat,0
+8,bug,[bug] Export fails intermittently #646,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Charlie,email,0
+11,how_to,[how_to] Reset SSO for contractor #647,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Charlie,email,0
+13,billing,[billing] Invoice total mismatch #648,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,phone,0
+24,account,[account] Cannot add new seat #649,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Alpha,chat,0
+22,account,[account] Cannot add new seat #650,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Charlie,email,0
+12,billing,[billing] Invoice total mismatch #651,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Alpha,chat,0
+16,billing,[billing] Invoice total mismatch #652,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,chat,0
+5,billing,[billing] Invoice total mismatch #653,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,email,450
+20,performance,[performance] Dashboard loads slowly #654,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Alpha,phone,0
+14,billing,[billing] Invoice total mismatch #655,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,email,0
+13,performance,[performance] Dashboard loads slowly #656,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Charlie,chat,0
+19,performance,[performance] Dashboard loads slowly #657,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Bravo,chat,450
+16,performance,[performance] Dashboard loads slowly #658,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Charlie,chat,120
+1,how_to,[how_to] Reset SSO for contractor #659,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Charlie,chat,0
+7,account,[account] Cannot add new seat #660,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Alpha,chat,900
+4,billing,[billing] Invoice total mismatch #661,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Alpha,phone,450
+19,bug,[bug] Export fails intermittently #662,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Alpha,chat,450
+0,bug,[bug] Export fails intermittently #663,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Charlie,email,0
+5,account,[account] Cannot add new seat #664,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Charlie,email,0
+15,how_to,[how_to] Reset SSO for contractor #665,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Alpha,email,0
+18,performance,[performance] Dashboard loads slowly #666,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Bravo,chat,120
+13,billing,[billing] Invoice total mismatch #667,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Bravo,email,0
+22,account,[account] Cannot add new seat #668,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Alpha,email,0
+23,how_to,[how_to] Reset SSO for contractor #669,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Alpha,email,0
+3,how_to,[how_to] Reset SSO for contractor #670,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Bravo,phone,120
+24,account,[account] Cannot add new seat #671,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Bravo,email,0
+15,bug,[bug] Export fails intermittently #672,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Alpha,email,0
+16,bug,[bug] Export fails intermittently #673,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Bravo,email,0
+2,how_to,[how_to] Reset SSO for contractor #674,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Charlie,chat,0
+16,billing,[billing] Invoice total mismatch #675,The amount charged does not match our purchase order for last cycle. Priority high.,Bravo,email,0
+18,bug,[bug] Export fails intermittently #676,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Bravo,email,0
+15,billing,[billing] Invoice total mismatch #677,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Charlie,chat,0
+2,billing,[billing] Invoice total mismatch #678,The amount charged does not match our purchase order for last cycle. Blocking our release.,Bravo,email,0
+13,account,[account] Cannot add new seat #679,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Alpha,email,0
+24,how_to,[how_to] Reset SSO for contractor #680,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Alpha,chat,0
+18,bug,[bug] Export fails intermittently #681,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Charlie,chat,0
+3,bug,[bug] Export fails intermittently #682,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Bravo,phone,0
+24,how_to,[how_to] Reset SSO for contractor #683,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Charlie,chat,0
+24,performance,[performance] Dashboard loads slowly #684,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Alpha,email,0
+4,account,[account] Cannot add new seat #685,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Bravo,email,0
+20,account,[account] Cannot add new seat #686,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Alpha,phone,0
+10,bug,[bug] Export fails intermittently #687,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Charlie,email,0
+15,bug,[bug] Export fails intermittently #688,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Alpha,chat,0
+11,how_to,[how_to] Reset SSO for contractor #689,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Charlie,email,0
+20,how_to,[how_to] Reset SSO for contractor #690,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Alpha,chat,0
+25,how_to,[how_to] Reset SSO for contractor #691,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Bravo,email,0
+20,performance,[performance] Dashboard loads slowly #692,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Alpha,phone,0
+24,how_to,[how_to] Reset SSO for contractor #693,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Alpha,phone,0
+24,bug,[bug] Export fails intermittently #694,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Bravo,chat,450
+2,bug,[bug] Export fails intermittently #695,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Charlie,chat,900
+6,bug,[bug] Export fails intermittently #696,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Alpha,phone,120
+18,billing,[billing] Invoice total mismatch #697,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Charlie,email,0
+15,billing,[billing] Invoice total mismatch #698,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Bravo,chat,0
+1,performance,[performance] Dashboard loads slowly #699,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Charlie,chat,0
+2,bug,[bug] Export fails intermittently #700,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Bravo,email,0
+13,billing,[billing] Invoice total mismatch #701,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,phone,0
+16,how_to,[how_to] Reset SSO for contractor #702,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Bravo,email,0
+4,performance,[performance] Dashboard loads slowly #703,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Charlie,phone,0
+4,bug,[bug] Export fails intermittently #704,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Charlie,chat,0
+3,performance,[performance] Dashboard loads slowly #705,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Charlie,email,0
+14,account,[account] Cannot add new seat #706,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Alpha,chat,0
+0,how_to,[how_to] Reset SSO for contractor #707,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Bravo,email,0
+14,performance,[performance] Dashboard loads slowly #708,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Charlie,email,450
+12,billing,[billing] Invoice total mismatch #709,The amount charged does not match our purchase order for last cycle. Priority high.,Alpha,chat,0
+12,account,[account] Cannot add new seat #710,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Charlie,email,450
+17,bug,[bug] Export fails intermittently #711,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Bravo,chat,0
+13,account,[account] Cannot add new seat #712,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Alpha,chat,0
+18,how_to,[how_to] Reset SSO for contractor #713,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Bravo,chat,0
+19,billing,[billing] Invoice total mismatch #714,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Alpha,email,0
+23,billing,[billing] Invoice total mismatch #715,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Alpha,chat,0
+20,performance,[performance] Dashboard loads slowly #716,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Charlie,email,0
+13,how_to,[how_to] Reset SSO for contractor #717,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Charlie,email,0
+12,billing,[billing] Invoice total mismatch #718,The amount charged does not match our purchase order for last cycle. Blocking our release.,Charlie,phone,0
+6,performance,[performance] Dashboard loads slowly #719,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Alpha,chat,900
+15,performance,[performance] Dashboard loads slowly #720,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Charlie,email,0
+3,how_to,[how_to] Reset SSO for contractor #721,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Alpha,email,0
+24,how_to,[how_to] Reset SSO for contractor #722,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Alpha,email,0
+21,billing,[billing] Invoice total mismatch #723,The amount charged does not match our purchase order for last cycle. Blocking our release.,Bravo,email,0
+3,performance,[performance] Dashboard loads slowly #724,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Alpha,phone,0
+20,bug,[bug] Export fails intermittently #725,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Bravo,email,0
+3,account,[account] Cannot add new seat #726,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Alpha,email,0
+18,bug,[bug] Export fails intermittently #727,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Bravo,chat,0
+2,how_to,[how_to] Reset SSO for contractor #728,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Bravo,chat,0
+12,bug,[bug] Export fails intermittently #729,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Bravo,email,0
+17,billing,[billing] Invoice total mismatch #730,The amount charged does not match our purchase order for last cycle. Priority high.,Bravo,phone,900
+18,performance,[performance] Dashboard loads slowly #731,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Charlie,email,0
+10,how_to,[how_to] Reset SSO for contractor #732,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Alpha,email,0
+23,how_to,[how_to] Reset SSO for contractor #733,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Alpha,chat,0
+20,account,[account] Cannot add new seat #734,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Alpha,chat,0
+5,account,[account] Cannot add new seat #735,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Charlie,email,0
+17,account,[account] Cannot add new seat #736,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Alpha,chat,0
+18,billing,[billing] Invoice total mismatch #737,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,chat,0
+8,how_to,[how_to] Reset SSO for contractor #738,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Alpha,phone,0
+19,account,[account] Cannot add new seat #739,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Bravo,chat,0
+23,bug,[bug] Export fails intermittently #740,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Bravo,email,0
+21,billing,[billing] Invoice total mismatch #741,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Alpha,email,0
+19,performance,[performance] Dashboard loads slowly #742,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Charlie,chat,450
+16,how_to,[how_to] Reset SSO for contractor #743,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Bravo,chat,0
+7,how_to,[how_to] Reset SSO for contractor #744,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Charlie,chat,0
+20,account,[account] Cannot add new seat #745,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Bravo,chat,0
+9,how_to,[how_to] Reset SSO for contractor #746,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Bravo,email,120
+13,bug,[bug] Export fails intermittently #747,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Bravo,phone,0
+8,bug,[bug] Export fails intermittently #748,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Charlie,email,450
+8,bug,[bug] Export fails intermittently #749,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Bravo,email,0
+4,billing,[billing] Invoice total mismatch #750,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,email,0
+24,performance,[performance] Dashboard loads slowly #751,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Charlie,chat,0
+3,performance,[performance] Dashboard loads slowly #752,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Bravo,phone,120
+2,bug,[bug] Export fails intermittently #753,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Alpha,phone,0
+24,bug,[bug] Export fails intermittently #754,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Charlie,phone,0
+14,account,[account] Cannot add new seat #755,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Alpha,chat,0
+11,billing,[billing] Invoice total mismatch #756,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,email,0
+19,how_to,[how_to] Reset SSO for contractor #757,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Charlie,email,0
+9,how_to,[how_to] Reset SSO for contractor #758,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Bravo,email,0
+3,performance,[performance] Dashboard loads slowly #759,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Alpha,email,0
+18,billing,[billing] Invoice total mismatch #760,The amount charged does not match our purchase order for last cycle. Blocking our release.,Bravo,email,0
+4,performance,[performance] Dashboard loads slowly #761,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Bravo,email,0
+14,bug,[bug] Export fails intermittently #762,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Alpha,chat,450
+24,performance,[performance] Dashboard loads slowly #763,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Bravo,chat,0
+24,billing,[billing] Invoice total mismatch #764,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Alpha,email,120
+9,how_to,[how_to] Reset SSO for contractor #765,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Charlie,email,0
+20,how_to,[how_to] Reset SSO for contractor #766,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Alpha,chat,0
+15,billing,[billing] Invoice total mismatch #767,The amount charged does not match our purchase order for last cycle. Blocking our release.,Charlie,phone,0
+12,billing,[billing] Invoice total mismatch #768,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Bravo,chat,0
+3,billing,[billing] Invoice total mismatch #769,The amount charged does not match our purchase order for last cycle. Blocking our release.,Charlie,email,0
+9,bug,[bug] Export fails intermittently #770,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Charlie,phone,0
+16,billing,[billing] Invoice total mismatch #771,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,phone,120
+25,account,[account] Cannot add new seat #772,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Bravo,chat,0
+0,bug,[bug] Export fails intermittently #773,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Bravo,phone,0
+18,performance,[performance] Dashboard loads slowly #774,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Bravo,phone,120
+22,account,[account] Cannot add new seat #775,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Charlie,email,900
+24,billing,[billing] Invoice total mismatch #776,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Alpha,chat,0
+11,performance,[performance] Dashboard loads slowly #777,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Charlie,phone,0
+3,account,[account] Cannot add new seat #778,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Bravo,email,0
+7,performance,[performance] Dashboard loads slowly #779,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Bravo,email,0
+22,how_to,[how_to] Reset SSO for contractor #780,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Charlie,chat,120
+22,how_to,[how_to] Reset SSO for contractor #781,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Bravo,chat,0
+16,billing,[billing] Invoice total mismatch #782,The amount charged does not match our purchase order for last cycle. Priority high.,Bravo,chat,0
+3,how_to,[how_to] Reset SSO for contractor #783,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Alpha,chat,0
+3,account,[account] Cannot add new seat #784,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Bravo,email,0
+12,account,[account] Cannot add new seat #785,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Bravo,chat,0
+15,billing,[billing] Invoice total mismatch #786,The amount charged does not match our purchase order for last cycle. Priority high.,Alpha,phone,0
+0,performance,[performance] Dashboard loads slowly #787,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Bravo,email,0
+17,bug,[bug] Export fails intermittently #788,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Alpha,phone,0
+14,account,[account] Cannot add new seat #789,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Bravo,email,0
+0,billing,[billing] Invoice total mismatch #790,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Bravo,chat,0
+2,account,[account] Cannot add new seat #791,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Charlie,chat,900
+11,performance,[performance] Dashboard loads slowly #792,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Alpha,chat,0
+18,billing,[billing] Invoice total mismatch #793,The amount charged does not match our purchase order for last cycle. Blocking our release.,Bravo,phone,0
+21,billing,[billing] Invoice total mismatch #794,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Charlie,chat,0
+11,performance,[performance] Dashboard loads slowly #795,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Charlie,chat,450
+7,billing,[billing] Invoice total mismatch #796,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Charlie,email,0
+25,how_to,[how_to] Reset SSO for contractor #797,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Alpha,chat,0
+11,account,[account] Cannot add new seat #798,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Charlie,chat,120
+8,how_to,[how_to] Reset SSO for contractor #799,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Alpha,chat,0
+11,bug,[bug] Export fails intermittently #800,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Charlie,email,0
+0,bug,[bug] Export fails intermittently #801,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Alpha,phone,0
+7,billing,[billing] Invoice total mismatch #802,The amount charged does not match our purchase order for last cycle. Priority high.,Bravo,chat,120
+13,account,[account] Cannot add new seat #803,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Alpha,email,0
+23,bug,[bug] Export fails intermittently #804,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Alpha,chat,0
+19,billing,[billing] Invoice total mismatch #805,The amount charged does not match our purchase order for last cycle. Priority high.,Bravo,email,0
+20,bug,[bug] Export fails intermittently #806,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Alpha,chat,0
+14,account,[account] Cannot add new seat #807,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Charlie,chat,0
+2,billing,[billing] Invoice total mismatch #808,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,email,0
+10,account,[account] Cannot add new seat #809,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Alpha,phone,0
+25,performance,[performance] Dashboard loads slowly #810,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Alpha,chat,0
+1,performance,[performance] Dashboard loads slowly #811,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Charlie,email,0
+22,account,[account] Cannot add new seat #812,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Charlie,email,0
+17,performance,[performance] Dashboard loads slowly #813,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Bravo,phone,0
+7,account,[account] Cannot add new seat #814,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Bravo,chat,120
+20,billing,[billing] Invoice total mismatch #815,The amount charged does not match our purchase order for last cycle. Priority high.,Bravo,chat,0
+21,performance,[performance] Dashboard loads slowly #816,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Alpha,phone,0
+1,how_to,[how_to] Reset SSO for contractor #817,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Alpha,phone,0
+2,how_to,[how_to] Reset SSO for contractor #818,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Alpha,email,0
+17,account,[account] Cannot add new seat #819,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Charlie,email,0
+25,account,[account] Cannot add new seat #820,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Bravo,phone,0
+0,performance,[performance] Dashboard loads slowly #821,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Charlie,phone,0
+17,how_to,[how_to] Reset SSO for contractor #822,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Charlie,chat,0
+3,how_to,[how_to] Reset SSO for contractor #823,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Bravo,phone,120
+16,bug,[bug] Export fails intermittently #824,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Charlie,phone,0
+16,bug,[bug] Export fails intermittently #825,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Charlie,phone,0
+2,bug,[bug] Export fails intermittently #826,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Alpha,email,450
+17,billing,[billing] Invoice total mismatch #827,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Alpha,chat,0
+23,billing,[billing] Invoice total mismatch #828,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Bravo,chat,0
+22,performance,[performance] Dashboard loads slowly #829,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Charlie,email,450
+0,bug,[bug] Export fails intermittently #830,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Alpha,phone,0
+6,account,[account] Cannot add new seat #831,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Alpha,email,0
+6,how_to,[how_to] Reset SSO for contractor #832,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Bravo,phone,0
+11,billing,[billing] Invoice total mismatch #833,The amount charged does not match our purchase order for last cycle. Priority high.,Bravo,chat,0
+3,billing,[billing] Invoice total mismatch #834,The amount charged does not match our purchase order for last cycle. Blocking our release.,Charlie,chat,0
+22,billing,[billing] Invoice total mismatch #835,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,email,0
+20,account,[account] Cannot add new seat #836,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Alpha,chat,0
+21,billing,[billing] Invoice total mismatch #837,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Charlie,chat,0
+5,how_to,[how_to] Reset SSO for contractor #838,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Charlie,email,120
+0,account,[account] Cannot add new seat #839,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Alpha,chat,450
+23,account,[account] Cannot add new seat #840,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Charlie,phone,0
+7,billing,[billing] Invoice total mismatch #841,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Charlie,chat,0
+17,billing,[billing] Invoice total mismatch #842,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Alpha,email,0
+23,billing,[billing] Invoice total mismatch #843,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,chat,120
+0,billing,[billing] Invoice total mismatch #844,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,email,450
+0,billing,[billing] Invoice total mismatch #845,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,chat,120
+0,how_to,[how_to] Reset SSO for contractor #846,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Alpha,email,0
+4,account,[account] Cannot add new seat #847,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Bravo,phone,0
+1,how_to,[how_to] Reset SSO for contractor #848,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Alpha,chat,0
+21,performance,[performance] Dashboard loads slowly #849,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Charlie,phone,120
+15,billing,[billing] Invoice total mismatch #850,The amount charged does not match our purchase order for last cycle. Blocking our release.,Charlie,chat,120
+25,performance,[performance] Dashboard loads slowly #851,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Alpha,email,0
+20,performance,[performance] Dashboard loads slowly #852,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Alpha,phone,0
+25,account,[account] Cannot add new seat #853,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Charlie,email,0
+6,account,[account] Cannot add new seat #854,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Charlie,email,0
+7,bug,[bug] Export fails intermittently #855,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Bravo,phone,0
+22,billing,[billing] Invoice total mismatch #856,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Alpha,chat,0
+6,billing,[billing] Invoice total mismatch #857,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,email,0
+1,bug,[bug] Export fails intermittently #858,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Alpha,chat,0
+17,account,[account] Cannot add new seat #859,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Bravo,email,0
+20,bug,[bug] Export fails intermittently #860,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Alpha,phone,0
+25,performance,[performance] Dashboard loads slowly #861,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Bravo,email,0
+24,how_to,[how_to] Reset SSO for contractor #862,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Bravo,phone,450
+3,billing,[billing] Invoice total mismatch #863,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Alpha,email,0
+20,bug,[bug] Export fails intermittently #864,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Bravo,email,120
+21,performance,[performance] Dashboard loads slowly #865,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Bravo,chat,0
+18,performance,[performance] Dashboard loads slowly #866,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Bravo,email,120
+21,how_to,[how_to] Reset SSO for contractor #867,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Alpha,chat,120
+21,bug,[bug] Export fails intermittently #868,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Charlie,email,0
+11,performance,[performance] Dashboard loads slowly #869,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Bravo,chat,450
+1,billing,[billing] Invoice total mismatch #870,The amount charged does not match our purchase order for last cycle. Blocking our release.,Bravo,phone,0
+11,account,[account] Cannot add new seat #871,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Bravo,email,0
+5,billing,[billing] Invoice total mismatch #872,The amount charged does not match our purchase order for last cycle. Priority high.,Alpha,email,120
+2,billing,[billing] Invoice total mismatch #873,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Bravo,email,0
+3,how_to,[how_to] Reset SSO for contractor #874,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Bravo,email,0
+18,how_to,[how_to] Reset SSO for contractor #875,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Bravo,email,0
+13,how_to,[how_to] Reset SSO for contractor #876,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Bravo,email,0
+14,how_to,[how_to] Reset SSO for contractor #877,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Alpha,email,0
+19,account,[account] Cannot add new seat #878,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Charlie,phone,0
+14,how_to,[how_to] Reset SSO for contractor #879,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Bravo,chat,120
+16,how_to,[how_to] Reset SSO for contractor #880,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Alpha,email,0
+2,bug,[bug] Export fails intermittently #881,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Alpha,email,450
+22,billing,[billing] Invoice total mismatch #882,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Charlie,email,0
+11,how_to,[how_to] Reset SSO for contractor #883,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Bravo,chat,0
+4,billing,[billing] Invoice total mismatch #884,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Alpha,phone,900
+21,performance,[performance] Dashboard loads slowly #885,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Bravo,chat,0
+19,billing,[billing] Invoice total mismatch #886,The amount charged does not match our purchase order for last cycle. Priority high.,Bravo,email,0
+1,account,[account] Cannot add new seat #887,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Alpha,phone,0
+5,how_to,[how_to] Reset SSO for contractor #888,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Bravo,email,900
+0,account,[account] Cannot add new seat #889,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Alpha,email,0
+7,how_to,[how_to] Reset SSO for contractor #890,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Bravo,phone,0
+2,billing,[billing] Invoice total mismatch #891,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,email,0
+18,performance,[performance] Dashboard loads slowly #892,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Alpha,chat,0
+13,performance,[performance] Dashboard loads slowly #893,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Bravo,email,120
+25,performance,[performance] Dashboard loads slowly #894,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Charlie,chat,0
+19,how_to,[how_to] Reset SSO for contractor #895,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Charlie,email,450
+15,performance,[performance] Dashboard loads slowly #896,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Alpha,chat,0
+13,account,[account] Cannot add new seat #897,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Alpha,chat,0
+1,how_to,[how_to] Reset SSO for contractor #898,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Charlie,phone,0
+1,bug,[bug] Export fails intermittently #899,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Alpha,email,0
+16,performance,[performance] Dashboard loads slowly #900,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Bravo,phone,120
+0,performance,[performance] Dashboard loads slowly #901,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Alpha,chat,0
+1,account,[account] Cannot add new seat #902,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Bravo,email,0
+5,bug,[bug] Export fails intermittently #903,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Bravo,email,120
+22,how_to,[how_to] Reset SSO for contractor #904,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Alpha,chat,0
+11,performance,[performance] Dashboard loads slowly #905,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Charlie,email,0
+18,how_to,[how_to] Reset SSO for contractor #906,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Alpha,email,0
+10,performance,[performance] Dashboard loads slowly #907,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Charlie,email,0
+4,how_to,[how_to] Reset SSO for contractor #908,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Bravo,chat,450
+9,billing,[billing] Invoice total mismatch #909,The amount charged does not match our purchase order for last cycle. Blocking our release.,Charlie,chat,0
+2,performance,[performance] Dashboard loads slowly #910,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Charlie,email,0
+20,billing,[billing] Invoice total mismatch #911,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Charlie,email,0
+4,billing,[billing] Invoice total mismatch #912,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Bravo,chat,0
+9,how_to,[how_to] Reset SSO for contractor #913,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Bravo,phone,0
+25,performance,[performance] Dashboard loads slowly #914,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Bravo,email,0
+15,account,[account] Cannot add new seat #915,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Charlie,chat,0
+11,bug,[bug] Export fails intermittently #916,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Alpha,phone,0
+14,billing,[billing] Invoice total mismatch #917,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,email,0
+20,account,[account] Cannot add new seat #918,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Charlie,email,0
+6,billing,[billing] Invoice total mismatch #919,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,chat,120
+16,billing,[billing] Invoice total mismatch #920,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Charlie,email,0
+22,bug,[bug] Export fails intermittently #921,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Charlie,email,0
+14,how_to,[how_to] Reset SSO for contractor #922,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Charlie,email,0
+11,account,[account] Cannot add new seat #923,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Charlie,email,0
+3,performance,[performance] Dashboard loads slowly #924,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Bravo,email,450
+6,performance,[performance] Dashboard loads slowly #925,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Alpha,email,120
+24,billing,[billing] Invoice total mismatch #926,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Alpha,phone,0
+14,bug,[bug] Export fails intermittently #927,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Bravo,email,0
+7,how_to,[how_to] Reset SSO for contractor #928,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Charlie,phone,900
+10,billing,[billing] Invoice total mismatch #929,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Charlie,chat,0
+15,bug,[bug] Export fails intermittently #930,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Charlie,chat,450
+13,bug,[bug] Export fails intermittently #931,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Alpha,chat,0
+18,billing,[billing] Invoice total mismatch #932,The amount charged does not match our purchase order for last cycle. Priority high.,Alpha,email,900
+6,how_to,[how_to] Reset SSO for contractor #933,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Bravo,email,0
+16,performance,[performance] Dashboard loads slowly #934,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Bravo,chat,450
+11,billing,[billing] Invoice total mismatch #935,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Charlie,chat,0
+24,how_to,[how_to] Reset SSO for contractor #936,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Alpha,phone,0
+4,performance,[performance] Dashboard loads slowly #937,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Alpha,phone,450
+3,performance,[performance] Dashboard loads slowly #938,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Alpha,chat,0
+12,performance,[performance] Dashboard loads slowly #939,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Alpha,email,0
+13,how_to,[how_to] Reset SSO for contractor #940,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Bravo,email,0
+17,performance,[performance] Dashboard loads slowly #941,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Alpha,phone,0
+10,bug,[bug] Export fails intermittently #942,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Charlie,email,0
+23,bug,[bug] Export fails intermittently #943,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Charlie,email,0
+12,billing,[billing] Invoice total mismatch #944,The amount charged does not match our purchase order for last cycle. Priority high.,Alpha,email,0
+3,how_to,[how_to] Reset SSO for contractor #945,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Alpha,email,0
+3,bug,[bug] Export fails intermittently #946,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Alpha,email,0
+25,bug,[bug] Export fails intermittently #947,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Alpha,email,0
+3,performance,[performance] Dashboard loads slowly #948,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Alpha,chat,0
+24,bug,[bug] Export fails intermittently #949,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Alpha,phone,450
+7,bug,[bug] Export fails intermittently #950,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Alpha,email,0
+2,billing,[billing] Invoice total mismatch #951,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,phone,0
+7,how_to,[how_to] Reset SSO for contractor #952,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Alpha,email,450
+15,bug,[bug] Export fails intermittently #953,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Charlie,email,0
+11,bug,[bug] Export fails intermittently #954,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Alpha,chat,450
+20,bug,[bug] Export fails intermittently #955,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Bravo,email,0
+15,performance,[performance] Dashboard loads slowly #956,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Bravo,phone,0
+10,account,[account] Cannot add new seat #957,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Charlie,email,0
+16,how_to,[how_to] Reset SSO for contractor #958,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Alpha,email,0
+25,performance,[performance] Dashboard loads slowly #959,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Bravo,email,0
+10,account,[account] Cannot add new seat #960,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Alpha,email,450
+3,account,[account] Cannot add new seat #961,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Charlie,email,120
+10,how_to,[how_to] Reset SSO for contractor #962,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Charlie,phone,0
+21,account,[account] Cannot add new seat #963,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Alpha,chat,450
+5,account,[account] Cannot add new seat #964,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Charlie,chat,0
+24,performance,[performance] Dashboard loads slowly #965,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Charlie,phone,0
+15,how_to,[how_to] Reset SSO for contractor #966,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Charlie,email,0
+15,billing,[billing] Invoice total mismatch #967,The amount charged does not match our purchase order for last cycle. Priority high.,Bravo,chat,900
+8,billing,[billing] Invoice total mismatch #968,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Bravo,email,0
+23,how_to,[how_to] Reset SSO for contractor #969,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Alpha,email,0
+0,how_to,[how_to] Reset SSO for contractor #970,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Bravo,email,0
+7,bug,[bug] Export fails intermittently #971,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Charlie,email,0
+10,how_to,[how_to] Reset SSO for contractor #972,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Charlie,chat,0
+12,how_to,[how_to] Reset SSO for contractor #973,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Bravo,chat,0
+12,performance,[performance] Dashboard loads slowly #974,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Alpha,email,0
+3,billing,[billing] Invoice total mismatch #975,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Alpha,chat,0
+5,billing,[billing] Invoice total mismatch #976,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Bravo,phone,0
+2,performance,[performance] Dashboard loads slowly #977,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Bravo,email,0
+14,performance,[performance] Dashboard loads slowly #978,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Charlie,email,0
+9,account,[account] Cannot add new seat #979,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Charlie,chat,0
+14,account,[account] Cannot add new seat #980,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Alpha,email,0
+15,account,[account] Cannot add new seat #981,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Alpha,email,120
+18,bug,[bug] Export fails intermittently #982,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Alpha,email,0
+14,bug,[bug] Export fails intermittently #983,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Bravo,chat,450
+16,bug,[bug] Export fails intermittently #984,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Alpha,email,0
+15,how_to,[how_to] Reset SSO for contractor #985,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Bravo,chat,450
+16,account,[account] Cannot add new seat #986,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Bravo,email,900
+16,bug,[bug] Export fails intermittently #987,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Alpha,phone,0
+8,how_to,[how_to] Reset SSO for contractor #988,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Bravo,phone,0
+6,bug,[bug] Export fails intermittently #989,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Bravo,email,0
+20,billing,[billing] Invoice total mismatch #990,The amount charged does not match our purchase order for last cycle. Priority high.,Bravo,email,0
+8,billing,[billing] Invoice total mismatch #991,The amount charged does not match our purchase order for last cycle. Priority high.,Bravo,email,0
+14,billing,[billing] Invoice total mismatch #992,The amount charged does not match our purchase order for last cycle. Priority high.,Bravo,email,0
+5,account,[account] Cannot add new seat #993,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Bravo,email,0
+11,bug,[bug] Export fails intermittently #994,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Bravo,email,900
+13,performance,[performance] Dashboard loads slowly #995,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Charlie,chat,900
+16,performance,[performance] Dashboard loads slowly #996,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Charlie,email,0
+13,billing,[billing] Invoice total mismatch #997,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,chat,0
+9,billing,[billing] Invoice total mismatch #998,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Alpha,email,900
+25,performance,[performance] Dashboard loads slowly #999,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Alpha,email,0
+13,bug,[bug] Export fails intermittently #1000,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Bravo,phone,120
+21,account,[account] Cannot add new seat #1001,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Bravo,email,0
+19,billing,[billing] Invoice total mismatch #1002,The amount charged does not match our purchase order for last cycle. Blocking our release.,Bravo,phone,0
+14,performance,[performance] Dashboard loads slowly #1003,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Bravo,chat,0
+23,performance,[performance] Dashboard loads slowly #1004,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Bravo,chat,0
+3,billing,[billing] Invoice total mismatch #1005,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Bravo,phone,0
+23,bug,[bug] Export fails intermittently #1006,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Alpha,email,0
+22,account,[account] Cannot add new seat #1007,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Bravo,chat,0
+13,bug,[bug] Export fails intermittently #1008,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Alpha,chat,0
+19,how_to,[how_to] Reset SSO for contractor #1009,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Bravo,email,0
+13,how_to,[how_to] Reset SSO for contractor #1010,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Bravo,chat,450
+6,bug,[bug] Export fails intermittently #1011,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Bravo,email,0
+20,performance,[performance] Dashboard loads slowly #1012,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Charlie,email,120
+6,performance,[performance] Dashboard loads slowly #1013,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Alpha,email,0
+8,bug,[bug] Export fails intermittently #1014,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Alpha,phone,0
+13,performance,[performance] Dashboard loads slowly #1015,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Alpha,email,0
+21,billing,[billing] Invoice total mismatch #1016,The amount charged does not match our purchase order for last cycle. Priority high.,Alpha,email,0
+9,billing,[billing] Invoice total mismatch #1017,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,chat,0
+12,how_to,[how_to] Reset SSO for contractor #1018,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Charlie,phone,0
+1,account,[account] Cannot add new seat #1019,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Alpha,phone,0
+3,billing,[billing] Invoice total mismatch #1020,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Bravo,email,0
+1,billing,[billing] Invoice total mismatch #1021,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Bravo,phone,0
+1,how_to,[how_to] Reset SSO for contractor #1022,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Charlie,chat,0
+22,performance,[performance] Dashboard loads slowly #1023,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Alpha,email,0
+21,billing,[billing] Invoice total mismatch #1024,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Bravo,email,0
+21,bug,[bug] Export fails intermittently #1025,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Charlie,chat,0
+1,performance,[performance] Dashboard loads slowly #1026,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Bravo,email,0
+2,bug,[bug] Export fails intermittently #1027,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Bravo,email,0
+7,billing,[billing] Invoice total mismatch #1028,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Bravo,chat,0
+14,billing,[billing] Invoice total mismatch #1029,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Charlie,phone,0
+8,bug,[bug] Export fails intermittently #1030,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Charlie,email,900
+12,how_to,[how_to] Reset SSO for contractor #1031,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Alpha,email,0
+4,account,[account] Cannot add new seat #1032,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Alpha,chat,0
+19,performance,[performance] Dashboard loads slowly #1033,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Alpha,chat,450
+8,performance,[performance] Dashboard loads slowly #1034,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Charlie,chat,0
+1,account,[account] Cannot add new seat #1035,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Alpha,phone,0
+19,bug,[bug] Export fails intermittently #1036,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Bravo,phone,0
+23,bug,[bug] Export fails intermittently #1037,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Charlie,email,0
+0,account,[account] Cannot add new seat #1038,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Bravo,email,450
+11,bug,[bug] Export fails intermittently #1039,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Alpha,phone,0
+21,performance,[performance] Dashboard loads slowly #1040,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Charlie,phone,0
+18,performance,[performance] Dashboard loads slowly #1041,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Bravo,email,0
+22,billing,[billing] Invoice total mismatch #1042,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Charlie,chat,0
+10,how_to,[how_to] Reset SSO for contractor #1043,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Alpha,chat,0
+9,billing,[billing] Invoice total mismatch #1044,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,chat,0
+18,billing,[billing] Invoice total mismatch #1045,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Charlie,email,0
+3,how_to,[how_to] Reset SSO for contractor #1046,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Alpha,email,0
+6,bug,[bug] Export fails intermittently #1047,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Bravo,email,450
+15,performance,[performance] Dashboard loads slowly #1048,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Alpha,chat,900
+17,account,[account] Cannot add new seat #1049,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Bravo,phone,0
+3,performance,[performance] Dashboard loads slowly #1050,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Charlie,chat,0
+13,bug,[bug] Export fails intermittently #1051,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Alpha,chat,0
+9,bug,[bug] Export fails intermittently #1052,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Charlie,email,0
+13,bug,[bug] Export fails intermittently #1053,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Charlie,email,0
+24,billing,[billing] Invoice total mismatch #1054,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Charlie,email,0
+1,account,[account] Cannot add new seat #1055,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Bravo,email,0
+25,bug,[bug] Export fails intermittently #1056,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Alpha,email,0
+11,billing,[billing] Invoice total mismatch #1057,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Alpha,chat,0
+20,performance,[performance] Dashboard loads slowly #1058,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Alpha,email,450
+11,bug,[bug] Export fails intermittently #1059,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Bravo,email,0
+8,billing,[billing] Invoice total mismatch #1060,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Alpha,phone,450
+20,billing,[billing] Invoice total mismatch #1061,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,email,0
+17,performance,[performance] Dashboard loads slowly #1062,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Alpha,email,0
+3,performance,[performance] Dashboard loads slowly #1063,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Bravo,email,450
+18,billing,[billing] Invoice total mismatch #1064,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,email,450
+19,account,[account] Cannot add new seat #1065,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Charlie,email,0
+10,performance,[performance] Dashboard loads slowly #1066,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Alpha,email,0
+24,performance,[performance] Dashboard loads slowly #1067,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Bravo,chat,0
+16,bug,[bug] Export fails intermittently #1068,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Bravo,chat,0
+8,billing,[billing] Invoice total mismatch #1069,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Alpha,email,120
+0,account,[account] Cannot add new seat #1070,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Bravo,chat,0
+17,bug,[bug] Export fails intermittently #1071,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Alpha,chat,0
+5,how_to,[how_to] Reset SSO for contractor #1072,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Charlie,email,0
+19,performance,[performance] Dashboard loads slowly #1073,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Bravo,chat,0
+13,billing,[billing] Invoice total mismatch #1074,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Bravo,phone,120
+12,performance,[performance] Dashboard loads slowly #1075,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Charlie,chat,0
+4,account,[account] Cannot add new seat #1076,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Bravo,email,0
+18,performance,[performance] Dashboard loads slowly #1077,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Bravo,email,0
+4,bug,[bug] Export fails intermittently #1078,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Charlie,email,0
+10,account,[account] Cannot add new seat #1079,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Bravo,email,450
+21,how_to,[how_to] Reset SSO for contractor #1080,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Alpha,phone,120
+23,performance,[performance] Dashboard loads slowly #1081,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Alpha,email,0
+25,performance,[performance] Dashboard loads slowly #1082,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Bravo,email,900
+24,performance,[performance] Dashboard loads slowly #1083,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Alpha,phone,0
+14,bug,[bug] Export fails intermittently #1084,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Charlie,email,0
+5,billing,[billing] Invoice total mismatch #1085,The amount charged does not match our purchase order for last cycle. Blocking our release.,Bravo,email,120
+21,bug,[bug] Export fails intermittently #1086,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Alpha,chat,0
+20,how_to,[how_to] Reset SSO for contractor #1087,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Bravo,email,0
+25,how_to,[how_to] Reset SSO for contractor #1088,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Alpha,email,0
+16,how_to,[how_to] Reset SSO for contractor #1089,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Charlie,chat,0
+3,bug,[bug] Export fails intermittently #1090,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Bravo,email,0
+13,performance,[performance] Dashboard loads slowly #1091,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Alpha,email,0
+11,account,[account] Cannot add new seat #1092,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Bravo,phone,0
+21,bug,[bug] Export fails intermittently #1093,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Bravo,email,0
+10,performance,[performance] Dashboard loads slowly #1094,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Charlie,email,0
+8,performance,[performance] Dashboard loads slowly #1095,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Bravo,email,450
+2,how_to,[how_to] Reset SSO for contractor #1096,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Bravo,chat,0
+21,billing,[billing] Invoice total mismatch #1097,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Charlie,email,0
+19,performance,[performance] Dashboard loads slowly #1098,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Charlie,email,0
+1,account,[account] Cannot add new seat #1099,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Charlie,chat,0
+11,performance,[performance] Dashboard loads slowly #1100,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Bravo,phone,450
+12,account,[account] Cannot add new seat #1101,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Bravo,email,0
+12,account,[account] Cannot add new seat #1102,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Bravo,phone,0
+23,bug,[bug] Export fails intermittently #1103,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Alpha,email,0
+3,how_to,[how_to] Reset SSO for contractor #1104,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Charlie,email,0
+7,how_to,[how_to] Reset SSO for contractor #1105,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Charlie,phone,0
+4,account,[account] Cannot add new seat #1106,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Charlie,chat,120
+6,billing,[billing] Invoice total mismatch #1107,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Alpha,chat,0
+23,how_to,[how_to] Reset SSO for contractor #1108,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Alpha,email,0
+24,account,[account] Cannot add new seat #1109,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Bravo,email,0
+1,bug,[bug] Export fails intermittently #1110,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Alpha,phone,900
+16,performance,[performance] Dashboard loads slowly #1111,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Alpha,email,0
+6,bug,[bug] Export fails intermittently #1112,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Bravo,phone,0
+5,account,[account] Cannot add new seat #1113,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Alpha,email,0
+7,account,[account] Cannot add new seat #1114,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Charlie,chat,0
+5,bug,[bug] Export fails intermittently #1115,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Alpha,phone,0
+12,performance,[performance] Dashboard loads slowly #1116,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Charlie,phone,0
+25,bug,[bug] Export fails intermittently #1117,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Charlie,email,0
+15,how_to,[how_to] Reset SSO for contractor #1118,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Alpha,chat,0
+18,performance,[performance] Dashboard loads slowly #1119,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Alpha,email,0
+12,performance,[performance] Dashboard loads slowly #1120,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Bravo,chat,0
+0,billing,[billing] Invoice total mismatch #1121,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Charlie,phone,0
+2,billing,[billing] Invoice total mismatch #1122,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Bravo,chat,0
+6,performance,[performance] Dashboard loads slowly #1123,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Bravo,chat,0
+6,how_to,[how_to] Reset SSO for contractor #1124,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Alpha,chat,0
+21,how_to,[how_to] Reset SSO for contractor #1125,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Charlie,email,0
+21,billing,[billing] Invoice total mismatch #1126,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Alpha,email,0
+22,bug,[bug] Export fails intermittently #1127,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Bravo,chat,0
+16,account,[account] Cannot add new seat #1128,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Bravo,email,0
+14,billing,[billing] Invoice total mismatch #1129,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,phone,0
+16,bug,[bug] Export fails intermittently #1130,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Bravo,phone,0
+10,account,[account] Cannot add new seat #1131,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Bravo,chat,0
+17,billing,[billing] Invoice total mismatch #1132,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,phone,900
+20,performance,[performance] Dashboard loads slowly #1133,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Bravo,email,120
+19,bug,[bug] Export fails intermittently #1134,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Bravo,email,0
+15,account,[account] Cannot add new seat #1135,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Alpha,chat,0
+1,performance,[performance] Dashboard loads slowly #1136,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Alpha,email,450
+18,account,[account] Cannot add new seat #1137,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Alpha,email,0
+9,billing,[billing] Invoice total mismatch #1138,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Alpha,phone,450
+19,how_to,[how_to] Reset SSO for contractor #1139,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Bravo,email,0
+14,performance,[performance] Dashboard loads slowly #1140,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Alpha,email,0
+22,bug,[bug] Export fails intermittently #1141,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Alpha,chat,0
+8,billing,[billing] Invoice total mismatch #1142,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,chat,0
+24,billing,[billing] Invoice total mismatch #1143,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Alpha,email,0
+21,account,[account] Cannot add new seat #1144,The admin panel returns an error when we try to add a seat to our subscription. Priority high.,Alpha,phone,450
+8,performance,[performance] Dashboard loads slowly #1145,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Bravo,email,0
+12,performance,[performance] Dashboard loads slowly #1146,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Bravo,email,0
+13,performance,[performance] Dashboard loads slowly #1147,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Bravo,chat,0
+19,how_to,[how_to] Reset SSO for contractor #1148,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Alpha,email,0
+17,how_to,[how_to] Reset SSO for contractor #1149,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Bravo,chat,0
+22,how_to,[how_to] Reset SSO for contractor #1150,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Alpha,email,120
+9,performance,[performance] Dashboard loads slowly #1151,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Bravo,email,0
+13,billing,[billing] Invoice total mismatch #1152,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,chat,450
+11,account,[account] Cannot add new seat #1153,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Bravo,email,0
+23,performance,[performance] Dashboard loads slowly #1154,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Alpha,chat,0
+7,bug,[bug] Export fails intermittently #1155,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Alpha,phone,0
+15,how_to,[how_to] Reset SSO for contractor #1156,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Alpha,email,450
+3,billing,[billing] Invoice total mismatch #1157,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,chat,900
+22,account,[account] Cannot add new seat #1158,The admin panel returns an error when we try to add a seat to our subscription. Need guidance by Friday.,Charlie,phone,450
+9,account,[account] Cannot add new seat #1159,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Bravo,chat,0
+8,account,[account] Cannot add new seat #1160,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Charlie,email,0
+15,bug,[bug] Export fails intermittently #1161,When exporting CSV over 5k rows the job hangs and eventually times out. Occurs on latest build only.,Charlie,email,900
+12,billing,[billing] Invoice total mismatch #1162,The amount charged does not match our purchase order for last cycle. Priority high.,Bravo,email,0
+22,billing,[billing] Invoice total mismatch #1163,The amount charged does not match our purchase order for last cycle. Priority high.,Charlie,chat,0
+13,billing,[billing] Invoice total mismatch #1164,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Bravo,email,0
+13,billing,[billing] Invoice total mismatch #1165,The amount charged does not match our purchase order for last cycle. Need guidance by Friday.,Charlie,chat,120
+2,billing,[billing] Invoice total mismatch #1166,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Bravo,phone,0
+0,account,[account] Cannot add new seat #1167,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Alpha,email,0
+10,billing,[billing] Invoice total mismatch #1168,The amount charged does not match our purchase order for last cycle. Priority high.,Bravo,chat,0
+25,billing,[billing] Invoice total mismatch #1169,The amount charged does not match our purchase order for last cycle. Priority high.,Alpha,chat,900
+23,performance,[performance] Dashboard loads slowly #1170,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Alpha,email,0
+16,how_to,[how_to] Reset SSO for contractor #1171,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Bravo,email,0
+16,performance,[performance] Dashboard loads slowly #1172,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Bravo,email,0
+10,performance,[performance] Dashboard loads slowly #1173,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Alpha,phone,0
+4,account,[account] Cannot add new seat #1174,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Alpha,email,0
+0,how_to,[how_to] Reset SSO for contractor #1175,We need steps to reset single sign-on for a contractor who lost device access. Occurs on latest build only.,Charlie,email,0
+8,how_to,[how_to] Reset SSO for contractor #1176,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Alpha,chat,450
+8,performance,[performance] Dashboard loads slowly #1177,The executive dashboard takes more than twenty seconds to render on Monday mornings. Occurs on latest build only.,Bravo,email,120
+4,how_to,[how_to] Reset SSO for contractor #1178,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Charlie,email,0
+6,bug,[bug] Export fails intermittently #1179,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Bravo,chat,0
+0,how_to,[how_to] Reset SSO for contractor #1180,We need steps to reset single sign-on for a contractor who lost device access. Need guidance by Friday.,Bravo,phone,0
+15,billing,[billing] Invoice total mismatch #1181,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Bravo,email,450
+24,performance,[performance] Dashboard loads slowly #1182,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Bravo,email,0
+17,bug,[bug] Export fails intermittently #1183,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Charlie,chat,0
+11,billing,[billing] Invoice total mismatch #1184,The amount charged does not match our purchase order for last cycle. Occurs on latest build only.,Alpha,phone,120
+10,bug,[bug] Export fails intermittently #1185,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Bravo,chat,450
+7,performance,[performance] Dashboard loads slowly #1186,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Charlie,chat,0
+3,bug,[bug] Export fails intermittently #1187,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Bravo,phone,0
+15,performance,[performance] Dashboard loads slowly #1188,The executive dashboard takes more than twenty seconds to render on Monday mornings. Priority high.,Alpha,email,450
+14,account,[account] Cannot add new seat #1189,The admin panel returns an error when we try to add a seat to our subscription. Blocking our release.,Charlie,phone,0
+0,billing,[billing] Invoice total mismatch #1190,The amount charged does not match our purchase order for last cycle. Blocking our release.,Charlie,phone,0
+10,performance,[performance] Dashboard loads slowly #1191,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Alpha,phone,0
+7,bug,[bug] Export fails intermittently #1192,When exporting CSV over 5k rows the job hangs and eventually times out. Need guidance by Friday.,Bravo,chat,0
+4,billing,[billing] Invoice total mismatch #1193,The amount charged does not match our purchase order for last cycle. Blocking our release.,Alpha,chat,0
+18,performance,[performance] Dashboard loads slowly #1194,The executive dashboard takes more than twenty seconds to render on Monday mornings. Need guidance by Friday.,Charlie,email,0
+13,account,[account] Cannot add new seat #1195,The admin panel returns an error when we try to add a seat to our subscription. Occurs on latest build only.,Charlie,email,0
+16,bug,[bug] Export fails intermittently #1196,When exporting CSV over 5k rows the job hangs and eventually times out. Priority high.,Charlie,email,0
+18,how_to,[how_to] Reset SSO for contractor #1197,We need steps to reset single sign-on for a contractor who lost device access. Blocking our release.,Bravo,phone,0
+25,bug,[bug] Export fails intermittently #1198,When exporting CSV over 5k rows the job hangs and eventually times out. Blocking our release.,Bravo,phone,0
+20,how_to,[how_to] Reset SSO for contractor #1199,We need steps to reset single sign-on for a contractor who lost device access. Priority high.,Bravo,email,0
+16,performance,[performance] Dashboard loads slowly #1200,The executive dashboard takes more than twenty seconds to render on Monday mornings. Blocking our release.,Alpha,chat,0

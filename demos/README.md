@@ -31,5 +31,5 @@ Artifacts are written to `outputs/` (and sometimes `data/*.csv`). The portfolio 
 | `ab-testing-decisions` | Two-sample inference |
 | `segmentation-explainable` | K-means + profiles |
 | `margin-whatif` | Price/cost scenarios |
-| `ticket-themes-trend` | Weekly theme volumes |
-| `repeatable-weekly-report` | Jinja2 HTML report |
+| `multimodal-support-signals` | Text + tabular fusion, k-means, weekly mix |
+| `repeatable-weekly-report` | Jinja2 HTML report (EN + ES) |
