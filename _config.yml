@@ -14,5 +14,4 @@ logo_width: 1254
 logo_height: 706
 
 exclude:
-  - Home.md
   - vendor
