@@ -30,7 +30,7 @@ Small, reproducible **Python** demos (synthetic data) illustrating how scientifi
 </section>
 <section class="home-industry">
 <h2 class="home-industry-title"><a href="{% link portfolio/repeatable-weekly-report.md %}">Repeatable weekly report</a></h2>
-<p>Generate a templated HTML report from CSVs with Python and Jinja2.</p>
+<p>Generate templated HTML from CSVs with Python and Jinja2; English and Spanish UI strings.</p>
 </section>
 </div>
 
