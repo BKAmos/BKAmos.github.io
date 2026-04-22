@@ -6,12 +6,34 @@
     <summary>Portfolio</summary>
     <ul class="site-nav-dropdown-panel">
       <li><a href="{% link portfolio/index.md %}">Overview</a></li>
-      <li><a href="{% link portfolio/forecasting-uncertainty.md %}">Demand and uncertainty</a></li>
-      <li><a href="{% link portfolio/ab-testing-decisions.md %}">A/B testing</a></li>
-      <li><a href="{% link portfolio/segmentation-explainable.md %}">Segmentation</a></li>
-      <li><a href="{% link portfolio/margin-whatif.md %}">Margin what-if</a></li>
-      <li><a href="{% link portfolio/multimodal-support-signals.md %}">Multimodal support</a></li>
-      <li><a href="{% link portfolio/repeatable-weekly-report.md %}">Weekly report</a></li>
+      <li class="site-nav-nested-item">
+        <details class="site-nav-dropdown site-nav-dropdown-nested">
+          <summary>Business questions answered</summary>
+          <ul class="site-nav-dropdown-panel site-nav-dropdown-panel-nested">
+            <li><a href="{% link portfolio/business.md %}">All business demos</a></li>
+            <li><a href="{% link portfolio/forecasting-uncertainty.md %}">Demand and uncertainty</a></li>
+            <li><a href="{% link portfolio/ab-testing-decisions.md %}">A/B testing</a></li>
+            <li><a href="{% link portfolio/segmentation-explainable.md %}">Segmentation</a></li>
+            <li><a href="{% link portfolio/margin-whatif.md %}">Margin what-if</a></li>
+            <li><a href="{% link portfolio/multimodal-support-signals.md %}">Multimodal support</a></li>
+            <li><a href="{% link portfolio/repeatable-weekly-report.md %}">Weekly report</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="site-nav-nested-item">
+        <details class="site-nav-dropdown site-nav-dropdown-nested">
+          <summary>Scientific portfolio</summary>
+          <ul class="site-nav-dropdown-panel site-nav-dropdown-panel-nested">
+            <li><a href="{% link portfolio/scientific.md %}">All scientific demos</a></li>
+            <li><a href="{% link portfolio/scientific-bioinformatics-de.md %}">Differential expression</a></li>
+            <li><a href="{% link portfolio/scientific-cheminformatics-similarity.md %}">Compound similarity</a></li>
+            <li><a href="{% link portfolio/scientific-predictive-dose-response.md %}">Dose–response</a></li>
+            <li><a href="{% link portfolio/scientific-structural-contacts.md %}">Contact map</a></li>
+            <li><a href="{% link portfolio/scientific-generative-sequences.md %}">Generative sequences</a></li>
+            <li><a href="{% link portfolio/scientific-multimodal-biology.md %}">Multimodal biology</a></li>
+          </ul>
+        </details>
+      </li>
     </ul>
   </details>
   <a href="{% link contact.md %}">Contact</a>
