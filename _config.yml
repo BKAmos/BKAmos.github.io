@@ -1,9 +1,17 @@
 remote_theme: pages-themes/cayman@v0.2.0
+lang: en-US
+url: "https://scianaconsultancy.com"
+baseurl: ""
 plugins:
   - jekyll-remote-theme
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 title: SciAna Consultancy
 description: Guiding business to successful outcomes through scientific strategy and data analytics
 logo: /assets/logo.png
 logo_width: 1254
 logo_height: 706
+
+exclude:
+  - vendor

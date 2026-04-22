@@ -1,6 +1,7 @@
 ---
 layout: default
 title: About
+description: SciAna Consultancy brings scientific rigor, reproducible analysis, and grounded advice to data-driven strategy and research.
 banner_logo_right: true
 ---
 
