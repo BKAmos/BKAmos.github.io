@@ -1,40 +1,24 @@
 ---
 layout: default
 title: Portfolio
-description: Portfolio of reproducible analytics demos—demand forecasting, A/B testing, customer segmentation, margin scenarios, and automated reporting.
+description: Two tracks—business questions answered and a scientific portfolio—each with six reproducible Python demos on synthetic data.
 banner_logo_right: true
 ---
 
-Small, reproducible **Python** demos (synthetic data) illustrating how scientific and data workflows support decisions. Each example links to source under `demos/` in the [GitHub repository](https://github.com/BKAmos/BKAmos.github.io). Automated workflows for building and deploying this site live under the **Actions** tab on that repository.
+The portfolio is split into two tracks. **Business questions answered** mirrors common analytics decisions (forecasting, experiments, segmentation, and more). **Scientific portfolio** showcases biology- and chemistry-flavored workflows—still **synthetic data**, but structured like expression profiles, compounds, dose–response, structure, generative sequence models, and multimodal patient/sample panels.
 
 <div class="home-industries" markdown="0">
 <section class="home-industry">
-<h2 class="home-industry-title"><a href="{% link portfolio/forecasting-uncertainty.md %}">Demand and uncertainty</a></h2>
-<p>Forecast monthly demand with prediction intervals to frame inventory risk.</p>
+<h2 class="home-industry-title"><a href="{% link portfolio/business.md %}">Business questions answered</a></h2>
+<p>Six demos: demand and uncertainty, A/B testing, segmentation, margin what-if, multimodal support signals, and repeatable weekly reporting.</p>
 </section>
 <section class="home-industry">
-<h2 class="home-industry-title"><a href="{% link portfolio/ab-testing-decisions.md %}">A/B testing decisions</a></h2>
-<p>Turn experiment results into effect sizes, confidence intervals, and a plain-language decision.</p>
-</section>
-<section class="home-industry">
-<h2 class="home-industry-title"><a href="{% link portfolio/segmentation-explainable.md %}">Segmentation</a></h2>
-<p>Cluster customers or products and summarize each segment with interpretable profiles.</p>
-</section>
-<section class="home-industry">
-<h2 class="home-industry-title"><a href="{% link portfolio/margin-whatif.md %}">Margin what-if</a></h2>
-<p>Explore price and cost sensitivity with simple elasticity-style scenarios.</p>
-</section>
-<section class="home-industry">
-<h2 class="home-industry-title"><a href="{% link portfolio/multimodal-support-signals.md %}">Multimodal support signals</a></h2>
-<p>Fuse text, product/channel, and attachment signals; cluster and track weekly mix.</p>
-</section>
-<section class="home-industry">
-<h2 class="home-industry-title"><a href="{% link portfolio/repeatable-weekly-report.md %}">Repeatable weekly report</a></h2>
-<p>Generate templated HTML from CSVs with Python and Jinja2; English and Spanish UI strings.</p>
+<h2 class="home-industry-title"><a href="{% link portfolio/scientific.md %}">Scientific portfolio</a></h2>
+<p>Six demos: differential expression, cheminformatics similarity, dose–response prediction, contact maps, PWM + latent sequence generation, and multimodal biological integration.</p>
 </section>
 </div>
 
-<p class="portfolio-meta">All demos share dependencies listed in <code>demos/requirements.txt</code>. Run instructions are in <code>demos/README.md</code> and each demo folder.</p>
+<p class="portfolio-meta">Source for every demo lives under <code>demos/</code> in the <a href="https://github.com/BKAmos/BKAmos.github.io">GitHub repository</a>. Use the nested <strong>Portfolio</strong> menu above for direct links to each piece.</p>
 
 ## Navigation
 
