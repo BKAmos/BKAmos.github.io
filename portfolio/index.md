@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Portfolio
-description: Synthetic-data examples that mirror common business questions—forecasting, experiments, segmentation, and more.
+description: Portfolio of reproducible analytics demos—demand forecasting, A/B testing, customer segmentation, margin scenarios, and automated reporting.
 banner_logo_right: true
 ---
 
