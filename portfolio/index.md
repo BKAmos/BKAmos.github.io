@@ -1,20 +1,34 @@
 ---
 layout: default
 title: Portfolio
-description: Two tracks—business questions answered and a scientific portfolio—each with six reproducible Python demos on synthetic data.
+description: Business and scientific decisions can be based on data
 banner_logo_right: true
 ---
 
-The portfolio is split into two tracks. **Business questions answered** mirrors common analytics decisions (forecasting, experiments, segmentation, and more). **Scientific portfolio** showcases biology- and chemistry-flavored workflows—still **synthetic data**, but structured like expression profiles, compounds, dose–response, structure, generative sequence models, and multimodal patient/sample panels.
+Below you will find two different tracks. Each track houses 6 examples. The Business track investigates synthetic data to address questions like demand uncertaity, customer segmentation, and multi-modal data decision making. The scientific portfolio addresses questions in synthetic biology and chemistry such as differential expression, prediction of dose response curves, and multi-modal modeling.
 
 <div class="home-industries" markdown="0">
 <section class="home-industry">
-<h2 class="home-industry-title"><a href="{% link portfolio/business.md %}">Business questions answered</a></h2>
-<p>Six demos: demand and uncertainty, A/B testing, segmentation, margin what-if, multimodal support signals, and repeatable weekly reporting.</p>
+<h2 class="home-industry-title"><a href="{% link portfolio/business.md %}">Business</a></h2>
+<ul>
+  <li>Demand and uncertainty</li>
+  <li>A/B testing</li>
+  <li>Segmentation</li>
+  <li>Margin what-if</li>
+  <li>Multimodal support signals</li>
+  <li>Repeatable weekly report</li>
+</ul>
 </section>
 <section class="home-industry">
-<h2 class="home-industry-title"><a href="{% link portfolio/scientific.md %}">Scientific portfolio</a></h2>
-<p>Six demos: differential expression, cheminformatics similarity, dose–response prediction, contact maps, PWM + latent sequence generation, and multimodal biological integration.</p>
+<h2 class="home-industry-title"><a href="{% link portfolio/scientific.md %}">Scientific</a></h2>
+<ul>
+  <li>Differential expression</li>
+  <li>Compound similarity</li>
+  <li>Dose-response</li>
+  <li>Contact map</li>
+  <li>Generative sequences</li>
+  <li>Multimodal biology</li>
+</ul>
 </section>
 </div>
 
