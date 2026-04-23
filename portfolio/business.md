@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Business questions answered
-description: Six synthetic-data demos for forecasting, experiments, segmentation, margin scenarios, multimodal support, and templated reporting.
+title: Business portfolio
+description: Below you will find 6 different synthetic data science examples to answer business pertinant decisions.
 banner_logo_right: true
 ---
 
-Small, reproducible **Python** demos illustrating how scientific and data workflows support business decisions. Each example links to source under `demos/` in the [GitHub repository](https://github.com/BKAmos/BKAmos.github.io).
+Here you will find small, repoducable **Python** demos illustrating how scientific and data workflows support business decisions. Each example links to source under `demos/` in the [GitHub repository](https://github.com/BKAmos/BKAmos.github.io).
 
 <div class="home-industries" markdown="0">
 <section class="home-industry">
@@ -13,7 +13,7 @@ Small, reproducible **Python** demos illustrating how scientific and data workfl
 <p>Forecast monthly demand with prediction intervals to frame inventory risk.</p>
 </section>
 <section class="home-industry">
-<h2 class="home-industry-title"><a href="{% link portfolio/ab-testing-decisions.md %}">A/B testing decisions</a></h2>
+<h2 class="home-industry-title"><a href="{% link portfolio/ab-testing-decisions.md %}">A/B testing</a></h2>
 <p>Turn experiment results into effect sizes, confidence intervals, and a plain-language decision.</p>
 </section>
 <section class="home-industry">
