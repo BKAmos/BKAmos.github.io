@@ -1,0 +1,134 @@
+Metadata-Version: 2.3
+Name: formulaic-contrasts
+Version: 1.0.0
+Summary: Build contrasts for models defined with formulaic
+Project-URL: Documentation, https://formulaic-contrasts.readthedocs.io/
+Project-URL: Homepage, https://github.com/scverse/formulaic-contrasts
+Project-URL: Source, https://github.com/scverse/formulaic-contrasts
+Author: Gregor Sturm
+Maintainer-email: Gregor Sturm <gregor.sturm@scverse.org>
+License: BSD 3-Clause License
+        
+        Copyright (c) 2024, Gregor Sturm
+        All rights reserved.
+        
+        Redistribution and use in source and binary forms, with or without
+        modification, are permitted provided that the following conditions are met:
+        
+        1. Redistributions of source code must retain the above copyright notice, this
+           list of conditions and the following disclaimer.
+        
+        2. Redistributions in binary form must reproduce the above copyright notice,
+           this list of conditions and the following disclaimer in the documentation
+           and/or other materials provided with the distribution.
+        
+        3. Neither the name of the copyright holder nor the names of its
+           contributors may be used to endorse or promote products derived from
+           this software without specific prior written permission.
+        
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+        AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+        IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+        DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+        FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+        SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+        CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+        OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: >=3.10
+Requires-Dist: formulaic
+Requires-Dist: pandas
+Requires-Dist: session-info
+Provides-Extra: dev
+Requires-Dist: pre-commit; extra == 'dev'
+Requires-Dist: twine>=4.0.2; extra == 'dev'
+Provides-Extra: doc
+Requires-Dist: docutils!=0.18.*,!=0.19.*,>=0.8; extra == 'doc'
+Requires-Dist: ipykernel; extra == 'doc'
+Requires-Dist: ipython; extra == 'doc'
+Requires-Dist: myst-nb>=1.1; extra == 'doc'
+Requires-Dist: pandas; extra == 'doc'
+Requires-Dist: setuptools; extra == 'doc'
+Requires-Dist: sphinx-autodoc-typehints; extra == 'doc'
+Requires-Dist: sphinx-book-theme>=1; extra == 'doc'
+Requires-Dist: sphinx-copybutton; extra == 'doc'
+Requires-Dist: sphinx-tabs; extra == 'doc'
+Requires-Dist: sphinx>=4; extra == 'doc'
+Requires-Dist: sphinxcontrib-bibtex>=1; extra == 'doc'
+Requires-Dist: sphinxext-opengraph; extra == 'doc'
+Requires-Dist: statsmodels; extra == 'doc'
+Provides-Extra: test
+Requires-Dist: coverage; extra == 'test'
+Requires-Dist: numpy; extra == 'test'
+Requires-Dist: pytest; extra == 'test'
+Description-Content-Type: text/markdown
+
+# formulaic-contrasts
+
+[![Tests][badge-tests]][tests]
+[![Documentation][badge-docs]][documentation]
+[![codecov.io][badge-codecov]][link-codecov]
+
+[badge-tests]: https://img.shields.io/github/actions/workflow/status/scverse/formulaic-contrasts/test.yaml?branch=main
+[badge-docs]: https://img.shields.io/readthedocs/formulaic-contrasts
+[badge-codecov]: https://codecov.io/github/scverse/formulaic-contrasts/coverage.svg?branch=main
+[link-codecov]: https://codecov.io/gh/scverse/formulaic-contrasts/branch/main
+
+Build arbitrary contrasts for models defined with formulaic.
+
+## Getting started
+
+Please refer to the [documentation][]. As a developer seeking to use `formulaic-contrasts` with your model, you'll find
+the [API documentation][] and the tutorial [Usage in custom model][] useful. If you are a user who wants to understand
+how to build contrasts for a model, the [building contrasts][] tutorial is for you!
+
+## Installation
+
+Typically, you don't install `formulaic-contrasts` directly, but obtain it as a dependency of
+another model. As a developer, you can obtain it from PyPI or GitHub:
+
+There are several alternative options to install formulaic-contrasts:
+
+1. Install the latest release of `formulaic-contrasts` from [PyPI][]:
+
+```bash
+pip install formulaic-contrasts
+```
+
+2. Install the latest development version:
+
+```bash
+pip install git+https://github.com/scverse/formulaic-contrasts.git@main
+```
+
+`Formulaic-contrasts` depends on Python 3.10 or later.
+
+## Release notes
+
+See the [changelog][].
+
+## Contact
+
+For questions and help requests, you can reach out in the [scverse discourse][].
+If you found a bug, please use the [issue tracker][].
+
+## Credits
+
+The `cond()` function for building contrasts has been devised by [@const-ae](https://github.com/const-ae) for his R package [glmGamPoi](https://bioconductor.org/packages/release/bioc/html/glmGamPoi.html). A [prototype](https://github.com/scverse/multi-condition-comparisions) of the Python implementation has been built at the [scverse hackathon in Cambridge, UK in Nov 2023](https://scverse.org/events/2023_11_hackathon/) by [@grst](https://github.com/grst), [@const-ae](https://github.com/const-ae) and [@BorisMuzellec](https://github.com/BorisMuzellec). The production version in this package has been implemented by [@grst](https://github.com/grst).
+
+[mambaforge]: https://github.com/conda-forge/miniforge#mambaforge
+[scverse discourse]: https://discourse.scverse.org/
+[issue tracker]: https://github.com/scverse/formulaic-contrasts/issues
+[tests]: https://github.com/scverse/formulaic-contrasts/actions/workflows/test.yml
+[documentation]: https://formulaic-contrasts.readthedocs.io
+[changelog]: https://formulaic-contrasts.readthedocs.io/en/latest/changelog.html
+[api documentation]: https://formulaic-contrasts.readthedocs.io/en/latest/api.html
+[usage in custom model]: https://formulaic-contrasts.readthedocs.io/en/latest/model_usage.html
+[building contrasts]: https://formulaic-contrasts.readthedocs.io/en/latest/contrasts.html
+[pypi]: https://pypi.org/project/formulaic-contrasts
