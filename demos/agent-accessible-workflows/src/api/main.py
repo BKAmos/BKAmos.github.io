@@ -90,6 +90,15 @@ def healthz() -> dict[str, str]:
     return {"status": "ok"}
 
 
+@app.get("/")
+def root() -> dict[str, str]:
+    return {
+        "service": "agent-accessible-deseq-api",
+        "docs": "/docs",
+        "health": "/healthz",
+    }
+
+
 @app.get("/synthetic-dataset")
 def synthetic_dataset() -> dict[str, Any]:
     return {
