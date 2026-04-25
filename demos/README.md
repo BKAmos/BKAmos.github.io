@@ -33,3 +33,6 @@ Artifacts are written to `outputs/` (and sometimes `data/*.csv`). The portfolio 
 | `margin-whatif` | Price/cost scenarios |
 | `multimodal-support-signals` | Text + tabular fusion, k-means, weekly mix |
 | `repeatable-weekly-report` | Jinja2 HTML report (EN + ES) |
+| `agent-accessible-workflows` | DESeq UI + MCP/API workflow with synthetic RNA-seq |
+
+`agent-accessible-workflows` has its own `requirements.txt` because PyDESeq2 and the API stack are heavier than the shared plotting/science dependencies above.
