@@ -1,0 +1,118 @@
+{
+  "job_id": "sample-job",
+  "status": "completed",
+  "analysis": "PyDESeq2 differential expression",
+  "design": "~batch+condition",
+  "condition_column": "condition",
+  "reference_level": "control",
+  "treatment_level": "treated",
+  "batch_column": "batch",
+  "min_count": 10,
+  "sample_count": 12,
+  "gene_count": 1000,
+  "significant_gene_count": 25,
+  "artifacts": [
+    "results.csv",
+    "top_genes.csv",
+    "normalized_counts.csv",
+    "metadata_used.csv",
+    "volcano.png",
+    "ma.png",
+    "pca.png",
+    "top_genes_heatmap.png",
+    "report.html",
+    "pydeseq2.log"
+  ],
+  "top_genes": [
+    {
+      "gene_id": "gene_0977",
+      "baseMean": 137.74340317578725,
+      "log2FoldChange": -3.29302235375781,
+      "lfcSE": 0.5261147272229755,
+      "stat": -6.679725932550555,
+      "pvalue": 2.3938951393928606e-11,
+      "padj": 2.3412294463262177e-08
+    },
+    {
+      "gene_id": "gene_0688",
+      "baseMean": 131.1508687816325,
+      "log2FoldChange": -2.3917753778475572,
+      "lfcSE": 0.40438886448471567,
+      "stat": -6.351075764313833,
+      "pvalue": 2.13814362133579e-10,
+      "padj": 1.0455522308332013e-07
+    },
+    {
+      "gene_id": "gene_0618",
+      "baseMean": 56.25483723462517,
+      "log2FoldChange": -2.0885092340280047,
+      "lfcSE": 0.4249749081706222,
+      "stat": -5.4437905242262055,
+      "pvalue": 5.215855345348156e-08,
+      "padj": 1.7003688425834987e-05
+    },
+    {
+      "gene_id": "gene_0148",
+      "baseMean": 118.29035490542731,
+      "log2FoldChange": 2.02162916192312,
+      "lfcSE": 0.4609749178942903,
+      "stat": 4.906423983157554,
+      "pvalue": 9.2751912868885e-07,
+      "padj": 0.00022677842696442382
+    },
+    {
+      "gene_id": "gene_0636",
+      "baseMean": 97.31747126916666,
+      "log2FoldChange": 2.2738501014043435,
+      "lfcSE": 0.5634748798098792,
+      "stat": 4.742444907676279,
+      "pvalue": 2.111542622235039e-06,
+      "padj": 0.00041301773690917366
+    },
+    {
+      "gene_id": "gene_0156",
+      "baseMean": 937.7883093124956,
+      "log2FoldChange": 2.91397413458728,
+      "lfcSE": 0.751830207271646,
+      "stat": 4.6982868923523515,
+      "pvalue": 2.623527386537307e-06,
+      "padj": 0.000427634964005581
+    },
+    {
+      "gene_id": "gene_0791",
+      "baseMean": 15.112321577077301,
+      "log2FoldChange": -2.186949527455286,
+      "lfcSE": 0.5452965168887185,
+      "stat": -4.614218722960397,
+      "pvalue": 3.9457673377545666e-06,
+      "padj": 0.0005512800651891381
+    },
+    {
+      "gene_id": "gene_0274",
+      "baseMean": 323.15878024105655,
+      "log2FoldChange": -2.2702600863293254,
+      "lfcSE": 0.5956374540833841,
+      "stat": -4.4844224594806965,
+      "pvalue": 7.311168598228596e-06,
+      "padj": 0.0008937903611334458
+    },
+    {
+      "gene_id": "gene_0462",
+      "baseMean": 18.095942370163744,
+      "log2FoldChange": -1.861058572596366,
+      "lfcSE": 0.4964925857845328,
+      "stat": -4.42750211845051,
+      "pvalue": 9.533063654288615e-06,
+      "padj": 0.0009388186420167204
+    },
+    {
+      "gene_id": "gene_0644",
+      "baseMean": 49.51655421853835,
+      "log2FoldChange": -1.7855300084195451,
+      "lfcSE": 0.46896736130245364,
+      "stat": -4.426006289498915,
+      "pvalue": 9.599372617757878e-06,
+      "padj": 0.0009388186420167204
+    }
+  ]
+}

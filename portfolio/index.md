@@ -32,6 +32,10 @@ Small, reproducible **Python** demos (synthetic data) illustrating how scientifi
 <h2 class="home-industry-title"><a href="{% link portfolio/repeatable-weekly-report.md %}">Repeatable weekly report</a></h2>
 <p>Generate templated HTML from CSVs with Python and Jinja2; English and Spanish UI strings.</p>
 </section>
+<section class="home-industry">
+<h2 class="home-industry-title"><a href="{% link portfolio/agent-accessible-workflows.md %}">Agent-accessible DESeq workflow</a></h2>
+<p>Upload RNA-seq count data or use a synthetic toy set; run PyDESeq2 through UI, REST, or MCP.</p>
+</section>
 </div>
 
 <p class="portfolio-meta">All demos share dependencies listed in <code>demos/requirements.txt</code>. Run instructions are in <code>demos/README.md</code> and each demo folder.</p>
