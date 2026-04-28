@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Agent-accessible DESeq workflow | SciAna Consultancy</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Agent-accessible DESeq workflow" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Upload RNA-seq counts, run PyDESeq2 through a cloud job API, and expose the same workflow to power users and MCP agents." />
+<meta property="og:description" content="Upload RNA-seq counts, run PyDESeq2 through a cloud job API, and expose the same workflow to power users and MCP agents." />
+<link rel="canonical" href="http://localhost:4000/portfolio/agent-accessible-workflows.html" />
+<meta property="og:url" content="http://localhost:4000/portfolio/agent-accessible-workflows.html" />
+<meta property="og:site_name" content="SciAna Consultancy" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Agent-accessible DESeq workflow" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Upload RNA-seq counts, run PyDESeq2 through a cloud job API, and expose the same workflow to power users and MCP agents.","headline":"Agent-accessible DESeq workflow","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/logo.png"}},"url":"http://localhost:4000/portfolio/agent-accessible-workflows.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <style>
+  .site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+    align-items: flex-start;
+    margin: -0.5rem 0 1.75rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(21, 120, 120, 0.2);
+  }
+  .site-nav > a {
+    font-weight: 600;
+    color: #1e6b6b;
+    text-decoration: none;
+    padding-top: 0.15rem;
+  }
+  .site-nav > a:hover,
+  .site-nav > a:focus {
+    text-decoration: underline;
+  }
+
+  .site-nav-dropdown {
+    position: relative;
+    margin: 0;
+  }
+  .site-nav-dropdown > summary {
+    list-style: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: #1e6b6b;
+    padding: 0.15rem 0;
+  }
+  .site-nav-dropdown > summary::-webkit-details-marker {
+    display: none;
+  }
+  .site-nav-dropdown > summary::after {
+    content: " ▾";
+    font-size: 0.85em;
+    opacity: 0.85;
+  }
+  .site-nav-dropdown[open] > summary::after {
+    content: " ▴";
+  }
+  .site-nav-dropdown > summary:hover,
+  .site-nav-dropdown > summary:focus {
+    text-decoration: underline;
+    outline: none;
+  }
+  .site-nav-dropdown-panel {
+    margin: 0.35rem 0 0;
+    padding: 0.35rem 0 0.35rem 0.75rem;
+    list-style: none;
+    border: 1px solid rgba(21, 120, 120, 0.25);
+    border-radius: 0.35rem;
+    background: rgba(255, 255, 255, 0.92);
+    min-width: 12rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+  .site-nav-dropdown-panel li {
+    margin: 0.2rem 0;
+  }
+  .site-nav-dropdown-panel a {
+    font-weight: 600;
+    color: #1e6b6b;
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+  .site-nav-dropdown-panel a:hover,
+  .site-nav-dropdown-panel a:focus {
+    text-decoration: underline;
+  }
+
+  /* Cayman buttons are tuned for dark header backgrounds. Make body buttons visible. */
+  .main-content .btn {
+    color: #1e6b6b;
+    border-color: rgba(21, 120, 120, 0.4);
+    background-color: rgba(21, 120, 120, 0.08);
+  }
+  .main-content .btn:hover,
+  .main-content .btn:focus {
+    color: #155353;
+    border-color: rgba(21, 120, 120, 0.6);
+    background-color: rgba(21, 120, 120, 0.14);
+    text-decoration: none;
+  }
+
+  .site-logo-link {
+    display: inline-block;
+    max-width: 100%;
+    /* Intrinsic image is 200px; percentage width on the img resolved against this shrink-wrapped
+       box and stayed ~200px. Size the link, then let the img fill it. */
+    width: min(100%, clamp(14rem, 42vw, 36rem));
+    margin-bottom: 1rem;
+    border: none;
+  }
+  .site-logo-link img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* About (and similar): title + tagline left, logo right */
+  .page-header--logo-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    text-align: left;
+  }
+  .page-header--logo-right .page-header-primary {
+    flex: 1 1 12rem;
+    min-width: 0;
+  }
+  .page-header--logo-right .site-logo-link {
+    flex: 0 1 auto;
+    min-width: 0;
+    margin-bottom: 0;
+  }
+
+  /* Home: service cards (legacy page used multiple section headings) */
+  .home-industries {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .home-industry {
+    margin: 0;
+    padding: 1rem 1.1rem;
+    border: 1px solid rgba(21, 120, 120, 0.2);
+    border-radius: 0.35rem;
+    background: rgba(255, 255, 255, 0.04);
+  }
+  .home-industry .home-industry-title {
+    margin-top: 0;
+    font-size: 1.15rem;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .home-industry p:last-child {
+    margin-bottom: 0;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 36rem;
+  }
+  .contact-form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .contact-form label {
+    flex: 1 1 12rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-weight: 600;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.4rem 0.55rem;
+    border-radius: 0.25rem;
+    border: 1px solid rgba(21, 120, 120, 0.35);
+    font: inherit;
+  }
+
+  .home-page-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  .home-page-nav .btn {
+    margin: 0;
+  }
+
+  .about-page-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  .about-page-nav .btn {
+    margin: 0;
+  }
+
+  .services-testimonial {
+    margin: 1.5rem 0 2rem;
+    padding: 1rem 1.25rem;
+    border-left: 4px solid rgba(21, 120, 120, 0.45);
+    background: rgba(255, 255, 255, 0.04);
+  }
+  .services-testimonial p {
+    margin: 0 0 0.75rem;
+    font-style: italic;
+  }
+  .services-testimonial footer {
+    margin: 0;
+    font-size: 0.95rem;
+    font-style: normal;
+  }
+
+  .portfolio-meta {
+    margin: 1rem 0 0;
+    font-size: 0.95rem;
+    color: #3d5c5c;
+  }
+  .portfolio-meta a {
+    font-weight: 600;
+  }
+</style>
+
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <header class="page-header page-header--logo-right" role="banner">
+      
+      <div class="page-header-primary">
+        
+        <h1 class="project-name">Agent-accessible DESeq workflow</h1>
+        <h2 class="project-tagline">Upload RNA-seq counts, run PyDESeq2 through a cloud job API, and expose the same workflow to power users and MCP agents.</h2>
+        
+      </div>
+      <a href="http://localhost:4000/" class="site-logo-link" aria-label="Home">
+        <img src="/assets/logo.png" alt="" />
+      </a>
+      
+      
+        
+        
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <nav class="site-nav" aria-label="Primary">
+  <a href="/">Home</a>
+  <a href="/about.html">About</a>
+  <a href="/services.html">Services</a>
+  <details class="site-nav-dropdown">
+    <summary>Portfolio</summary>
+    <ul class="site-nav-dropdown-panel">
+      <li><a href="/portfolio/">Overview</a></li>
+      <li><a href="/portfolio/forecasting-uncertainty.html">Demand and uncertainty</a></li>
+      <li><a href="/portfolio/ab-testing-decisions.html">A/B testing</a></li>
+      <li><a href="/portfolio/segmentation-explainable.html">Segmentation</a></li>
+      <li><a href="/portfolio/margin-whatif.html">Margin what-if</a></li>
+      <li><a href="/portfolio/multimodal-support-signals.html">Multimodal support</a></li>
+      <li><a href="/portfolio/repeatable-weekly-report.html">Weekly report</a></li>
+      <li><a href="/portfolio/agent-accessible-workflows.html">DESeq workflow UI</a></li>
+    </ul>
+  </details>
+  <a href="/contact.html">Contact</a>
+</nav>
+
+      <link rel="stylesheet" href="/assets/css/deseq-workflow-ui.css" />
+
+<h2 id="business-question">Business question</h2>
+
+<p>Can a small lab or bioinformatics team run a reproducible <strong>DESeq differential-expression workflow</strong> through a web UI while giving power users and AI agents the same backend through REST and MCP?</p>
+
+<h2 id="what-we-would-decide-with-this">What we would decide with this</h2>
+
+<p>Use a lightweight UI for routine analysis, a documented API for automation, and an MCP gateway for agent workflows. The heavy computation stays in a Dockerized Python worker—on cloud compute in production, or on your machine via the same Compose stack used in the Oracle reference deployment.</p>
+
+<h2 id="try-the-workflow">Try the workflow</h2>
+
+<p>This portfolio page includes a functional UI shell. In demo mode it previews the bundled synthetic outputs. When you run <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code>, Jekyll uses development mode: the UI targets <code class="language-plaintext highlighter-rouge">http://localhost:8000</code> (run Docker Compose from <code class="language-plaintext highlighter-rouge">demos/agent-accessible-workflows/src</code> and use the same <code class="language-plaintext highlighter-rouge">API_TOKEN</code> as in <code class="language-plaintext highlighter-rouge">.env</code>). Production builds keep demo mode until you point a deployed API or Worker at this page.</p>
+
+<script>
+  window.DESEQ_WORKFLOW_CONFIG = {
+    apiBaseUrl: "http://localhost:8000",
+    syntheticCountsUrl: "/demos/agent-accessible-workflows/data/counts.csv",
+    syntheticMetadataUrl: "/demos/agent-accessible-workflows/data/metadata.csv",
+    sampleManifestUrl: "/demos/agent-accessible-workflows/outputs/manifest.json",
+    outputBaseUrl: "/demos/agent-accessible-workflows/outputs/",
+    demoMode: false
+  };
+</script>
+
+<div id="deseq-app" class="deseq-app">
+  <section class="deseq-panel">
+    <h2>1. Dataset</h2>
+    <p>Use the bundled synthetic toy RNA-seq dataset, or upload a count matrix and sample metadata after the backend is deployed.</p>
+    <p class="deseq-warning">Do not upload sensitive or regulated data to a public demo deployment. Real data should require authentication, private object storage, retention policies, and compliance review.</p>
+    <div class="deseq-actions">
+      <a class="btn" href="/demos/agent-accessible-workflows/data/counts.csv">Download counts.csv</a>
+      <a class="btn" href="/demos/agent-accessible-workflows/data/metadata.csv">Download metadata.csv</a>
+      <button type="button" class="btn" id="use-synthetic">Use synthetic toy dataset</button>
+    </div>
+    <label>Counts CSV <input type="file" id="counts-file" accept=".csv,text/csv" /></label>
+    <label>Metadata CSV <input type="file" id="metadata-file" accept=".csv,text/csv" /></label>
+    <p id="sample-summary" class="portfolio-meta"></p>
+    <pre id="synthetic-preview" class="deseq-code" style="max-height: 14rem; overflow: auto; margin-top: 0.75rem; white-space: pre-wrap"></pre>
+  </section>
+
+  <section class="deseq-panel">
+    <h2>2. Analysis configuration</h2>
+    <div class="deseq-grid">
+      <label>Condition column <input id="condition-column" value="condition" /></label>
+      <label>Reference level <input id="reference-level" value="control" /></label>
+      <label>Treatment level <input id="treatment-level" value="treated" /></label>
+      <label>Batch column <input id="batch-column" value="batch" /></label>
+      <label>Minimum count filter <input id="min-count" type="number" min="0" value="10" /></label>
+      <label>API token <input id="api-token" type="password" placeholder="Required for live jobs" /></label>
+    </div>
+  </section>
+
+  <section class="deseq-panel">
+    <h2>3. Submit and monitor</h2>
+    <div class="deseq-actions">
+      <button type="button" class="btn" id="run-uploaded">Run uploaded data</button>
+      <button type="button" class="btn" id="run-synthetic">Run synthetic data through API</button>
+    </div>
+    <div id="deseq-status" class="deseq-status" data-kind="info">Demo mode is active until a backend API URL is configured.</div>
+    <dl class="deseq-job">
+      <dt>Job ID</dt><dd id="job-id">sample-job</dd>
+      <dt>Status</dt><dd id="job-state">sample outputs loaded</dd>
+      <dt>Message</dt><dd id="job-message">Precomputed PyDESeq2 outputs are embedded below.</dd>
+    </dl>
+  </section>
+
+  <section class="deseq-panel">
+    <h2>4. Results preview</h2>
+    <div class="deseq-actions" id="artifact-links">
+      <a class="btn" href="/demos/agent-accessible-workflows/outputs/results.csv">results.csv</a>
+      <a class="btn" href="/demos/agent-accessible-workflows/outputs/top_genes.csv">top_genes.csv</a>
+      <a class="btn" href="/demos/agent-accessible-workflows/outputs/report.html">HTML report</a>
+    </div>
+    <div class="deseq-output-grid">
+      <figure><img src="/demos/agent-accessible-workflows/outputs/volcano.png" alt="Volcano plot" /><figcaption>Volcano plot</figcaption></figure>
+      <figure><img src="/demos/agent-accessible-workflows/outputs/ma.png" alt="MA plot" /><figcaption>MA plot</figcaption></figure>
+      <figure><img src="/demos/agent-accessible-workflows/outputs/pca.png" alt="PCA plot" /><figcaption>PCA plot</figcaption></figure>
+      <figure><img src="/demos/agent-accessible-workflows/outputs/top_genes_heatmap.png" alt="Top genes heatmap" /><figcaption>Top genes heatmap</figcaption></figure>
+    </div>
+    <h3>Top genes</h3>
+    <div id="top-genes-table" class="deseq-top-genes">
+      <table>
+        <thead>
+          <tr><th>gene_id</th><th>log2FoldChange</th><th>padj</th><th>baseMean</th></tr>
+        </thead>
+        <tbody id="top-genes-body"></tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<h2 id="synthetic-data">Synthetic data</h2>
+
+<p>The toy set contains 12 samples, 1,000 genes, two conditions (<code class="language-plaintext highlighter-rouge">control</code> and <code class="language-plaintext highlighter-rouge">treated</code>), and a batch label. It is generated with a negative-binomial-like Gamma-Poisson process and a seeded subset of truly differential genes. See <code class="language-plaintext highlighter-rouge">demos/agent-accessible-workflows/data/generate.py</code>.</p>
+
+<h2 id="architecture">Architecture</h2>
+
+<p><img src="/demos/agent-accessible-workflows/outputs/architecture.png" alt="Architecture: Cloudflare Worker gateway, FastAPI API, Redis queue, PyDESeq2 worker, object storage" /></p>
+
+<h2 id="power-user-rest-example">Power-user REST example</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST <span class="s2">"</span><span class="nv">$API_BASE_URL</span><span class="s2">/tools/run_deseq"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
+    "dataset": "synthetic",
+    "condition_column": "condition",
+    "reference_level": "control",
+    "treatment_level": "treated",
+    "batch_column": "batch",
+    "min_count": 10
+  }'</span>
+</code></pre></div></div>
+
+<h2 id="agent-tools">Agent tools</h2>
+
+<p>The Cloudflare Worker exposes an MCP endpoint with tools for <code class="language-plaintext highlighter-rouge">run_deseq</code>, <code class="language-plaintext highlighter-rouge">get_job_status</code>, <code class="language-plaintext highlighter-rouge">get_deseq_results_summary</code>, and <code class="language-plaintext highlighter-rouge">get_synthetic_dataset_info</code>.</p>
+
+<h2 id="reproduce-locally">Reproduce locally</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>demos/agent-accessible-workflows
+python3 <span class="nt">-m</span> venv .venv
+<span class="nb">source</span> .venv/bin/activate
+pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+python3 data/generate.py
+python3 src/run.py
+</code></pre></div></div>
+
+<script src="/assets/js/deseq-workflow-ui.js"></script>
+
+
+
+      <footer class="site-footer">
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "dataset": "synthetic",
+  "condition_column": "condition",
+  "reference_level": "control",
+  "treatment_level": "treated",
+  "min_count": 10
+}

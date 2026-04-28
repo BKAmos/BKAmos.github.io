@@ -1,0 +1,3 @@
+week_start,severity,summary
+2025-02-03,SEV2,Synthetic latency spike on checkout API
+2025-02-17,SEV3,Synthetic email delay for password resets

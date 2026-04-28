@@ -43,6 +43,7 @@ This portfolio page includes a functional UI shell. In demo mode it previews the
     <label>Counts CSV <input type="file" id="counts-file" accept=".csv,text/csv"></label>
     <label>Metadata CSV <input type="file" id="metadata-file" accept=".csv,text/csv"></label>
     <p id="sample-summary" class="portfolio-meta"></p>
+    <pre id="synthetic-preview" class="deseq-code" style="max-height: 14rem; overflow: auto; margin-top: 0.75rem; white-space: pre-wrap"></pre>
   </section>
 
   <section class="deseq-panel">
@@ -85,7 +86,14 @@ This portfolio page includes a functional UI shell. In demo mode it previews the
       <figure><img src="{{ '/demos/agent-accessible-workflows/outputs/top_genes_heatmap.png' | relative_url }}" alt="Top genes heatmap"><figcaption>Top genes heatmap</figcaption></figure>
     </div>
     <h3>Top genes</h3>
-    <div id="top-genes-table"></div>
+    <div id="top-genes-table" class="deseq-top-genes">
+      <table>
+        <thead>
+          <tr><th>gene_id</th><th>log2FoldChange</th><th>padj</th><th>baseMean</th></tr>
+        </thead>
+        <tbody id="top-genes-body"></tbody>
+      </table>
+    </div>
   </section>
 </div>
 

@@ -1,0 +1,16 @@
+numpy
+pandas
+matplotlib
+scikit-learn
+jinja2
+pydeseq2
+fastapi
+uvicorn[standard]
+rq
+redis
+pyjwt
+boto3
+python-multipart
+requests
+httpx
+ruff

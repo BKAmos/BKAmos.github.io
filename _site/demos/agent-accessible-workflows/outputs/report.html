@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DESeq toy workflow report</title>
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 2rem; color: #173f3f; }
+    main { max-width: 960px; margin: 0 auto; }
+    h1, h2 { color: #155353; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+    th, td { border: 1px solid #c8dddd; padding: 0.45rem 0.55rem; text-align: left; }
+    th { background: #eef7f7; }
+    .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 0.75rem; }
+    .metric { border: 1px solid #c8dddd; border-radius: 0.35rem; padding: 0.75rem; background: #f8fcfc; }
+    .metric strong { display: block; font-size: 1.4rem; color: #155353; }
+    .note { border-left: 4px solid #1e6b6b; padding: 0.75rem 1rem; background: #f4fbfb; }
+    img { max-width: 100%; border: 1px solid #d7e6e6; border-radius: 0.35rem; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>DESeq toy workflow report</h1>
+  <p class="note">This report uses synthetic data generated for architecture testing. It is not biological evidence.</p>
+
+  <section class="metrics">
+    <div class="metric"><span>Samples</span><strong>12</strong></div>
+    <div class="metric"><span>Genes tested</span><strong>1000</strong></div>
+    <div class="metric"><span>Significant genes</span><strong>25</strong></div>
+    <div class="metric"><span>Contrast</span><strong>treated vs control</strong></div>
+  </section>
+
+  <h2>Top genes</h2>
+  <table border="1" class="dataframe top-genes">
+  <thead>
+    <tr style="text-align: right;">
+      <th>gene_id</th>
+      <th>baseMean</th>
+      <th>log2FoldChange</th>
+      <th>lfcSE</th>
+      <th>stat</th>
+      <th>pvalue</th>
+      <th>padj</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>gene_0977</td>
+      <td>137.7</td>
+      <td>-3.293</td>
+      <td>0.5261</td>
+      <td>-6.68</td>
+      <td>2.394e-11</td>
+      <td>2.341e-08</td>
+    </tr>
+    <tr>
+      <td>gene_0688</td>
+      <td>131.2</td>
+      <td>-2.392</td>
+      <td>0.4044</td>
+      <td>-6.351</td>
+      <td>2.138e-10</td>
+      <td>1.046e-07</td>
+    </tr>
+    <tr>
+      <td>gene_0618</td>
+      <td>56.25</td>
+      <td>-2.089</td>
+      <td>0.425</td>
+      <td>-5.444</td>
+      <td>5.216e-08</td>
+      <td>1.7e-05</td>
+    </tr>
+    <tr>
+      <td>gene_0148</td>
+      <td>118.3</td>
+      <td>2.022</td>
+      <td>0.461</td>
+      <td>4.906</td>
+      <td>9.275e-07</td>
+      <td>0.0002268</td>
+    </tr>
+    <tr>
+      <td>gene_0636</td>
+      <td>97.32</td>
+      <td>2.274</td>
+      <td>0.5635</td>
+      <td>4.742</td>
+      <td>2.112e-06</td>
+      <td>0.000413</td>
+    </tr>
+    <tr>
+      <td>gene_0156</td>
+      <td>937.8</td>
+      <td>2.914</td>
+      <td>0.7518</td>
+      <td>4.698</td>
+      <td>2.624e-06</td>
+      <td>0.0004276</td>
+    </tr>
+    <tr>
+      <td>gene_0791</td>
+      <td>15.11</td>
+      <td>-2.187</td>
+      <td>0.5453</td>
+      <td>-4.614</td>
+      <td>3.946e-06</td>
+      <td>0.0005513</td>
+    </tr>
+    <tr>
+      <td>gene_0274</td>
+      <td>323.2</td>
+      <td>-2.27</td>
+      <td>0.5956</td>
+      <td>-4.484</td>
+      <td>7.311e-06</td>
+      <td>0.0008938</td>
+    </tr>
+    <tr>
+      <td>gene_0462</td>
+      <td>18.1</td>
+      <td>-1.861</td>
+      <td>0.4965</td>
+      <td>-4.428</td>
+      <td>9.533e-06</td>
+      <td>0.0009388</td>
+    </tr>
+    <tr>
+      <td>gene_0644</td>
+      <td>49.52</td>
+      <td>-1.786</td>
+      <td>0.469</td>
+      <td>-4.426</td>
+      <td>9.599e-06</td>
+      <td>0.0009388</td>
+    </tr>
+    <tr>
+      <td>gene_0328</td>
+      <td>43.52</td>
+      <td>-1.644</td>
+      <td>0.4385</td>
+      <td>-4.36</td>
+      <td>1.302e-05</td>
+      <td>0.001158</td>
+    </tr>
+    <tr>
+      <td>gene_0658</td>
+      <td>229.3</td>
+      <td>2.56</td>
+      <td>0.7252</td>
+      <td>4.318</td>
+      <td>1.576e-05</td>
+      <td>0.001285</td>
+    </tr>
+    <tr>
+      <td>gene_0687</td>
+      <td>293.4</td>
+      <td>1.764</td>
+      <td>0.5145</td>
+      <td>4.089</td>
+      <td>4.326e-05</td>
+      <td>0.003254</td>
+    </tr>
+    <tr>
+      <td>gene_0179</td>
+      <td>73.36</td>
+      <td>1.638</td>
+      <td>0.478</td>
+      <td>4.068</td>
+      <td>4.752e-05</td>
+      <td>0.00332</td>
+    </tr>
+    <tr>
+      <td>gene_0793</td>
+      <td>52.13</td>
+      <td>-1.781</td>
+      <td>0.5597</td>
+      <td>-3.997</td>
+      <td>6.427e-05</td>
+      <td>0.00419</td>
+    </tr>
+    <tr>
+      <td>gene_0404</td>
+      <td>44.05</td>
+      <td>-1.42</td>
+      <td>0.4785</td>
+      <td>-3.734</td>
+      <td>0.0001882</td>
+      <td>0.0115</td>
+    </tr>
+    <tr>
+      <td>gene_0421</td>
+      <td>45.89</td>
+      <td>-1.852</td>
+      <td>0.6563</td>
+      <td>-3.681</td>
+      <td>0.0002324</td>
+      <td>0.01337</td>
+    </tr>
+    <tr>
+      <td>gene_0679</td>
+      <td>151.4</td>
+      <td>1.077</td>
+      <td>0.3815</td>
+      <td>3.534</td>
+      <td>0.0004089</td>
+      <td>0.02222</td>
+    </tr>
+    <tr>
+      <td>gene_0901</td>
+      <td>69.87</td>
+      <td>-0.3363</td>
+      <td>0.7157</td>
+      <td>-3.421</td>
+      <td>0.000625</td>
+      <td>0.03061</td>
+    </tr>
+    <tr>
+      <td>gene_0268</td>
+      <td>129.1</td>
+      <td>1.378</td>
+      <td>0.5911</td>
+      <td>3.42</td>
+      <td>0.000626</td>
+      <td>0.03061</td>
+    </tr>
+    <tr>
+      <td>gene_0744</td>
+      <td>15.87</td>
+      <td>1.403</td>
+      <td>0.5388</td>
+      <td>3.402</td>
+      <td>0.0006678</td>
+      <td>0.03079</td>
+    </tr>
+    <tr>
+      <td>gene_0536</td>
+      <td>94.43</td>
+      <td>1.189</td>
+      <td>0.4574</td>
+      <td>3.392</td>
+      <td>0.0006926</td>
+      <td>0.03079</td>
+    </tr>
+    <tr>
+      <td>gene_0640</td>
+      <td>110.5</td>
+      <td>1.578</td>
+      <td>0.6765</td>
+      <td>3.32</td>
+      <td>0.0008997</td>
+      <td>0.03826</td>
+    </tr>
+    <tr>
+      <td>gene_0903</td>
+      <td>92.57</td>
+      <td>1.037</td>
+      <td>0.4277</td>
+      <td>3.242</td>
+      <td>0.001189</td>
+      <td>0.04845</td>
+    </tr>
+    <tr>
+      <td>gene_0449</td>
+      <td>118.4</td>
+      <td>-1.276</td>
+      <td>0.5571</td>
+      <td>-3.221</td>
+      <td>0.001276</td>
+      <td>0.04993</td>
+    </tr>
+  </tbody>
+</table>
+
+  <h2>Diagnostic plots</h2>
+  <p>The portfolio page embeds these same files for a compact web preview.</p>
+  <p><img src="volcano.png" alt="Volcano plot"></p>
+  <p><img src="pca.png" alt="PCA plot"></p>
+</main>
+</body>
+</html>

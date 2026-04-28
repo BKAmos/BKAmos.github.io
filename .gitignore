@@ -10,3 +10,8 @@ dist/
 .wrangler/
 demos/agent-accessible-workflows/src/.env
 demos/agent-accessible-workflows/src/gateway/.dev.vars
+
+# Regenerated synthetic RNA-seq matrices (`data/generate.py`; can be large). Restore published toy defaults: `python data/generate.py` with no args.
+demos/agent-accessible-workflows/data/counts.csv
+demos/agent-accessible-workflows/data/metadata.csv
+demos/agent-accessible-workflows/data/truth.csv

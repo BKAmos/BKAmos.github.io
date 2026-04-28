@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="{{ t.html_lang }}">
+<head>
+  <meta charset="utf-8">
+  <title>{{ t.doc_title_suffix }} — {{ report_week }}</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 52rem; margin: 2rem auto; color: #222; }
+    h1 { color: #157878; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+    th, td { border: 1px solid #ccc; padding: 0.4rem 0.6rem; text-align: left; }
+    th { background: #f4fafa; }
+    .muted { color: #555; font-size: 0.95rem; }
+    .callout { background: #f4fafa; border-left: 4px solid #157878; padding: 0.75rem 1rem; margin: 1rem 0; }
+  </style>
+</head>
+<body>
+  <h1>{{ t.heading_main }}</h1>
+  <p class="muted">{{ t.report_week_label }}: <strong>{{ report_week }}</strong> · {{ t.synthetic_note }}</p>
+
+  <div class="callout">
+    <strong>{{ t.highlights_heading }}</strong>
+    <ul>
+      {% for line in highlights %}
+      <li>{{ line }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <h2>{{ t.kpis_heading }}</h2>
+  {{ kpi_table }}
+
+  <h2>{{ t.incidents_heading }}</h2>
+  {% if incidents.empty %}
+  <p>{{ t.no_incidents }}</p>
+  {% else %}
+  {{ incidents_table }}
+  {% endif %}
+
+  <p class="muted">{{ t.footer }}</p>
+</body>
+</html>

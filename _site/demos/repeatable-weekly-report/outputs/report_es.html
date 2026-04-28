@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Informe semanal de operaciones — 2025-02-18/2025-02-24</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 52rem; margin: 2rem auto; color: #222; }
+    h1 { color: #157878; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+    th, td { border: 1px solid #ccc; padding: 0.4rem 0.6rem; text-align: left; }
+    th { background: #f4fafa; }
+    .muted { color: #555; font-size: 0.95rem; }
+    .callout { background: #f4fafa; border-left: 4px solid #157878; padding: 0.75rem 1rem; margin: 1rem 0; }
+  </style>
+</head>
+<body>
+  <h1>Informe semanal de operaciones</h1>
+  <p class="muted">Semana del informe: <strong>2025-02-18/2025-02-24</strong> · Datos de demostración sintéticos</p>
+
+  <div class="callout">
+    <strong>Destacados</strong>
+    <ul>
+      
+      <li>Ingresos de la última semana: 110,057 USD (-1.1% respecto a la semana anterior).</li>
+      
+      <li>Pedidos: 1191 (-12.7% respecto a la semana anterior).</li>
+      
+      <li>Devoluciones (recuento): 18.</li>
+      
+    </ul>
+  </div>
+
+  <h2>Indicadores semanales</h2>
+  <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>week_start</th>
+      <th>revenue</th>
+      <th>orders</th>
+      <th>returns</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2024-12-31/2025-01-06</td>
+      <td>121219.0</td>
+      <td>1424</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <td>2025-01-07/2025-01-13</td>
+      <td>117059.0</td>
+      <td>1274</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <td>2025-01-14/2025-01-20</td>
+      <td>120061.0</td>
+      <td>1518</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <td>2025-01-21/2025-01-27</td>
+      <td>123823.0</td>
+      <td>1550</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <td>2025-01-28/2025-02-03</td>
+      <td>116019.0</td>
+      <td>1372</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <td>2025-02-04/2025-02-10</td>
+      <td>110810.0</td>
+      <td>1438</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>2025-02-11/2025-02-17</td>
+      <td>111321.0</td>
+      <td>1365</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <td>2025-02-18/2025-02-24</td>
+      <td>110057.0</td>
+      <td>1191</td>
+      <td>18</td>
+    </tr>
+  </tbody>
+</table>
+
+  <h2>Incidentes</h2>
+  
+  <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>week_start</th>
+      <th>severity</th>
+      <th>summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2025-02-03</td>
+      <td>SEV2</td>
+      <td>Synthetic latency spike on checkout API</td>
+    </tr>
+    <tr>
+      <td>2025-02-17</td>
+      <td>SEV3</td>
+      <td>Synthetic email delay for password resets</td>
+    </tr>
+  </tbody>
+</table>
+  
+
+  <p class="muted">Generado con Python (pandas + Jinja2). Origen: demos/repeatable-weekly-report/</p>
+</body>
+</html>
