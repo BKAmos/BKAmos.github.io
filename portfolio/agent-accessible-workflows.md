@@ -13,20 +13,20 @@ Can a small lab or bioinformatics team run a reproducible **DESeq differential-e
 
 ## What we would decide with this
 
-Use a lightweight UI for routine analysis, a documented API for automation, and an MCP gateway for agent workflows. The heavy computation stays in a Dockerized Python worker on cloud compute instead of a personal machine.
+Use a lightweight UI for routine analysis, a documented API for automation, and an MCP gateway for agent workflows. The heavy computation stays in a Dockerized Python worker—on cloud compute in production, or on your machine via the same Compose stack used in the Oracle reference deployment.
 
 ## Try the workflow
 
-This portfolio page includes a functional UI shell. In demo mode it previews the bundled synthetic outputs. After deploying the Cloudflare Worker + FastAPI stack, set `apiBaseUrl` below to submit live jobs.
+This portfolio page includes a functional UI shell. In demo mode it previews the bundled synthetic outputs. When you run `bundle exec jekyll serve`, Jekyll uses development mode: the UI targets `http://localhost:8000` (run Docker Compose from `demos/agent-accessible-workflows/src` and use the same `API_TOKEN` as in `.env`). Production builds keep demo mode until you point a deployed API or Worker at this page.
 
 <script>
   window.DESEQ_WORKFLOW_CONFIG = {
-    apiBaseUrl: "",
+    apiBaseUrl: {% if jekyll.environment == "development" %}"http://localhost:8000"{% else %}""{% endif %},
     syntheticCountsUrl: "{{ '/demos/agent-accessible-workflows/data/counts.csv' | relative_url }}",
     syntheticMetadataUrl: "{{ '/demos/agent-accessible-workflows/data/metadata.csv' | relative_url }}",
     sampleManifestUrl: "{{ '/demos/agent-accessible-workflows/outputs/manifest.json' | relative_url }}",
     outputBaseUrl: "{{ '/demos/agent-accessible-workflows/outputs/' | relative_url }}",
-    demoMode: true
+    demoMode: {% if jekyll.environment == "development" %}false{% else %}true{% endif %}
   };
 </script>
 

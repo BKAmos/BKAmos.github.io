@@ -8,3 +8,5 @@ uploads/
 node_modules/
 dist/
 .wrangler/
+demos/agent-accessible-workflows/src/.env
+demos/agent-accessible-workflows/src/gateway/.dev.vars
