@@ -319,10 +319,6 @@
 <script>
   window.DESEQ_WORKFLOW_CONFIG = {
     apiBaseUrl: "http://localhost:8000",
-    syntheticCountsUrl: "/demos/agent-accessible-workflows/data/counts.csv",
-    syntheticMetadataUrl: "/demos/agent-accessible-workflows/data/metadata.csv",
-    sampleManifestUrl: "/demos/agent-accessible-workflows/outputs/manifest.json",
-    outputBaseUrl: "/demos/agent-accessible-workflows/outputs/",
     demoMode: false
   };
 </script>
@@ -364,27 +360,13 @@
   <section class="deseq-panel">
     <h2>3. Results preview (job-specific)</h2>
     <p id="results-placeholder" class="portfolio-meta">Artifacts and plots appear only after the submitted job completes.</p>
-    <div class="deseq-actions is-hidden" id="artifact-links">
-      <a class="btn" id="artifact-results" href="#" target="_blank" rel="noopener">results.csv</a>
-      <a class="btn" id="artifact-top-genes" href="#" target="_blank" rel="noopener">top_genes.csv</a>
-      <a class="btn" id="artifact-report" href="#" target="_blank" rel="noopener">HTML report</a>
-    </div>
-    <div id="live-image-grid" class="deseq-output-grid is-hidden"></div>
-    <h3>Result CSV preview</h3>
-    <pre id="result-csv-preview" class="deseq-code is-hidden" style="max-height: 14rem; overflow: auto; margin-top: 0.75rem; white-space: pre-wrap"></pre>
-    <p id="result-csv-empty" class="portfolio-meta">No run-specific CSV preview yet.</p>
-    <h3>All run artifacts</h3>
+    <h3>Results</h3>
     <div class="deseq-actions">
       <ul id="live-artifacts"></ul>
     </div>
-    <h3>Top genes</h3>
-    <div id="top-genes-table" class="deseq-top-genes">
-      <table>
-        <thead>
-          <tr><th>gene_id</th><th>log2FoldChange</th><th>padj</th><th>baseMean</th></tr>
-        </thead>
-        <tbody id="top-genes-body"></tbody>
-      </table>
+    <div id="artifact-preview" class="deseq-artifact-preview is-hidden" aria-live="polite">
+      <h3 id="artifact-preview-title">Artifact preview</h3>
+      <div id="artifact-preview-body"></div>
     </div>
   </section>
 </div>
@@ -400,22 +382,26 @@
 
 <h2 id="architecture">Architecture</h2>
 
-<p><img src="/demos/agent-accessible-workflows/outputs/architecture.png" alt="Architecture: Cloudflare Worker gateway, FastAPI API, Redis queue, PyDESeq2 worker, object storage" /></p>
+<p>This workflow uses a single backend pipeline with multiple access surfaces:</p>
 
-<h2 id="power-user-rest-example">Power-user REST example</h2>
+<ul>
+  <li><strong>UX surface:</strong> portfolio web page for guided run submission</li>
+  <li><strong>CLI/API surface:</strong> direct REST calls and scripted batch submissions</li>
+  <li><strong>Agent surface:</strong> Cloudflare Worker MCP gateway (<code class="language-plaintext highlighter-rouge">run_deseq</code>, status, summary tools)</li>
+  <li><strong>Control plane:</strong> FastAPI endpoint handling auth, job submission, and artifact access</li>
+  <li><strong>Queue layer:</strong> Redis-backed queue for concurrent job orchestration</li>
+  <li><strong>Compute layer:</strong> Dockerized PyDESeq2 workers executing synthetic differential expression runs</li>
+  <li><strong>Artifact layer:</strong> per-job outputs (CSV + plots + report) returned through API artifact endpoints</li>
+</ul>
+
+<p>Flow summary: <code class="language-plaintext highlighter-rouge">UX / CLI / Agent -&gt; API -&gt; Redis queue -&gt; Worker containers -&gt; job artifacts -&gt; API responses/UI rendering</code></p>
+
+<h2 id="optional-rest-example">Optional REST example</h2>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST <span class="s2">"</span><span class="nv">$API_BASE_URL</span><span class="s2">/tools/run_deseq"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-  <span class="nt">-d</span> <span class="s1">'{
-    "dataset": "synthetic",
-    "synthetic_profile": "medium",
-    "condition_column": "condition",
-    "reference_level": "control",
-    "treatment_level": "treated",
-    "batch_column": "batch",
-    "min_count": 10
-  }'</span>
+  <span class="nt">--data-binary</span> @fixtures/run-deseq-synthetic.json
 </code></pre></div></div>
 
 <h2 id="agent-tools">Agent tools</h2>
@@ -432,7 +418,7 @@ python3 data/generate.py
 python3 src/run.py
 </code></pre></div></div>
 
-<script src="/assets/js/deseq-workflow-ui.js"></script>
+<script src="/assets/js/deseq-workflow-ui.js?v=20260429-inline-preview"></script>
 
 
 

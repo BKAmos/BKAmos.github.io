@@ -15,6 +15,11 @@
     .metric { border: 1px solid #c8dddd; border-radius: 0.35rem; padding: 0.75rem; background: #f8fcfc; }
     .metric strong { display: block; font-size: 1.4rem; color: #155353; }
     .note { border-left: 4px solid #1e6b6b; padding: 0.75rem 1rem; background: #f4fbfb; }
+    .plot-context { border: 1px solid #c8dddd; border-radius: 0.35rem; padding: 0.75rem 1rem; background: #f8fcfc; }
+    .plot-context dl { display: grid; grid-template-columns: max-content 1fr; gap: 0.35rem 0.75rem; margin: 0; }
+    .plot-context dt { font-weight: 700; }
+    figure { margin: 1.25rem 0; }
+    figcaption { margin-top: 0.4rem; color: #356161; font-size: 0.95rem; }
     img { max-width: 100%; border: 1px solid #d7e6e6; border-radius: 0.35rem; }
   </style>
 </head>
@@ -24,9 +29,9 @@
   <p class="note">This report uses synthetic data generated for architecture testing. It is not biological evidence.</p>
 
   <section class="metrics">
-    <div class="metric"><span>Samples</span><strong>12</strong></div>
-    <div class="metric"><span>Genes tested</span><strong>1000</strong></div>
-    <div class="metric"><span>Significant genes</span><strong>25</strong></div>
+    <div class="metric"><span>Samples</span><strong>48</strong></div>
+    <div class="metric"><span>Genes tested</span><strong>20000</strong></div>
+    <div class="metric"><span>Significant genes</span><strong>847</strong></div>
     <div class="metric"><span>Contrast</span><strong>treated vs control</strong></div>
   </section>
 
@@ -45,237 +50,260 @@
   </thead>
   <tbody>
     <tr>
-      <td>gene_0977</td>
-      <td>137.7</td>
-      <td>-3.293</td>
-      <td>0.5261</td>
-      <td>-6.68</td>
-      <td>2.394e-11</td>
-      <td>2.341e-08</td>
+      <td>gene_05169</td>
+      <td>450.6</td>
+      <td>2.179</td>
+      <td>0.1185</td>
+      <td>18.38</td>
+      <td>1.747e-75</td>
+      <td>3.494e-71</td>
     </tr>
     <tr>
-      <td>gene_0688</td>
-      <td>131.2</td>
-      <td>-2.392</td>
-      <td>0.4044</td>
-      <td>-6.351</td>
-      <td>2.138e-10</td>
-      <td>1.046e-07</td>
+      <td>gene_10397</td>
+      <td>265.7</td>
+      <td>2.147</td>
+      <td>0.1181</td>
+      <td>18.19</td>
+      <td>6.508e-74</td>
+      <td>6.508e-70</td>
     </tr>
     <tr>
-      <td>gene_0618</td>
-      <td>56.25</td>
-      <td>-2.089</td>
-      <td>0.425</td>
-      <td>-5.444</td>
-      <td>5.216e-08</td>
-      <td>1.7e-05</td>
+      <td>gene_14379</td>
+      <td>580.8</td>
+      <td>-2.159</td>
+      <td>0.1454</td>
+      <td>-14.86</td>
+      <td>6.333e-50</td>
+      <td>4.222e-46</td>
     </tr>
     <tr>
-      <td>gene_0148</td>
-      <td>118.3</td>
-      <td>2.022</td>
-      <td>0.461</td>
-      <td>4.906</td>
-      <td>9.275e-07</td>
-      <td>0.0002268</td>
+      <td>gene_08539</td>
+      <td>591.1</td>
+      <td>2.299</td>
+      <td>0.1576</td>
+      <td>14.58</td>
+      <td>3.519e-48</td>
+      <td>1.76e-44</td>
     </tr>
     <tr>
-      <td>gene_0636</td>
-      <td>97.32</td>
-      <td>2.274</td>
-      <td>0.5635</td>
-      <td>4.742</td>
-      <td>2.112e-06</td>
-      <td>0.000413</td>
+      <td>gene_17015</td>
+      <td>93.09</td>
+      <td>-2.597</td>
+      <td>0.1854</td>
+      <td>-14.01</td>
+      <td>1.398e-44</td>
+      <td>5.591e-41</td>
     </tr>
     <tr>
-      <td>gene_0156</td>
-      <td>937.8</td>
-      <td>2.914</td>
-      <td>0.7518</td>
-      <td>4.698</td>
-      <td>2.624e-06</td>
-      <td>0.0004276</td>
+      <td>gene_18064</td>
+      <td>89.5</td>
+      <td>1.912</td>
+      <td>0.1405</td>
+      <td>13.6</td>
+      <td>3.936e-42</td>
+      <td>1.312e-38</td>
     </tr>
     <tr>
-      <td>gene_0791</td>
-      <td>15.11</td>
-      <td>-2.187</td>
-      <td>0.5453</td>
-      <td>-4.614</td>
-      <td>3.946e-06</td>
-      <td>0.0005513</td>
+      <td>gene_13798</td>
+      <td>2457</td>
+      <td>2.231</td>
+      <td>0.166</td>
+      <td>13.44</td>
+      <td>3.687e-41</td>
+      <td>1.053e-37</td>
     </tr>
     <tr>
-      <td>gene_0274</td>
-      <td>323.2</td>
-      <td>-2.27</td>
-      <td>0.5956</td>
-      <td>-4.484</td>
-      <td>7.311e-06</td>
-      <td>0.0008938</td>
+      <td>gene_15044</td>
+      <td>166.3</td>
+      <td>2.085</td>
+      <td>0.1562</td>
+      <td>13.34</td>
+      <td>1.272e-40</td>
+      <td>3.18e-37</td>
     </tr>
     <tr>
-      <td>gene_0462</td>
-      <td>18.1</td>
-      <td>-1.861</td>
-      <td>0.4965</td>
-      <td>-4.428</td>
-      <td>9.533e-06</td>
-      <td>0.0009388</td>
+      <td>gene_15648</td>
+      <td>86.71</td>
+      <td>-1.801</td>
+      <td>0.1399</td>
+      <td>-12.88</td>
+      <td>6.126e-38</td>
+      <td>1.361e-34</td>
     </tr>
     <tr>
-      <td>gene_0644</td>
-      <td>49.52</td>
-      <td>-1.786</td>
-      <td>0.469</td>
-      <td>-4.426</td>
-      <td>9.599e-06</td>
-      <td>0.0009388</td>
+      <td>gene_03773</td>
+      <td>246.1</td>
+      <td>2.257</td>
+      <td>0.1771</td>
+      <td>12.74</td>
+      <td>3.363e-37</td>
+      <td>6.726e-34</td>
     </tr>
     <tr>
-      <td>gene_0328</td>
-      <td>43.52</td>
-      <td>-1.644</td>
-      <td>0.4385</td>
-      <td>-4.36</td>
-      <td>1.302e-05</td>
-      <td>0.001158</td>
+      <td>gene_06068</td>
+      <td>296.3</td>
+      <td>1.941</td>
+      <td>0.1525</td>
+      <td>12.72</td>
+      <td>4.347e-37</td>
+      <td>7.904e-34</td>
     </tr>
     <tr>
-      <td>gene_0658</td>
-      <td>229.3</td>
-      <td>2.56</td>
-      <td>0.7252</td>
-      <td>4.318</td>
-      <td>1.576e-05</td>
-      <td>0.001285</td>
+      <td>gene_17491</td>
+      <td>708.6</td>
+      <td>2.082</td>
+      <td>0.1661</td>
+      <td>12.53</td>
+      <td>4.972e-36</td>
+      <td>7.951e-33</td>
     </tr>
     <tr>
-      <td>gene_0687</td>
-      <td>293.4</td>
-      <td>1.764</td>
-      <td>0.5145</td>
-      <td>4.089</td>
-      <td>4.326e-05</td>
-      <td>0.003254</td>
+      <td>gene_07042</td>
+      <td>464.9</td>
+      <td>2.117</td>
+      <td>0.169</td>
+      <td>12.53</td>
+      <td>5.168e-36</td>
+      <td>7.951e-33</td>
     </tr>
     <tr>
-      <td>gene_0179</td>
-      <td>73.36</td>
-      <td>1.638</td>
-      <td>0.478</td>
-      <td>4.068</td>
-      <td>4.752e-05</td>
-      <td>0.00332</td>
+      <td>gene_02888</td>
+      <td>162.3</td>
+      <td>1.914</td>
+      <td>0.1532</td>
+      <td>12.5</td>
+      <td>7.925e-36</td>
+      <td>1.132e-32</td>
     </tr>
     <tr>
-      <td>gene_0793</td>
-      <td>52.13</td>
-      <td>-1.781</td>
-      <td>0.5597</td>
-      <td>-3.997</td>
-      <td>6.427e-05</td>
-      <td>0.00419</td>
+      <td>gene_02983</td>
+      <td>34.62</td>
+      <td>-2.308</td>
+      <td>0.1861</td>
+      <td>-12.4</td>
+      <td>2.531e-35</td>
+      <td>3.375e-32</td>
     </tr>
     <tr>
-      <td>gene_0404</td>
-      <td>44.05</td>
-      <td>-1.42</td>
-      <td>0.4785</td>
-      <td>-3.734</td>
-      <td>0.0001882</td>
-      <td>0.0115</td>
+      <td>gene_07674</td>
+      <td>90.82</td>
+      <td>2.217</td>
+      <td>0.1791</td>
+      <td>12.38</td>
+      <td>3.463e-35</td>
+      <td>4.329e-32</td>
     </tr>
     <tr>
-      <td>gene_0421</td>
-      <td>45.89</td>
-      <td>-1.852</td>
-      <td>0.6563</td>
-      <td>-3.681</td>
-      <td>0.0002324</td>
-      <td>0.01337</td>
+      <td>gene_17604</td>
+      <td>445.7</td>
+      <td>2.115</td>
+      <td>0.1735</td>
+      <td>12.19</td>
+      <td>3.547e-34</td>
+      <td>4.172e-31</td>
     </tr>
     <tr>
-      <td>gene_0679</td>
-      <td>151.4</td>
-      <td>1.077</td>
-      <td>0.3815</td>
-      <td>3.534</td>
-      <td>0.0004089</td>
-      <td>0.02222</td>
+      <td>gene_11043</td>
+      <td>101.8</td>
+      <td>-1.701</td>
+      <td>0.1396</td>
+      <td>-12.18</td>
+      <td>3.858e-34</td>
+      <td>4.287e-31</td>
     </tr>
     <tr>
-      <td>gene_0901</td>
-      <td>69.87</td>
-      <td>-0.3363</td>
-      <td>0.7157</td>
-      <td>-3.421</td>
-      <td>0.000625</td>
-      <td>0.03061</td>
+      <td>gene_17186</td>
+      <td>328.7</td>
+      <td>2.362</td>
+      <td>0.194</td>
+      <td>12.18</td>
+      <td>4.086e-34</td>
+      <td>4.302e-31</td>
     </tr>
     <tr>
-      <td>gene_0268</td>
-      <td>129.1</td>
-      <td>1.378</td>
-      <td>0.5911</td>
-      <td>3.42</td>
-      <td>0.000626</td>
-      <td>0.03061</td>
+      <td>gene_12754</td>
+      <td>106.9</td>
+      <td>1.87</td>
+      <td>0.1543</td>
+      <td>12.12</td>
+      <td>8.251e-34</td>
+      <td>8.251e-31</td>
     </tr>
     <tr>
-      <td>gene_0744</td>
-      <td>15.87</td>
-      <td>1.403</td>
-      <td>0.5388</td>
-      <td>3.402</td>
-      <td>0.0006678</td>
-      <td>0.03079</td>
+      <td>gene_19468</td>
+      <td>94.82</td>
+      <td>2.177</td>
+      <td>0.1809</td>
+      <td>12.04</td>
+      <td>2.229e-33</td>
+      <td>2.123e-30</td>
     </tr>
     <tr>
-      <td>gene_0536</td>
-      <td>94.43</td>
-      <td>1.189</td>
-      <td>0.4574</td>
-      <td>3.392</td>
-      <td>0.0006926</td>
-      <td>0.03079</td>
+      <td>gene_06503</td>
+      <td>2707</td>
+      <td>2.017</td>
+      <td>0.1717</td>
+      <td>11.75</td>
+      <td>7.356e-32</td>
+      <td>6.687e-29</td>
     </tr>
     <tr>
-      <td>gene_0640</td>
-      <td>110.5</td>
-      <td>1.578</td>
-      <td>0.6765</td>
-      <td>3.32</td>
-      <td>0.0008997</td>
-      <td>0.03826</td>
+      <td>gene_08425</td>
+      <td>126.3</td>
+      <td>1.782</td>
+      <td>0.152</td>
+      <td>11.73</td>
+      <td>9.463e-32</td>
+      <td>8.228e-29</td>
     </tr>
     <tr>
-      <td>gene_0903</td>
-      <td>92.57</td>
-      <td>1.037</td>
-      <td>0.4277</td>
-      <td>3.242</td>
-      <td>0.001189</td>
-      <td>0.04845</td>
+      <td>gene_12428</td>
+      <td>206</td>
+      <td>1.822</td>
+      <td>0.1555</td>
+      <td>11.72</td>
+      <td>1.052e-31</td>
+      <td>8.77e-29</td>
     </tr>
     <tr>
-      <td>gene_0449</td>
-      <td>118.4</td>
-      <td>-1.276</td>
-      <td>0.5571</td>
-      <td>-3.221</td>
-      <td>0.001276</td>
-      <td>0.04993</td>
+      <td>gene_13592</td>
+      <td>42.15</td>
+      <td>-1.804</td>
+      <td>0.1551</td>
+      <td>-11.63</td>
+      <td>2.778e-31</td>
+      <td>2.222e-28</td>
     </tr>
   </tbody>
 </table>
 
   <h2>Diagnostic plots</h2>
-  <p>The portfolio page embeds these same files for a compact web preview.</p>
-  <p><img src="volcano.png" alt="Volcano plot"></p>
-  <p><img src="pca.png" alt="PCA plot"></p>
+  <p>The portfolio page exposes these same job-specific files through the artifact API.</p>
+  <section class="plot-context" aria-label="Analysis configuration used for diagnostic plots">
+    <dl>
+      <dt>Contrast</dt><dd>treated vs control</dd>
+      <dt>Condition column</dt><dd>condition</dd>
+      <dt>Batch column</dt><dd>batch</dd>
+      <dt>Minimum count</dt><dd>10</dd>
+      <dt>Design</dt><dd>~batch+condition</dd>
+    </dl>
+  </section>
+  <figure>
+    <img src="volcano.png" alt="Volcano plot for treated vs control">
+    <figcaption>Volcano plot using log2 fold change for treated vs control.</figcaption>
+  </figure>
+  <figure>
+    <img src="ma.png" alt="MA plot for treated vs control">
+    <figcaption>MA plot using log2 fold change for treated vs control.</figcaption>
+  </figure>
+  <figure>
+    <img src="top_genes_heatmap.png" alt="Top genes heatmap grouped by condition">
+    <figcaption>Top adjusted-p-value genes ordered by condition, then batch.</figcaption>
+  </figure>
+  <figure>
+    <img src="pca.png" alt="PCA plot grouped by condition">
+    <figcaption>PCA of log2 counts grouped by condition.</figcaption>
+  </figure>
 </main>
 </body>
 </html>

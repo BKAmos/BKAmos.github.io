@@ -6,6 +6,7 @@ import math
 import shutil
 import sys
 import contextlib
+import inspect
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any
@@ -94,6 +95,33 @@ def _design(config: DeseqConfig) -> str:
     return f"~{config.condition_column}"
 
 
+def _deseq_dataset_kwargs(
+    config: DeseqConfig,
+    counts: pd.DataFrame,
+    metadata: pd.DataFrame,
+    design: str,
+    inference: DefaultInference,
+) -> dict[str, Any]:
+    params = inspect.signature(DeseqDataSet.__init__).parameters
+    common = {
+        "counts": counts,
+        "metadata": metadata,
+        "refit_cooks": True,
+        "inference": inference,
+    }
+    if "design" in params:
+        return {**common, "design": design}
+
+    design_factors = [config.condition_column]
+    if config.batch_column:
+        design_factors.insert(0, config.batch_column)
+    return {
+        **common,
+        "design_factors": design_factors,
+        "ref_level": [config.condition_column, config.reference_level],
+    }
+
+
 def _safe_number(value: Any) -> Any:
     if isinstance(value, (float, np.floating)) and (math.isnan(value) or math.isinf(value)):
         return None
@@ -117,6 +145,15 @@ def _write_report(
     )
     template = env.get_template("report.html.j2")
     significant = int((results["padj"].fillna(1.0) < 0.05).sum())
+    plot_context = {
+        "condition_column": config.condition_column,
+        "reference_level": config.reference_level,
+        "treatment_level": config.treatment_level,
+        "batch_column": config.batch_column,
+        "min_count": config.min_count,
+        "design": _design(config),
+        "contrast": f"{config.treatment_level} vs {config.reference_level}",
+    }
     rendered = template.render(
         title=strings["title"],
         summary_note=strings["summary_note"],
@@ -132,6 +169,7 @@ def _write_report(
             classes="top-genes",
         ),
         config=config,
+        plot_context=plot_context,
         top_genes=top_genes.reset_index().rename(columns={"index": "gene_id"}).to_dict("records"),
         condition_counts=metadata[config.condition_column].astype(str).value_counts().to_dict(),
     )
@@ -143,18 +181,14 @@ def run_deseq(config: DeseqConfig) -> dict[str, Any]:
     if output_dir.exists():
         shutil.rmtree(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(config.counts_path, output_dir / "original_counts.csv")
+    shutil.copyfile(config.metadata_path, output_dir / "metadata.csv")
 
     counts, metadata = _load_inputs(config)
     design = _design(config)
 
     inference = DefaultInference(n_cpus=config.n_cpus)
-    dds = DeseqDataSet(
-        counts=counts,
-        metadata=metadata,
-        design=design,
-        refit_cooks=True,
-        inference=inference,
-    )
+    dds = DeseqDataSet(**_deseq_dataset_kwargs(config, counts, metadata, design, inference))
     with open(output_dir / "pydeseq2.log", "w", encoding="utf-8") as log, contextlib.redirect_stdout(log):
         dds.deseq2()
 
@@ -177,24 +211,48 @@ def run_deseq(config: DeseqConfig) -> dict[str, Any]:
 
     results.to_csv(output_dir / "results.csv")
     top_genes.to_csv(output_dir / "top_genes.csv")
-    metadata.to_csv(output_dir / "metadata_used.csv")
 
     raw_counts = counts.T
     normed_counts = pd.DataFrame(dds.layers["normed_counts"], index=counts.index, columns=counts.columns)
     normed_counts.to_csv(output_dir / "normalized_counts.csv")
 
-    volcano_plot(results, output_dir / "volcano.png")
-    ma_plot(results, output_dir / "ma.png")
+    volcano_plot(
+        results,
+        output_dir / "volcano.png",
+        reference_level=config.reference_level,
+        treatment_level=config.treatment_level,
+    )
+    ma_plot(
+        results,
+        output_dir / "ma.png",
+        reference_level=config.reference_level,
+        treatment_level=config.treatment_level,
+    )
     metadata_for_plots = metadata.reset_index().rename(columns={"index": "sample_id"})
-    pca_plot(raw_counts, metadata_for_plots, output_dir / "pca.png")
-    top_genes_heatmap(raw_counts, metadata_for_plots, results, output_dir / "top_genes_heatmap.png")
+    pca_plot(
+        raw_counts,
+        metadata_for_plots,
+        output_dir / "pca.png",
+        condition_column=config.condition_column,
+        reference_level=config.reference_level,
+        treatment_level=config.treatment_level,
+    )
+    top_genes_heatmap(
+        raw_counts,
+        metadata_for_plots,
+        results,
+        output_dir / "top_genes_heatmap.png",
+        condition_column=config.condition_column,
+        batch_column=config.batch_column,
+    )
     _write_report(output_dir, config, results, top_genes, counts, metadata)
 
     artifacts = [
+        "original_counts.csv",
         "results.csv",
         "top_genes.csv",
         "normalized_counts.csv",
-        "metadata_used.csv",
+        "metadata.csv",
         "volcano.png",
         "ma.png",
         "pca.png",

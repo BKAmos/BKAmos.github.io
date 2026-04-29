@@ -123,3 +123,26 @@
   margin: 0;
   padding-left: 1.2rem;
 }
+
+.deseq-artifact-preview {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(21, 120, 120, 0.18);
+}
+
+.deseq-artifact-preview iframe,
+.deseq-artifact-preview img {
+  display: block;
+  width: 100%;
+  border: 1px solid #d7e6e6;
+  border-radius: 0.25rem;
+  background: #fff;
+}
+
+.deseq-artifact-preview iframe {
+  min-height: 42rem;
+}
+
+.deseq-artifact-preview img {
+  height: auto;
+}

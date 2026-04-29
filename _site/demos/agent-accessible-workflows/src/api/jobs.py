@@ -81,7 +81,7 @@ def prepare_synthetic_job(job_id: str) -> tuple[Path, Path]:
 
 
 def artifact_paths(job_id: str) -> list[dict[str, str]]:
-    out_dir = job_dir(job_id) / "outputs"
+    out_dir = job_dir(job_id)
     if not out_dir.exists():
         return []
     artifacts = []
@@ -107,4 +107,6 @@ def _content_type(path: Path) -> str:
         return "application/json"
     if suffix == ".csv":
         return "text/csv; charset=utf-8"
+    if suffix == ".log":
+        return "text/plain; charset=utf-8"
     return "application/octet-stream"

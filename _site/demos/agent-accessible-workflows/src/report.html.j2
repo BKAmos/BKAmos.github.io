@@ -15,6 +15,11 @@
     .metric { border: 1px solid #c8dddd; border-radius: 0.35rem; padding: 0.75rem; background: #f8fcfc; }
     .metric strong { display: block; font-size: 1.4rem; color: #155353; }
     .note { border-left: 4px solid #1e6b6b; padding: 0.75rem 1rem; background: #f4fbfb; }
+    .plot-context { border: 1px solid #c8dddd; border-radius: 0.35rem; padding: 0.75rem 1rem; background: #f8fcfc; }
+    .plot-context dl { display: grid; grid-template-columns: max-content 1fr; gap: 0.35rem 0.75rem; margin: 0; }
+    .plot-context dt { font-weight: 700; }
+    figure { margin: 1.25rem 0; }
+    figcaption { margin-top: 0.4rem; color: #356161; font-size: 0.95rem; }
     img { max-width: 100%; border: 1px solid #d7e6e6; border-radius: 0.35rem; }
   </style>
 </head>
@@ -34,9 +39,32 @@
   {{ top_genes_table }}
 
   <h2>Diagnostic plots</h2>
-  <p>The portfolio page embeds these same files for a compact web preview.</p>
-  <p><img src="volcano.png" alt="Volcano plot"></p>
-  <p><img src="pca.png" alt="PCA plot"></p>
+  <p>The portfolio page exposes these same job-specific files through the artifact API.</p>
+  <section class="plot-context" aria-label="Analysis configuration used for diagnostic plots">
+    <dl>
+      <dt>Contrast</dt><dd>{{ plot_context.contrast }}</dd>
+      <dt>Condition column</dt><dd>{{ plot_context.condition_column }}</dd>
+      <dt>Batch column</dt><dd>{{ plot_context.batch_column or "None" }}</dd>
+      <dt>Minimum count</dt><dd>{{ plot_context.min_count }}</dd>
+      <dt>Design</dt><dd>{{ plot_context.design }}</dd>
+    </dl>
+  </section>
+  <figure>
+    <img src="volcano.png" alt="Volcano plot for {{ plot_context.contrast }}">
+    <figcaption>Volcano plot using log2 fold change for {{ plot_context.contrast }}.</figcaption>
+  </figure>
+  <figure>
+    <img src="ma.png" alt="MA plot for {{ plot_context.contrast }}">
+    <figcaption>MA plot using log2 fold change for {{ plot_context.contrast }}.</figcaption>
+  </figure>
+  <figure>
+    <img src="top_genes_heatmap.png" alt="Top genes heatmap grouped by {{ plot_context.condition_column }}">
+    <figcaption>Top adjusted-p-value genes ordered by {{ plot_context.condition_column }}{% if plot_context.batch_column %}, then {{ plot_context.batch_column }}{% endif %}.</figcaption>
+  </figure>
+  <figure>
+    <img src="pca.png" alt="PCA plot grouped by {{ plot_context.condition_column }}">
+    <figcaption>PCA of log2 counts grouped by {{ plot_context.condition_column }}.</figcaption>
+  </figure>
 </main>
 </body>
 </html>

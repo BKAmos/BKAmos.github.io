@@ -34,10 +34,6 @@ For technical reviewers, this project includes a copy-paste local package that r
 <script>
   window.DESEQ_WORKFLOW_CONFIG = {
     apiBaseUrl: {% if jekyll.environment == "development" %}"http://localhost:8000"{% else %}""{% endif %},
-    syntheticCountsUrl: "{{ '/demos/agent-accessible-workflows/data/counts.csv' | relative_url }}",
-    syntheticMetadataUrl: "{{ '/demos/agent-accessible-workflows/data/metadata.csv' | relative_url }}",
-    sampleManifestUrl: "{{ '/demos/agent-accessible-workflows/outputs/manifest.json' | relative_url }}",
-    outputBaseUrl: "{{ '/demos/agent-accessible-workflows/outputs/' | relative_url }}",
     demoMode: {% if jekyll.environment == "development" %}false{% else %}true{% endif %}
   };
 </script>
@@ -79,27 +75,13 @@ For technical reviewers, this project includes a copy-paste local package that r
   <section class="deseq-panel">
     <h2>3. Results preview (job-specific)</h2>
     <p id="results-placeholder" class="portfolio-meta">Artifacts and plots appear only after the submitted job completes.</p>
-    <div class="deseq-actions is-hidden" id="artifact-links">
-      <a class="btn" id="artifact-results" href="#" target="_blank" rel="noopener">results.csv</a>
-      <a class="btn" id="artifact-top-genes" href="#" target="_blank" rel="noopener">top_genes.csv</a>
-      <a class="btn" id="artifact-report" href="#" target="_blank" rel="noopener">HTML report</a>
-    </div>
-    <div id="live-image-grid" class="deseq-output-grid is-hidden"></div>
-    <h3>Result CSV preview</h3>
-    <pre id="result-csv-preview" class="deseq-code is-hidden" style="max-height: 14rem; overflow: auto; margin-top: 0.75rem; white-space: pre-wrap"></pre>
-    <p id="result-csv-empty" class="portfolio-meta">No run-specific CSV preview yet.</p>
-    <h3>All run artifacts</h3>
+    <h3>Results</h3>
     <div class="deseq-actions">
       <ul id="live-artifacts"></ul>
     </div>
-    <h3>Top genes</h3>
-    <div id="top-genes-table" class="deseq-top-genes">
-      <table>
-        <thead>
-          <tr><th>gene_id</th><th>log2FoldChange</th><th>padj</th><th>baseMean</th></tr>
-        </thead>
-        <tbody id="top-genes-body"></tbody>
-      </table>
+    <div id="artifact-preview" class="deseq-artifact-preview is-hidden" aria-live="polite">
+      <h3 id="artifact-preview-title">Artifact preview</h3>
+      <div id="artifact-preview-body"></div>
     </div>
   </section>
 </div>
@@ -113,23 +95,25 @@ The live run flow supports bounded synthetic compute presets:
 
 ## Architecture
 
-![Architecture: Cloudflare Worker gateway, FastAPI API, Redis queue, PyDESeq2 worker, object storage]({{ '/demos/agent-accessible-workflows/outputs/architecture.png' | relative_url }})
+This workflow uses a single backend pipeline with multiple access surfaces:
 
-## Power-user REST example
+- **UX surface:** portfolio web page for guided run submission
+- **CLI/API surface:** direct REST calls and scripted batch submissions
+- **Agent surface:** Cloudflare Worker MCP gateway (`run_deseq`, status, summary tools)
+- **Control plane:** FastAPI endpoint handling auth, job submission, and artifact access
+- **Queue layer:** Redis-backed queue for concurrent job orchestration
+- **Compute layer:** Dockerized PyDESeq2 workers executing synthetic differential expression runs
+- **Artifact layer:** per-job outputs (CSV + plots + report) returned through API artifact endpoints
+
+Flow summary: `UX / CLI / Agent -> API -> Redis queue -> Worker containers -> job artifacts -> API responses/UI rendering`
+
+## Optional REST example
 
 ```bash
 curl -X POST "$API_BASE_URL/tools/run_deseq" \
   -H "Authorization: Bearer $TOKEN" \
   -H "Content-Type: application/json" \
-  -d '{
-    "dataset": "synthetic",
-    "synthetic_profile": "medium",
-    "condition_column": "condition",
-    "reference_level": "control",
-    "treatment_level": "treated",
-    "batch_column": "batch",
-    "min_count": 10
-  }'
+  --data-binary @fixtures/run-deseq-synthetic.json
 ```
 
 ## Agent tools
@@ -149,4 +133,4 @@ python3 data/generate.py
 python3 src/run.py
 ```
 
-<script src="{{ '/assets/js/deseq-workflow-ui.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/deseq-workflow-ui.js?v=20260429-inline-preview' | relative_url }}"></script>

@@ -72,9 +72,11 @@ python3 src/run.py
 
 Outputs are written to `outputs/`:
 
+- `original_counts.csv`
 - `results.csv`
 - `top_genes.csv`
 - `normalized_counts.csv`
+- `metadata.csv`
 - `volcano.png`
 - `ma.png`
 - `pca.png`

@@ -26,7 +26,6 @@
     jobId: null,
     pollTimer: null,
     artifactsByName: {},
-    blobUrls: [],
   };
 
   function $(selector) {
@@ -56,193 +55,140 @@
     return token ? { Authorization: `Bearer ${token}` } : {};
   }
 
-  async function parseCsvPreview(url, maxRows, headers) {
-    const response = await fetch(url, headers ? { headers } : undefined);
-    if (!response.ok) throw new Error(`Could not fetch ${url}`);
-    const text = await response.text();
-    return text.split(/\r?\n/).filter(Boolean).slice(0, maxRows);
-  }
-
-  async function loadSyntheticPreview() {
-    try {
-      const [counts, metadata] = await Promise.all([
-        parseCsvPreview(config.syntheticCountsUrl, 5),
-        parseCsvPreview(config.syntheticMetadataUrl, 8),
-      ]);
-      const text = [
-        "counts.csv preview:",
-        ...counts,
-        "",
-        "metadata.csv preview:",
-        ...metadata,
-      ].join("\n");
-      const preview = $("#synthetic-preview");
-      if (preview) {
-        preview.textContent = text;
-      }
-      setStatus(
-        liveSubmitEnabled()
-          ? "Synthetic preview loaded. Choose a workload size and click \"Run synthetic data through API\"."
-          : "Synthetic toy dataset loaded for preview. Configure the API for live jobs.",
-        "success",
-      );
-    } catch (error) {
-      setStatus(error.message, "error");
-    }
-  }
-
-  function renderTopGenes(rows) {
-    const tbody = $("#top-genes-body");
-    if (!tbody) return;
-    tbody.innerHTML = "";
-    rows.forEach((row) => {
-      const tr = document.createElement("tr");
-      ["gene_id", "log2FoldChange", "padj", "baseMean"].forEach((key) => {
-        const td = document.createElement("td");
-        const value = row[key];
-        td.textContent = typeof value === "number" ? value.toPrecision(4) : value;
-        tr.appendChild(td);
-      });
-      tbody.appendChild(tr);
-    });
-  }
-
   function artifactUrl(name) {
     return `${config.apiBaseUrl}/jobs/${state.jobId}/artifacts/${encodeURIComponent(name)}`;
   }
 
-  function revokeBlobUrls() {
-    state.blobUrls.forEach((url) => URL.revokeObjectURL(url));
-    state.blobUrls = [];
+  function absoluteApiUrl(url) {
+    try {
+      return new URL(url, config.apiBaseUrl).href;
+    } catch (_err) {
+      return url;
+    }
   }
 
   function hideLiveResults() {
-    revokeBlobUrls();
-    $("#artifact-links")?.classList.add("is-hidden");
-    $("#live-image-grid")?.classList.add("is-hidden");
-    $("#result-csv-preview")?.classList.add("is-hidden");
-    $("#result-csv-empty")?.classList.remove("is-hidden");
     $("#results-placeholder")?.classList.remove("is-hidden");
     const list = $("#live-artifacts");
     if (list) list.innerHTML = "";
-    const grid = $("#live-image-grid");
-    if (grid) grid.innerHTML = "";
-    const csvPreview = $("#result-csv-preview");
-    if (csvPreview) csvPreview.textContent = "";
-    renderTopGenes([]);
+    clearArtifactPreview();
     state.artifactsByName = {};
   }
 
   function mapArtifacts(artifacts) {
-    const names = artifacts.map((artifact) => (typeof artifact === "string" ? artifact : artifact.name));
-    state.artifactsByName = names.reduce((acc, name) => {
-      acc[name] = artifactUrl(name);
+    const mapped = artifacts.map((artifact) => {
+      const name = typeof artifact === "string" ? artifact : artifact.name;
+      const url = typeof artifact === "string" ? artifactUrl(name) : artifact.url || artifactUrl(name);
+      const downloadUrl =
+        typeof artifact === "string" ? artifactUrl(name) : artifact.download_url || artifact.url || artifactUrl(name);
+      return {
+        name,
+        kind: typeof artifact === "string" ? "file" : artifact.kind || "file",
+        contentType: typeof artifact === "string" ? "" : String(artifact.content_type || ""),
+        url: absoluteApiUrl(url),
+        downloadUrl: absoluteApiUrl(downloadUrl),
+      };
+    });
+    state.artifactsByName = mapped.reduce((acc, artifact) => {
+      acc[artifact.name] = artifact;
       return acc;
     }, {});
-    return names;
+    return mapped;
   }
 
-  async function materializeBlobUrls(names) {
-    await Promise.all(
-      names.map(async (name) => {
-        const sourceUrl = state.artifactsByName[name];
-        const response = await fetch(sourceUrl, { headers: authHeaders() });
-        if (!response.ok) throw new Error(`Could not fetch artifact ${name}`);
-        const blob = await response.blob();
-        const blobUrl = URL.createObjectURL(blob);
-        state.blobUrls.push(blobUrl);
-        state.artifactsByName[name] = blobUrl;
-      }),
-    );
+  function shouldRenderArtifact(artifact, job) {
+    if (job?.report_url && artifact.name === "report.html") return false;
+    if (artifact.name === "pydeseq2.log") return false;
+    return true;
   }
 
-  function setLink(id, name) {
-    const link = $(id);
-    if (!link) return;
-    const url = state.artifactsByName[name];
-    if (!url) {
-      link.classList.add("is-hidden");
-      link.removeAttribute("href");
-      return;
+  function extensionFor(artifact) {
+    return artifact.name.split("?")[0].split("#")[0].toLowerCase().split(".").pop() || "";
+  }
+
+  function isCsvArtifact(artifact) {
+    return extensionFor(artifact) === "csv" || artifact.contentType.toLowerCase().startsWith("text/csv");
+  }
+
+  function isImageArtifact(artifact) {
+    return /\.(png|jpe?g|gif|webp)$/i.test(artifact.name) || artifact.contentType.toLowerCase().startsWith("image/");
+  }
+
+  function clearArtifactPreview() {
+    const preview = $("#artifact-preview");
+    const body = $("#artifact-preview-body");
+    if (preview) preview.classList.add("is-hidden");
+    if (body) body.innerHTML = "";
+  }
+
+  function renderArtifactPreview(title, url, isImage) {
+    const preview = $("#artifact-preview");
+    const heading = $("#artifact-preview-title");
+    const body = $("#artifact-preview-body");
+    if (!preview || !heading || !body) return;
+
+    body.innerHTML = "";
+    heading.textContent = title;
+    const element = document.createElement(isImage ? "img" : "iframe");
+    element.src = url;
+    element.title = title;
+    if (isImage) {
+      element.alt = title;
+    } else {
+      element.loading = "lazy";
     }
-    link.classList.remove("is-hidden");
-    link.href = url;
+    body.appendChild(element);
+    preview.classList.remove("is-hidden");
   }
 
-  function renderImageArtifacts(names) {
-    const imageNames = names.filter((name) => /\.(png|jpg|jpeg|gif|webp)$/i.test(name));
-    const grid = $("#live-image-grid");
-    if (!grid) return;
-    grid.innerHTML = "";
-    if (!imageNames.length) {
-      grid.classList.add("is-hidden");
-      return;
-    }
-    imageNames.forEach((name) => {
-      const figure = document.createElement("figure");
-      const img = document.createElement("img");
-      const caption = document.createElement("figcaption");
-      img.src = state.artifactsByName[name];
-      img.alt = name;
-      caption.textContent = name;
-      figure.appendChild(img);
-      figure.appendChild(caption);
-      grid.appendChild(figure);
-    });
-    grid.classList.remove("is-hidden");
-  }
-
-  async function renderCsvPreview() {
-    const csvPreview = $("#result-csv-preview");
-    const empty = $("#result-csv-empty");
-    if (!csvPreview || !empty) return;
-
-    const selected = ["top_genes.csv", "results.csv", "metadata_used.csv"].filter(
-      (name) => state.artifactsByName[name],
-    );
-    if (!selected.length) {
-      csvPreview.classList.add("is-hidden");
-      empty.classList.remove("is-hidden");
-      return;
+  function createArtifactControl(artifact) {
+    if (isCsvArtifact(artifact)) {
+      const link = document.createElement("a");
+      link.className = "btn";
+      link.href = artifact.downloadUrl;
+      link.download = artifact.name;
+      link.textContent = artifact.name;
+      return link;
     }
 
-    const chunks = await Promise.all(
-      selected.map(async (name) => {
-        const rows = await parseCsvPreview(
-          state.artifactsByName[name],
-          name === "results.csv" ? 8 : 6,
-        );
-        return [`${name} preview:`, ...rows].join("\n");
-      }),
-    );
-    csvPreview.textContent = chunks.join("\n\n");
-    csvPreview.classList.remove("is-hidden");
-    empty.classList.add("is-hidden");
+    const control = document.createElement(isImageArtifact(artifact) ? "button" : "a");
+    control.className = "btn";
+    control.textContent = artifact.name;
+    if (isImageArtifact(artifact)) {
+      control.type = "button";
+      control.addEventListener("click", () => renderArtifactPreview(artifact.name, artifact.url, true));
+    } else {
+      control.href = artifact.url;
+    }
+    return control;
   }
 
-  async function renderArtifacts(artifacts) {
-    const names = mapArtifacts(artifacts);
-    await materializeBlobUrls(names);
+  async function renderArtifacts(artifacts, job) {
+    const mapped = mapArtifacts(artifacts);
     const list = $("#live-artifacts");
     if (!list) return;
     list.innerHTML = "";
-    names.forEach((name) => {
+
+    if (job?.report_url) {
       const li = document.createElement("li");
-      const link = document.createElement("a");
-      link.href = state.artifactsByName[name];
-      link.textContent = name;
-      link.target = "_blank";
-      link.rel = "noopener";
-      li.appendChild(link);
+      const button = document.createElement("button");
+      const reportUrl = absoluteApiUrl(job.report_url);
+      button.className = "btn";
+      button.type = "button";
+      button.addEventListener("click", () => renderArtifactPreview("Report", reportUrl, false));
+      button.textContent = "Open report";
+      li.appendChild(button);
       list.appendChild(li);
-    });
-    setLink("#artifact-results", "results.csv");
-    setLink("#artifact-top-genes", "top_genes.csv");
-    setLink("#artifact-report", "report.html");
-    $("#artifact-links")?.classList.remove("is-hidden");
+    }
+
+    mapped
+      .filter((artifact) => shouldRenderArtifact(artifact, job))
+      .forEach((artifact) => {
+        const li = document.createElement("li");
+        li.appendChild(createArtifactControl(artifact));
+        list.appendChild(li);
+      });
     $("#results-placeholder")?.classList.add("is-hidden");
-    renderImageArtifacts(names);
-    await renderCsvPreview();
   }
 
   async function submitJob() {
@@ -309,8 +255,7 @@
       $("#job-message").textContent = job.message || "";
       if (job.status === "completed" || job.state === "completed") {
         setStatus("Job complete. Results are ready below.", "success");
-        if (job.top_genes) renderTopGenes(job.top_genes);
-        await renderArtifacts(job.artifacts || []);
+        await renderArtifacts(job.artifacts || [], job);
         return;
       }
       if (job.status === "failed" || job.state === "failed") {
@@ -324,9 +269,6 @@
   }
 
   function bindEvents() {
-    $("#use-synthetic")?.addEventListener("click", () => {
-      loadSyntheticPreview().catch((error) => setStatus(error.message, "error"));
-    });
     $("#run-synthetic")?.addEventListener("click", () =>
       submitJob().catch((error) => setStatus(error.message, "error")),
     );
