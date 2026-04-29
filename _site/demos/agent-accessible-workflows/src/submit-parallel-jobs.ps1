@@ -49,7 +49,9 @@ if ($rqNorm -ne "true" -and $rqNorm -ne "1" -and $rqNorm -ne "yes") {
 if (-not (Test-Path -LiteralPath $Fixture)) {
     throw "Missing $Fixture"
 }
-$body = [System.IO.File]::ReadAllText($Fixture, [System.Text.UTF8Encoding]::new($false)).Trim()
+$payload = Get-Content -LiteralPath $Fixture -Raw | ConvertFrom-Json
+$payload.synthetic_profile = "large" # Force 10,000-gene run for queue stress runs.
+$body = $payload | ConvertTo-Json -Depth 20
 
 Write-Host "Submitting $Count jobs to $BaseUrl/tools/run_deseq ..."
 $jobs = @( foreach ($i in 1..$Count) {

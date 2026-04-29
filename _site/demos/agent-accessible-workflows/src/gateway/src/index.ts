@@ -79,9 +79,9 @@ export class DeseqMcpAgent extends McpAgent<Env> {
       "run_deseq",
       "Submit a DESeq differential expression job.",
       {
-        dataset: z.enum(["synthetic", "uploaded"]).default("synthetic"),
-        counts_uri: z.string().optional(),
-        metadata_uri: z.string().optional(),
+        dataset: z.literal("synthetic").default("synthetic"),
+        synthetic_profile: z.enum(["small", "medium", "large"]).default("medium"),
+        synthetic_seed: z.number().int().min(0).max(2147483647).optional(),
         condition_column: z.string().default("condition"),
         reference_level: z.string().default("control"),
         treatment_level: z.string().default("treated"),

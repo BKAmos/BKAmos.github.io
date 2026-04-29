@@ -3,36 +3,41 @@ from __future__ import annotations
 
 import json
 import os
-import shutil
 import sys
 import uuid
 from pathlib import Path
 from typing import Annotated, Any
 
-from fastapi import Depends, FastAPI, File, Header, HTTPException, UploadFile
+from fastapi import Depends, FastAPI, Header, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 if __package__ in {None, ""}:
     sys.path.append(str(Path(__file__).resolve().parents[1]))
     from api.jobs import enqueue_deseq_job, get_job_payload
     from worker.run_job import DeseqConfig, run_deseq
+    from worker.synthetic import write_synthetic_dataset
 else:
     from .jobs import enqueue_deseq_job, get_job_payload
     from worker.run_job import DeseqConfig, run_deseq
+    from worker.synthetic import write_synthetic_dataset
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = ROOT / "data"
 RUNS_DIR = Path(os.getenv("RUNS_DIR", ROOT / "runs"))
-UPLOADS_DIR = Path(os.getenv("UPLOADS_DIR", ROOT / "uploads"))
 API_TOKEN = os.getenv("API_TOKEN", "dev-token")
 DEMO_MODE = os.getenv("DESEQ_DEMO_MODE", "true").lower() == "true"
+SYNTHETIC_PROFILES: dict[str, dict[str, int]] = {
+    "small": {"genes": 1000, "samples": 12, "n_de": 120, "seed": 42},
+    "medium": {"genes": 5000, "samples": 24, "n_de": 400, "seed": 84},
+    "large": {"genes": 10000, "samples": 32, "n_de": 700, "seed": 126},
+}
 
 app = FastAPI(
     title="Agent-accessible DESeq workflow API",
     version="0.1.0",
-    description="FastAPI control plane for synthetic and uploaded PyDESeq2 jobs.",
+    description="FastAPI control plane for synthetic-only PyDESeq2 jobs.",
 )
 app.add_middleware(
     CORSMiddleware,
@@ -44,9 +49,10 @@ app.add_middleware(
 
 
 class DeseqRunRequest(BaseModel):
-    dataset: str = Field(default="synthetic", pattern="^(synthetic|uploaded)$")
-    counts_uri: str | None = None
-    metadata_uri: str | None = None
+    model_config = ConfigDict(extra="forbid")
+    dataset: str = Field(default="synthetic", pattern="^synthetic$")
+    synthetic_profile: str = Field(default="medium", pattern="^(small|medium|large)$")
+    synthetic_seed: int | None = Field(default=None, ge=0, le=2_147_483_647)
     counts_url: str | None = None
     metadata_url: str | None = None
     condition_column: str = "condition"
@@ -73,16 +79,6 @@ def _safe_child(root: Path, relative_path: str) -> Path:
     if root.resolve() not in path.parents and path != root.resolve():
         raise HTTPException(status_code=400, detail="Invalid path")
     return path
-
-
-def _resolve_local_uri(uri: str | None, *, default: Path) -> Path:
-    if not uri:
-        return default
-    if uri.startswith("file://"):
-        return Path(uri.removeprefix("file://"))
-    if uri.startswith("upload://"):
-        return _safe_child(UPLOADS_DIR, uri.removeprefix("upload://"))
-    return Path(uri)
 
 
 @app.get("/healthz")
@@ -113,46 +109,24 @@ def synthetic_dataset() -> dict[str, Any]:
         "reference_level": "control",
         "treatment_level": "treated",
         "batch_column": "batch",
+        "profiles": SYNTHETIC_PROFILES,
     }
-
-
-@app.post("/uploads")
-async def upload_inputs(
-    counts: UploadFile = File(...),
-    metadata: UploadFile = File(...),
-    _: None = Depends(_auth),
-) -> dict[str, str]:
-    upload_id = uuid.uuid4().hex
-    target = UPLOADS_DIR / upload_id
-    target.mkdir(parents=True, exist_ok=True)
-    counts_path = target / "counts.csv"
-    metadata_path = target / "metadata.csv"
-    with counts_path.open("wb") as fh:
-        shutil.copyfileobj(counts.file, fh)
-    with metadata_path.open("wb") as fh:
-        shutil.copyfileobj(metadata.file, fh)
-    return {
-        "upload_id": upload_id,
-        "counts_uri": f"upload://{upload_id}/counts.csv",
-        "metadata_uri": f"upload://{upload_id}/metadata.csv",
-    }
-
-
-@app.post("/uploads/presign")
-def presign_upload(_: None = Depends(_auth)) -> dict[str, Any]:
-    upload_id = uuid.uuid4().hex
-    return {
-        "upload_id": upload_id,
-        "mode": "direct-multipart-demo",
-        "message": "This local demo accepts POST /uploads multipart files. Production deployments should return signed Object Storage URLs here.",
-    }
-
 
 def run_deseq_job(job_id: str, request_payload: dict[str, Any]) -> dict[str, Any]:
     request = DeseqRunRequest(**request_payload)
     output_dir = _job_dir(job_id)
-    counts_path = _resolve_local_uri(request.counts_uri, default=DATA_DIR / "counts.csv")
-    metadata_path = _resolve_local_uri(request.metadata_uri, default=DATA_DIR / "metadata.csv")
+    profile = SYNTHETIC_PROFILES[request.synthetic_profile].copy()
+    if request.synthetic_seed is not None:
+        profile["seed"] = request.synthetic_seed
+    # Keep generated inputs outside output_dir because run_deseq() recreates output_dir.
+    inputs_dir = RUNS_DIR / "_synthetic_inputs" / job_id
+    counts_path, metadata_path, _truth_path = write_synthetic_dataset(
+        output_dir=inputs_dir,
+        genes=profile["genes"],
+        samples=profile["samples"],
+        n_de=profile["n_de"],
+        seed=profile["seed"],
+    )
     manifest = run_deseq(
         DeseqConfig(
             counts_path=counts_path,
@@ -166,6 +140,10 @@ def run_deseq_job(job_id: str, request_payload: dict[str, Any]) -> dict[str, Any
             job_id=job_id,
         )
     )
+    manifest["dataset"] = "synthetic"
+    manifest["synthetic_profile"] = request.synthetic_profile
+    manifest["synthetic_request"] = profile
+    (output_dir / "manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     return manifest
 
 

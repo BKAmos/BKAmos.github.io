@@ -45,6 +45,10 @@
   margin-top: 1rem;
 }
 
+.is-hidden {
+  display: none !important;
+}
+
 .deseq-status {
   margin-top: 1rem;
   padding: 0.75rem;
@@ -106,4 +110,16 @@
 
 .deseq-code {
   white-space: pre-wrap;
+}
+
+.deseq-output-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 0.9rem;
+  margin-top: 0.75rem;
+}
+
+#live-artifacts {
+  margin: 0;
+  padding-left: 1.2rem;
 }

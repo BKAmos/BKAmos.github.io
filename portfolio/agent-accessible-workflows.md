@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Agent-accessible DESeq workflow
-description: Upload RNA-seq counts, run PyDESeq2 through a cloud job API, and expose the same workflow to power users and MCP agents.
+description: Currently a work in progress. Assembing backend resources. You can download and run the mvp architecture on your local machine.
 banner_logo_right: true
 ---
 
@@ -9,15 +9,27 @@ banner_logo_right: true
 
 ## Business question
 
-Can a small lab or bioinformatics team run a reproducible **DESeq differential-expression workflow** through a web UI while giving power users and AI agents the same backend through REST and MCP?
+Can a small lab or bioinformatics team run a reproducible **DESeq differential-expression workflow** through a web UI while giving power users and AI agents the same backend through REST, CLI payloads, and MCP?
 
-## What we would decide with this
+## What we can do with this
 
-Use a lightweight UI for routine analysis, a documented API for automation, and an MCP gateway for agent workflows. The heavy computation stays in a Dockerized Python worker—on cloud compute in production, or on your machine via the same Compose stack used in the Oracle reference deployment.
+This architecture affords users of the software (employees) multiple ways of accessing the differential expression workflow. For example, if a user wanted to run a differential expression analsysis using an agent, the web page upload, or the command line, all three are viable.
 
 ## Try the workflow
 
-This portfolio page includes a functional UI shell. In demo mode it previews the bundled synthetic outputs. When you run `bundle exec jekyll serve`, Jekyll uses development mode: the UI targets `http://localhost:8000` (run Docker Compose from `demos/agent-accessible-workflows/src` and use the same `API_TOKEN` as in `.env`). Production builds keep demo mode until you point a deployed API or Worker at this page.
+This workflow demonstrates a practical pattern for analytics teams: one analysis pipeline, multiple access surfaces. A non-technical user can launch a synthetic DESeq run from the browser, a power user can automate the same run over REST/CLI, and an agent can orchestrate it through MCP tools. All three surfaces submit into the same backend job system, so results stay consistent while each audience gets the interface that fits how they work.
+
+Its biggest strength is operational consistency under different usage styles. The queue-backed worker layer allows concurrent job execution, while the UI now renders run-specific artifacts only after the submitted job completes. That makes the demo useful both as a product UX prototype and as a systems proof-of-concept for reproducible, agent-accessible bioinformatics workflows.
+
+To build this on your own desktop, start the local stack from `demos/agent-accessible-workflows` using the included quickstart scripts (`start-demo` and `verify-demo`), then open this portfolio page locally and submit runs with your generated `API_TOKEN`. The same packaged flow supports UX, CLI, and agent validation on a single workstation.
+
+### Run this demo on your workstation
+
+For technical reviewers, this project includes a copy-paste local package that runs UX + CLI + agent surfaces on one machine.
+
+- [Quickstart and setup](https://github.com/BKAmos/BKAmos.github.io/blob/main/demos/agent-accessible-workflows/README.md)
+- [Local validation runbook (queue + concurrency)](https://github.com/BKAmos/BKAmos.github.io/blob/main/demos/agent-accessible-workflows/runbook-local.md)
+- [Demo folder contents](https://github.com/BKAmos/BKAmos.github.io/tree/main/demos/agent-accessible-workflows)
 
 <script>
   window.DESEQ_WORKFLOW_CONFIG = {
@@ -32,23 +44,15 @@ This portfolio page includes a functional UI shell. In demo mode it previews the
 
 <div id="deseq-app" class="deseq-app">
   <section class="deseq-panel">
-    <h2>1. Dataset</h2>
-    <p>Use the bundled synthetic toy RNA-seq dataset, or upload a count matrix and sample metadata after the backend is deployed.</p>
-    <p class="deseq-warning">Do not upload sensitive or regulated data to a public demo deployment. Real data should require authentication, private object storage, retention policies, and compliance review.</p>
-    <div class="deseq-actions">
-      <a class="btn" href="{{ '/demos/agent-accessible-workflows/data/counts.csv' | relative_url }}">Download counts.csv</a>
-      <a class="btn" href="{{ '/demos/agent-accessible-workflows/data/metadata.csv' | relative_url }}">Download metadata.csv</a>
-      <button type="button" class="btn" id="use-synthetic">Use synthetic toy dataset</button>
-    </div>
-    <label>Counts CSV <input type="file" id="counts-file" accept=".csv,text/csv"></label>
-    <label>Metadata CSV <input type="file" id="metadata-file" accept=".csv,text/csv"></label>
-    <p id="sample-summary" class="portfolio-meta"></p>
-    <pre id="synthetic-preview" class="deseq-code" style="max-height: 14rem; overflow: auto; margin-top: 0.75rem; white-space: pre-wrap"></pre>
-  </section>
-
-  <section class="deseq-panel">
-    <h2>2. Analysis configuration</h2>
+    <h2>1. Analysis configuration</h2>
     <div class="deseq-grid">
+      <label>Synthetic workload size
+        <select id="synthetic-profile">
+          <option value="small">Small (1,000 genes x 12 samples)</option>
+          <option value="medium" selected>Medium (5,000 genes x 24 samples)</option>
+          <option value="large">Large (10,000 genes x 32 samples)</option>
+        </select>
+      </label>
       <label>Condition column <input id="condition-column" value="condition"></label>
       <label>Reference level <input id="reference-level" value="control"></label>
       <label>Treatment level <input id="treatment-level" value="treated"></label>
@@ -56,34 +60,37 @@ This portfolio page includes a functional UI shell. In demo mode it previews the
       <label>Minimum count filter <input id="min-count" type="number" min="0" value="10"></label>
       <label>API token <input id="api-token" type="password" placeholder="Required for live jobs"></label>
     </div>
+    <p class="portfolio-meta" style="margin-top: 0.75rem;">This demo runs synthetic-only RNA-seq jobs. No user-uploaded files are accepted in UX, CLI/API, or agent tools.</p>
   </section>
 
   <section class="deseq-panel">
-    <h2>3. Submit and monitor</h2>
+    <h2>2. Submit and monitor</h2>
     <div class="deseq-actions">
-      <button type="button" class="btn" id="run-uploaded">Run uploaded data</button>
       <button type="button" class="btn" id="run-synthetic">Run synthetic data through API</button>
     </div>
     <div id="deseq-status" class="deseq-status" data-kind="info">Demo mode is active until a backend API URL is configured.</div>
     <dl class="deseq-job">
-      <dt>Job ID</dt><dd id="job-id">sample-job</dd>
-      <dt>Status</dt><dd id="job-state">sample outputs loaded</dd>
-      <dt>Message</dt><dd id="job-message">Precomputed PyDESeq2 outputs are embedded below.</dd>
+      <dt>Job ID</dt><dd id="job-id">not submitted</dd>
+      <dt>Status</dt><dd id="job-state">idle</dd>
+      <dt>Message</dt><dd id="job-message">Submit a job to render outputs for that run.</dd>
     </dl>
   </section>
 
   <section class="deseq-panel">
-    <h2>4. Results preview</h2>
-    <div class="deseq-actions" id="artifact-links">
-      <a class="btn" href="{{ '/demos/agent-accessible-workflows/outputs/results.csv' | relative_url }}">results.csv</a>
-      <a class="btn" href="{{ '/demos/agent-accessible-workflows/outputs/top_genes.csv' | relative_url }}">top_genes.csv</a>
-      <a class="btn" href="{{ '/demos/agent-accessible-workflows/outputs/report.html' | relative_url }}">HTML report</a>
+    <h2>3. Results preview (job-specific)</h2>
+    <p id="results-placeholder" class="portfolio-meta">Artifacts and plots appear only after the submitted job completes.</p>
+    <div class="deseq-actions is-hidden" id="artifact-links">
+      <a class="btn" id="artifact-results" href="#" target="_blank" rel="noopener">results.csv</a>
+      <a class="btn" id="artifact-top-genes" href="#" target="_blank" rel="noopener">top_genes.csv</a>
+      <a class="btn" id="artifact-report" href="#" target="_blank" rel="noopener">HTML report</a>
     </div>
-    <div class="deseq-output-grid">
-      <figure><img src="{{ '/demos/agent-accessible-workflows/outputs/volcano.png' | relative_url }}" alt="Volcano plot"><figcaption>Volcano plot</figcaption></figure>
-      <figure><img src="{{ '/demos/agent-accessible-workflows/outputs/ma.png' | relative_url }}" alt="MA plot"><figcaption>MA plot</figcaption></figure>
-      <figure><img src="{{ '/demos/agent-accessible-workflows/outputs/pca.png' | relative_url }}" alt="PCA plot"><figcaption>PCA plot</figcaption></figure>
-      <figure><img src="{{ '/demos/agent-accessible-workflows/outputs/top_genes_heatmap.png' | relative_url }}" alt="Top genes heatmap"><figcaption>Top genes heatmap</figcaption></figure>
+    <div id="live-image-grid" class="deseq-output-grid is-hidden"></div>
+    <h3>Result CSV preview</h3>
+    <pre id="result-csv-preview" class="deseq-code is-hidden" style="max-height: 14rem; overflow: auto; margin-top: 0.75rem; white-space: pre-wrap"></pre>
+    <p id="result-csv-empty" class="portfolio-meta">No run-specific CSV preview yet.</p>
+    <h3>All run artifacts</h3>
+    <div class="deseq-actions">
+      <ul id="live-artifacts"></ul>
     </div>
     <h3>Top genes</h3>
     <div id="top-genes-table" class="deseq-top-genes">
@@ -99,7 +106,10 @@ This portfolio page includes a functional UI shell. In demo mode it previews the
 
 ## Synthetic data
 
-The toy set contains 12 samples, 1,000 genes, two conditions (`control` and `treated`), and a batch label. It is generated with a negative-binomial-like Gamma-Poisson process and a seeded subset of truly differential genes. See `demos/agent-accessible-workflows/data/generate.py`.
+The live run flow supports bounded synthetic compute presets:
+- `small`: 1,000 genes x 12 samples
+- `medium`: 5,000 genes x 24 samples
+- `large`: 10,000 genes x 32 samples
 
 ## Architecture
 
@@ -113,6 +123,7 @@ curl -X POST "$API_BASE_URL/tools/run_deseq" \
   -H "Content-Type: application/json" \
   -d '{
     "dataset": "synthetic",
+    "synthetic_profile": "medium",
     "condition_column": "condition",
     "reference_level": "control",
     "treatment_level": "treated",
@@ -123,7 +134,7 @@ curl -X POST "$API_BASE_URL/tools/run_deseq" \
 
 ## Agent tools
 
-The Cloudflare Worker exposes an MCP endpoint with tools for `run_deseq`, `get_job_status`, `get_deseq_results_summary`, and `get_synthetic_dataset_info`.
+The Cloudflare Worker exposes an MCP endpoint with tools for `run_deseq`, `get_job_status`, `get_deseq_results_summary`, and `get_synthetic_dataset_info`. `run_deseq` remains available to agents with synthetic-only inputs and profile selection.
 
 ## Reproduce locally
 

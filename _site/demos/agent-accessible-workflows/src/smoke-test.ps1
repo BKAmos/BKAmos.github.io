@@ -48,7 +48,9 @@ if (-not (Test-Path -LiteralPath $Fixture)) {
     throw "Missing fixture: $Fixture"
 }
 
-$body = [System.IO.File]::ReadAllText($Fixture, [System.Text.UTF8Encoding]::new($false)).Trim()
+$payload = Get-Content -LiteralPath $Fixture -Raw | ConvertFrom-Json
+$payload.synthetic_profile = "large" # Force 10,000-gene run for smoke tests.
+$body = $payload | ConvertTo-Json -Depth 20
 $headers = @{ 'Content-Type' = 'application/json' }
 if (-not $demoMode) {
     $headers['Authorization'] = "Bearer $token"
