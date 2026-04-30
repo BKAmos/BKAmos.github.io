@@ -20,7 +20,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.append(str(ROOT / "src"))
-from worker.synthetic import write_synthetic_dataset
+from worker.synthetic import write_synthetic_dataset  # noqa: E402
 
 DATA_DIR = ROOT / "data"
 
