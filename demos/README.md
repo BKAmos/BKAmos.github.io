@@ -34,5 +34,11 @@ Artifacts are written to `outputs/` (and sometimes `data/*.csv`). The portfolio 
 | `multimodal-support-signals` | Text + tabular fusion, k-means, weekly mix |
 | `repeatable-weekly-report` | Jinja2 HTML report (EN + ES) |
 | `agent-accessible-workflows` | DESeq UI + MCP/API workflow with synthetic RNA-seq |
+| `scientific-bioinformatics-de` | Toy DE + volcano (BH-FDR) |
+| `scientific-cheminformatics-similarity` | Fingerprints + Tanimoto + PCA (no RDKit) |
+| `scientific-predictive-dose-response` | Hill fit + bootstrap band |
+| `scientific-structural-contacts` | Synthetic Cα distances + contact map |
+| `scientific-generative-sequences` | PWM + latent motif strength |
+| `scientific-multimodal-biology` | Expression + imaging + clinical CCA |
 
 `agent-accessible-workflows` has its own `requirements.txt` because PyDESeq2 and the API stack are heavier than the shared plotting/science dependencies above.

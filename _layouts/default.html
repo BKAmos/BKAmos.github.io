@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
 
 {% seo %}
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -24,12 +22,12 @@
         {% endunless %}
       </div>
       <a href="{{ "/" | absolute_url }}" class="site-logo-link" aria-label="Home">
-        <img src="{{ site.logo | relative_url }}" alt="" />
+        <img src="{{ site.logo | relative_url }}" alt="{{ site.title }}" width="{{ site.logo_width }}" height="{{ site.logo_height }}" decoding="async" />
       </a>
       {% else %}
       {% if site.logo %}
         <a href="{{ "/" | absolute_url }}" class="site-logo-link" aria-label="Home">
-          <img src="{{ site.logo | relative_url }}" alt="" />
+          <img src="{{ site.logo | relative_url }}" alt="{{ site.title }}" width="{{ site.logo_width }}" height="{{ site.logo_height }}" decoding="async" />
         </a>
       {% endif %}
       {% unless page.hide_banner_titles %}

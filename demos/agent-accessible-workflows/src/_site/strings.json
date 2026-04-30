@@ -1,9 +1,0 @@
-{
-  "title": "DESeq toy workflow report",
-  "subtitle": "Synthetic RNA-seq differential expression analysis",
-  "summary_note": "This report uses synthetic data generated for architecture testing. It is not biological evidence.",
-  "summary_label": "Run summary",
-  "top_genes_label": "Top significant genes",
-  "artifacts_label": "Artifacts",
-  "data_notice": "This report uses synthetic data generated for architecture testing. It is not biological evidence."
-}

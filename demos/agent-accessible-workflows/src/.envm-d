@@ -1,7 +1,0 @@
-# Copy to .env and adjust. Used by: docker compose --env-file .env, smoke-test.ps1
-API_TOKEN=vlyj8aXSFi9ZoJsdzRQDNcrL732gYBAP
-DESEQ_DEMO_MODE=false
-# Set true and scale workers to process multiple jobs in parallel (Redis + RQ).
-# ENABLE_RQ=true
-MINIO_ROOT_USER=deseqdemo
-MINIO_ROOT_PASSWORD=change-me
