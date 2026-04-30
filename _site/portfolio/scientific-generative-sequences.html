@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Portfolio | SciAna Consultancy</title>
+<title>Generative sequences (PWM + latent) | SciAna Consultancy</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Portfolio" />
+<meta property="og:title" content="Generative sequences (PWM + latent)" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Business, scientific, and agentic examples built as reproducible synthetic-data demos." />
-<meta property="og:description" content="Business, scientific, and agentic examples built as reproducible synthetic-data demos." />
-<link rel="canonical" href="http://localhost:4000/portfolio/" />
-<meta property="og:url" content="http://localhost:4000/portfolio/" />
+<meta name="description" content="Classical DNA motif PWM plus a 2D latent decoder that modulates motif strength; scores and interpolation." />
+<meta property="og:description" content="Classical DNA motif PWM plus a 2D latent decoder that modulates motif strength; scores and interpolation." />
+<link rel="canonical" href="http://localhost:4000/portfolio/scientific-generative-sequences.html" />
+<meta property="og:url" content="http://localhost:4000/portfolio/scientific-generative-sequences.html" />
 <meta property="og:site_name" content="SciAna Consultancy" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Portfolio" />
+<meta property="twitter:title" content="Generative sequences (PWM + latent)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Business, scientific, and agentic examples built as reproducible synthetic-data demos.","headline":"Portfolio","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/logo.png"}},"url":"http://localhost:4000/portfolio/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Classical DNA motif PWM plus a 2D latent decoder that modulates motif strength; scores and interpolation.","headline":"Generative sequences (PWM + latent)","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/logo.png"}},"url":"http://localhost:4000/portfolio/scientific-generative-sequences.html"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -280,8 +280,8 @@
       
       <div class="page-header-primary">
         
-        <h1 class="project-name">Portfolio</h1>
-        <h2 class="project-tagline">Business, scientific, and agentic examples built as reproducible synthetic-data demos.</h2>
+        <h1 class="project-name">Generative sequences (PWM + latent)</h1>
+        <h2 class="project-tagline">Classical DNA motif PWM plus a 2D latent decoder that modulates motif strength; scores and interpolation.</h2>
         
       </div>
       <a href="http://localhost:4000/" class="site-logo-link" aria-label="Home">
@@ -344,34 +344,42 @@
   <a href="/contact.html">Contact</a>
 </nav>
 
-      <p>The portfolio is split into three tracks. <strong>Business</strong> mirrors common analytics decisions such as forecasting, experiments, segmentation, and reporting. <strong>Scientific</strong> showcases biology- and chemistry-flavored workflows built on synthetic data. <strong>Agentic</strong> contains workflows designed for multiple access surfaces, including UI, REST/CLI, and agent tooling.</p>
+      <h2 id="scientific-question">Scientific question</h2>
 
-<div class="home-industries">
-<section class="home-industry">
-<h2 class="home-industry-title"><a href="/portfolio/business.html">Business</a></h2>
-<p>Six demos: demand and uncertainty, A/B testing, segmentation, margin what-if, multimodal support signals, and repeatable weekly reporting.</p>
-</section>
-<section class="home-industry">
-<h2 class="home-industry-title"><a href="/portfolio/scientific.html">Scientific</a></h2>
-<p>Six demos: differential expression, compound similarity, dose-response, contact maps, generative sequences, and multimodal biological integration.</p>
-</section>
-<section class="home-industry">
-<h2 class="home-industry-title"><a href="/portfolio/agent-accessible-workflows.html">Agentic</a></h2>
-<p>One current workflow: an agent-accessible DESeq demo that can be run through the browser, REST/CLI, or MCP tooling.</p>
-</section>
-</div>
+<p>Can we <strong>propose sequences</strong> whose motif content is <strong>tunable</strong>—here combining a <strong>PWM</strong> with a simple <strong>latent</strong> “strength” decoder—and track that change along an <strong>interpolation</strong> path?</p>
 
-<p class="portfolio-meta">Source for every demo lives under <code>demos/</code> in the <a href="https://github.com/BKAmos/BKAmos.github.io">GitHub repository</a>. Use the nested <strong>Portfolio</strong> menu above for direct links to each piece.</p>
+<h2 id="what-we-would-conclude-with-this">What we would conclude with this</h2>
 
-<h2 id="navigation">Navigation</h2>
+<p><strong>PWM sampling</strong> gives an interpretable generative baseline; <strong>latent mixing</strong> between PWM and background mimics how deep models might <strong>smoothly vary</strong> motif usage. This is a <strong>toy</strong> illustration, not a trained genome-scale generative model.</p>
 
-<p class="home-page-nav">
-  <a href="/" class="btn">Home</a>
-  <a href="/about.html" class="btn">About</a>
-  <a href="/services.html" class="btn">Services</a>
-  <a href="/portfolio/" class="btn">Portfolio</a>
-  <a href="/contact.html" class="btn">Contact</a>
-</p>
+<h2 id="synthetic-data">Synthetic data</h2>
+
+<p>A <strong>12 bp</strong> DNA PWM (CSV) and a <strong>background</strong> base composition; sequences are <strong>40 bp</strong> with a fixed motif window. <strong>Seed: 42</strong> (data), <strong>7</strong> (sampling). See <code class="language-plaintext highlighter-rouge">demos/scientific-generative-sequences/data/generate.py</code> and <code class="language-plaintext highlighter-rouge">src/run.py</code>.</p>
+
+<h2 id="approach">Approach</h2>
+
+<ol>
+  <li><strong>Classical:</strong> sample motif positions from row-wise PWM; negatives use background only.</li>
+  <li><strong>Latent:</strong> map <strong>z ∈ ℝ²</strong> through a logistic decoder to <strong>strength s(z) ∈ (0,1)</strong>; per-position probabilities are <strong>s·PWM + (1−s)·background</strong> (renormalized).</li>
+  <li>Score sequences with <strong>PWM log-odds</strong>; plot <strong>latent path</strong> and mean score vs interpolation <strong>t</strong>.</li>
+</ol>
+
+<h2 id="key-outputs">Key outputs</h2>
+
+<p><img src="/demos/scientific-generative-sequences/outputs/motif_composition.png" alt="Motif composition" /></p>
+
+<p><img src="/demos/scientific-generative-sequences/outputs/score_histograms.png" alt="Score distributions" /></p>
+
+<p><img src="/demos/scientific-generative-sequences/outputs/latent_interpolation.png" alt="Latent interpolation" /></p>
+
+<h2 id="reproduce">Reproduce</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>demos/scientific-generative-sequences
+python3 data/generate.py
+python3 src/run.py
+</code></pre></div></div>
+
+<p>Dependencies: <code class="language-plaintext highlighter-rouge">demos/requirements.txt</code>.</p>
 
 
       <footer class="site-footer">

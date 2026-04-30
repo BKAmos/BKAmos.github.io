@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Portfolio | SciAna Consultancy</title>
+<title>Dose–response / viability | SciAna Consultancy</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Portfolio" />
+<meta property="og:title" content="Dose–response / viability" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Business, scientific, and agentic examples built as reproducible synthetic-data demos." />
-<meta property="og:description" content="Business, scientific, and agentic examples built as reproducible synthetic-data demos." />
-<link rel="canonical" href="http://localhost:4000/portfolio/" />
-<meta property="og:url" content="http://localhost:4000/portfolio/" />
+<meta name="description" content="Hill-style synthetic viability curves; nonlinear fit with bootstrap uncertainty band." />
+<meta property="og:description" content="Hill-style synthetic viability curves; nonlinear fit with bootstrap uncertainty band." />
+<link rel="canonical" href="http://localhost:4000/portfolio/scientific-predictive-dose-response.html" />
+<meta property="og:url" content="http://localhost:4000/portfolio/scientific-predictive-dose-response.html" />
 <meta property="og:site_name" content="SciAna Consultancy" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Portfolio" />
+<meta property="twitter:title" content="Dose–response / viability" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Business, scientific, and agentic examples built as reproducible synthetic-data demos.","headline":"Portfolio","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/logo.png"}},"url":"http://localhost:4000/portfolio/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Hill-style synthetic viability curves; nonlinear fit with bootstrap uncertainty band.","headline":"Dose–response / viability","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/logo.png"}},"url":"http://localhost:4000/portfolio/scientific-predictive-dose-response.html"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -280,8 +280,8 @@
       
       <div class="page-header-primary">
         
-        <h1 class="project-name">Portfolio</h1>
-        <h2 class="project-tagline">Business, scientific, and agentic examples built as reproducible synthetic-data demos.</h2>
+        <h1 class="project-name">Dose–response / viability</h1>
+        <h2 class="project-tagline">Hill-style synthetic viability curves; nonlinear fit with bootstrap uncertainty band.</h2>
         
       </div>
       <a href="http://localhost:4000/" class="site-logo-link" aria-label="Home">
@@ -344,34 +344,34 @@
   <a href="/contact.html">Contact</a>
 </nav>
 
-      <p>The portfolio is split into three tracks. <strong>Business</strong> mirrors common analytics decisions such as forecasting, experiments, segmentation, and reporting. <strong>Scientific</strong> showcases biology- and chemistry-flavored workflows built on synthetic data. <strong>Agentic</strong> contains workflows designed for multiple access surfaces, including UI, REST/CLI, and agent tooling.</p>
+      <h2 id="scientific-question">Scientific question</h2>
 
-<div class="home-industries">
-<section class="home-industry">
-<h2 class="home-industry-title"><a href="/portfolio/business.html">Business</a></h2>
-<p>Six demos: demand and uncertainty, A/B testing, segmentation, margin what-if, multimodal support signals, and repeatable weekly reporting.</p>
-</section>
-<section class="home-industry">
-<h2 class="home-industry-title"><a href="/portfolio/scientific.html">Scientific</a></h2>
-<p>Six demos: differential expression, compound similarity, dose-response, contact maps, generative sequences, and multimodal biological integration.</p>
-</section>
-<section class="home-industry">
-<h2 class="home-industry-title"><a href="/portfolio/agent-accessible-workflows.html">Agentic</a></h2>
-<p>One current workflow: an agent-accessible DESeq demo that can be run through the browser, REST/CLI, or MCP tooling.</p>
-</section>
-</div>
+<p>What <strong>potency</strong> (e.g. <strong>EC50</strong>) best explains observed <strong>viability</strong> across concentrations, and how uncertain is the curve?</p>
 
-<p class="portfolio-meta">Source for every demo lives under <code>demos/</code> in the <a href="https://github.com/BKAmos/BKAmos.github.io">GitHub repository</a>. Use the nested <strong>Portfolio</strong> menu above for direct links to each piece.</p>
+<h2 id="what-we-would-conclude-with-this">What we would conclude with this</h2>
 
-<h2 id="navigation">Navigation</h2>
+<p>A well-identified <strong>Hill</strong> fit supports ranking compounds and comparing <strong>potency</strong>; the band communicates <strong>experimental + fit</strong> variability at a glance.</p>
 
-<p class="home-page-nav">
-  <a href="/" class="btn">Home</a>
-  <a href="/about.html" class="btn">About</a>
-  <a href="/services.html" class="btn">Services</a>
-  <a href="/portfolio/" class="btn">Portfolio</a>
-  <a href="/contact.html" class="btn">Contact</a>
-</p>
+<h2 id="synthetic-data">Synthetic data</h2>
+
+<p>Log-spaced concentrations with <strong>four</strong> technical replicates; response follows a <strong>Hill</strong> equation plus Gaussian noise. See <code class="language-plaintext highlighter-rouge">demos/scientific-predictive-dose-response/data/generate.py</code>.</p>
+
+<h2 id="approach">Approach</h2>
+
+<p>Nonlinear least squares (<code class="language-plaintext highlighter-rouge">scipy.optimize.curve_fit</code>); <strong>residual bootstrap</strong> on the fitted mean to shade a <strong>90%</strong> band on the curve.</p>
+
+<h2 id="key-outputs">Key outputs</h2>
+
+<p><img src="/demos/scientific-predictive-dose-response/outputs/dose_response_fit.png" alt="Dose–response fit" /></p>
+
+<h2 id="reproduce">Reproduce</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>demos/scientific-predictive-dose-response
+python3 data/generate.py
+python3 src/run.py
+</code></pre></div></div>
+
+<p>Dependencies: <code class="language-plaintext highlighter-rouge">demos/requirements.txt</code>.</p>
 
 
       <footer class="site-footer">

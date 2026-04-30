@@ -98,6 +98,33 @@
     text-decoration: underline;
   }
 
+  .site-nav-nested-item {
+    list-style: none;
+    margin: 0.35rem 0 0.25rem;
+  }
+  .site-nav-dropdown-nested {
+    margin: 0;
+  }
+  .site-nav-dropdown-nested > summary {
+    font-weight: 600;
+    color: #1e6b6b;
+    font-size: 0.95rem;
+    padding: 0.1rem 0;
+  }
+  .site-nav-dropdown-panel-nested {
+    margin: 0.35rem 0 0.35rem 0.5rem;
+    padding: 0.35rem 0.5rem 0.35rem 0.65rem;
+    min-width: 11rem;
+    border-style: dashed;
+  }
+  .site-nav-dropdown-panel-nested li {
+    margin: 0.15rem 0;
+  }
+  .site-nav-dropdown-panel-nested a {
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+
   /* Cayman buttons are tuned for dark header backgrounds. Make body buttons visible. */
   .main-content .btn {
     color: #1e6b6b;
@@ -276,13 +303,42 @@
     <summary>Portfolio</summary>
     <ul class="site-nav-dropdown-panel">
       <li><a href="/portfolio/">Overview</a></li>
-      <li><a href="/portfolio/forecasting-uncertainty.html">Demand and uncertainty</a></li>
-      <li><a href="/portfolio/ab-testing-decisions.html">A/B testing</a></li>
-      <li><a href="/portfolio/segmentation-explainable.html">Segmentation</a></li>
-      <li><a href="/portfolio/margin-whatif.html">Margin what-if</a></li>
-      <li><a href="/portfolio/multimodal-support-signals.html">Multimodal support</a></li>
-      <li><a href="/portfolio/repeatable-weekly-report.html">Weekly report</a></li>
-      <li><a href="/portfolio/agent-accessible-workflows.html">DESeq workflow UI</a></li>
+      <li class="site-nav-nested-item">
+        <details class="site-nav-dropdown site-nav-dropdown-nested">
+          <summary>Business</summary>
+          <ul class="site-nav-dropdown-panel site-nav-dropdown-panel-nested">
+            <li><a href="/portfolio/business.html">All business demos</a></li>
+            <li><a href="/portfolio/forecasting-uncertainty.html">Demand and uncertainty</a></li>
+            <li><a href="/portfolio/ab-testing-decisions.html">A/B testing</a></li>
+            <li><a href="/portfolio/segmentation-explainable.html">Segmentation</a></li>
+            <li><a href="/portfolio/margin-whatif.html">Margin what-if</a></li>
+            <li><a href="/portfolio/multimodal-support-signals.html">Multimodal support</a></li>
+            <li><a href="/portfolio/repeatable-weekly-report.html">Weekly report</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="site-nav-nested-item">
+        <details class="site-nav-dropdown site-nav-dropdown-nested">
+          <summary>Scientific</summary>
+          <ul class="site-nav-dropdown-panel site-nav-dropdown-panel-nested">
+            <li><a href="/portfolio/scientific.html">All scientific demos</a></li>
+            <li><a href="/portfolio/scientific-bioinformatics-de.html">Differential expression</a></li>
+            <li><a href="/portfolio/scientific-cheminformatics-similarity.html">Compound similarity</a></li>
+            <li><a href="/portfolio/scientific-predictive-dose-response.html">Dose-response</a></li>
+            <li><a href="/portfolio/scientific-structural-contacts.html">Contact map</a></li>
+            <li><a href="/portfolio/scientific-generative-sequences.html">Generative sequences</a></li>
+            <li><a href="/portfolio/scientific-multimodal-biology.html">Multimodal biology</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="site-nav-nested-item">
+        <details class="site-nav-dropdown site-nav-dropdown-nested">
+          <summary>Agentic</summary>
+          <ul class="site-nav-dropdown-panel site-nav-dropdown-panel-nested">
+            <li><a href="/portfolio/agent-accessible-workflows.html">DESeq</a></li>
+          </ul>
+        </details>
+      </li>
     </ul>
   </details>
   <a href="/contact.html">Contact</a>
