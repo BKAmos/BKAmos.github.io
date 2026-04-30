@@ -1,20 +1,24 @@
 ---
 layout: default
 title: Portfolio
-description: Two tracks—business questions answered and a scientific portfolio—each with six reproducible Python demos on synthetic data.
+description: Business, scientific, and agentic examples built as reproducible synthetic-data demos.
 banner_logo_right: true
 ---
 
-The portfolio is split into two tracks. **Business questions answered** mirrors common analytics decisions (forecasting, experiments, segmentation, and more). **Scientific portfolio** showcases biology- and chemistry-flavored workflows—still **synthetic data**, but structured like expression profiles, compounds, dose–response, structure, generative sequence models, and multimodal patient/sample panels.
+The portfolio is split into three tracks. **Business** mirrors common analytics decisions such as forecasting, experiments, segmentation, and reporting. **Scientific** showcases biology- and chemistry-flavored workflows built on synthetic data. **Agentic** contains workflows designed for multiple access surfaces, including UI, REST/CLI, and agent tooling.
 
 <div class="home-industries" markdown="0">
 <section class="home-industry">
-<h2 class="home-industry-title"><a href="{% link portfolio/business.md %}">Business questions answered</a></h2>
+<h2 class="home-industry-title"><a href="{% link portfolio/business.md %}">Business</a></h2>
 <p>Six demos: demand and uncertainty, A/B testing, segmentation, margin what-if, multimodal support signals, and repeatable weekly reporting.</p>
 </section>
 <section class="home-industry">
-<h2 class="home-industry-title"><a href="{% link portfolio/scientific.md %}">Scientific portfolio</a></h2>
-<p>Six demos: differential expression, cheminformatics similarity, dose–response prediction, contact maps, PWM + latent sequence generation, and multimodal biological integration.</p>
+<h2 class="home-industry-title"><a href="{% link portfolio/scientific.md %}">Scientific</a></h2>
+<p>Six demos: differential expression, compound similarity, dose-response, contact maps, generative sequences, and multimodal biological integration.</p>
+</section>
+<section class="home-industry">
+<h2 class="home-industry-title"><a href="{% link portfolio/agent-accessible-workflows.md %}">Agentic</a></h2>
+<p>One current workflow: an agent-accessible DESeq demo that can be run through the browser, REST/CLI, or MCP tooling.</p>
 </section>
 </div>
 

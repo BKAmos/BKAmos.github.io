@@ -7,11 +7,13 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
+# Keep Jekyll from scanning MCP gateway dependencies (huge, breaks Liquid on .mdx).
+exclude:
+  - demos/agent-accessible-workflows/src/gateway/node_modules
+  - vendor
+
 title: SciAna Consultancy
 description: Guiding business to successful outcomes through scientific strategy and data analytics
 logo: /assets/logo.png
 logo_width: 1254
 logo_height: 706
-
-exclude:
-  - vendor

@@ -1,0 +1,23 @@
+{
+  "name": "deseq-mcp-gateway",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-04-25",
+  "compatibility_flags": ["nodejs_compat"],
+  "vars": {
+    "API_BASE_URL": "https://api.example.com"
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "MCP_OBJECT",
+        "class_name": "DeseqMcpAgent"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["DeseqMcpAgent"]
+    }
+  ]
+}
