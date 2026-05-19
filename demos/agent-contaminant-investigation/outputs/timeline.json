@@ -1,0 +1,22 @@
+[
+  {
+    "stage": "overview",
+    "status": "ok"
+  },
+  {
+    "stage": "investigator",
+    "status": "ok"
+  },
+  {
+    "stage": "executor",
+    "status": "ok"
+  },
+  {
+    "stage": "summary",
+    "status": "ok"
+  },
+  {
+    "stage": "verdict",
+    "status": "ok"
+  }
+]

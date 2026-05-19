@@ -1,0 +1,16 @@
+{
+  "profile": "low_contam",
+  "seed": 42,
+  "sample_count": 24,
+  "controls": [
+    "S001",
+    "S002",
+    "S003",
+    "S004"
+  ],
+  "heuristic_thresholds": {
+    "non_host_ratio_warn": 0.01,
+    "marker_hits_warn": 2,
+    "control_bleed_warn": 300
+  }
+}

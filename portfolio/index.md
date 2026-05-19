@@ -18,7 +18,7 @@ The portfolio is split into three tracks. **Business** mirrors common analytics 
 </section>
 <section class="home-industry">
 <h2 class="home-industry-title"><a href="{% link portfolio/agent-accessible-workflows.md %}">Agentic</a></h2>
-<p>One current workflow: an agent-accessible DESeq demo that can be run through the browser, REST/CLI, or MCP tooling.</p>
+<p>Two workflows: an agent-accessible DESeq demo and a local-first contamination investigation workflow with interactive stage-by-stage evidence.</p>
 </section>
 </div>
 

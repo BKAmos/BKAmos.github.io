@@ -1,0 +1,13 @@
+{
+  "selected_queries": [
+    "top_non_host_taxa",
+    "non_host_ratio_by_sample",
+    "unexpected_marker_hits",
+    "negative_control_bleed"
+  ],
+  "grep": {
+    "file": "qc.log",
+    "keywords": "warn|marker_hits=[3-9]|contam_reads=[2-9][0-9]{3,}"
+  },
+  "max_iterations": 2
+}

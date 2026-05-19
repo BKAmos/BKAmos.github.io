@@ -1,0 +1,22 @@
+{
+  "executive_summary": "Investigation found elevated non-host reads and marker evidence consistent with possible foreign genetic material.",
+  "signals": [
+    {
+      "name": "max_non_host_ratio",
+      "value": 0.02325
+    },
+    {
+      "name": "max_marker_hits",
+      "value": 7
+    },
+    {
+      "name": "max_negative_control_contaminant_reads",
+      "value": 5
+    },
+    {
+      "name": "risk_score",
+      "value": 71.069
+    }
+  ],
+  "confidence": 0.711
+}

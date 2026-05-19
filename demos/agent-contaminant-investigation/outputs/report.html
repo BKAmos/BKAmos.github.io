@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contamination Investigation Report</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; color: #173f3f; }
+    main { max-width: 960px; margin: 0 auto; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+    th, td { border: 1px solid #c8dddd; padding: 0.45rem 0.55rem; text-align: left; }
+    th { background: #eef7f7; }
+    .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 0.75rem; }
+    .metric { border: 1px solid #c8dddd; border-radius: 0.35rem; padding: 0.75rem; background: #f8fcfc; }
+    .metric strong { display: block; font-size: 1.4rem; color: #155353; }
+    .note { border-left: 4px solid #1e6b6b; padding: 0.75rem 1rem; background: #f4fbfb; }
+    img { max-width: 100%; border: 1px solid #d7e6e6; border-radius: 0.35rem; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Contamination Investigation Report</h1>
+  <p class="note">Synthetic-only agentic triage output.</p>
+  <section class="metrics">
+    <div class="metric"><span>Samples</span><strong>24</strong></div>
+    <div class="metric"><span>Mean non-host ratio</span><strong>0.01371</strong></div>
+    <div class="metric"><span>Negative controls</span><strong>4</strong></div>
+    <div class="metric"><span>Risk score</span><strong>71.069</strong></div>
+  </section>
+
+  <h2>Key signals</h2>
+  <table border="1" class="dataframe top-genes">
+  <thead>
+    <tr style="text-align: right;">
+      <th>name</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>max_non_host_ratio</td>
+      <td>0.02325</td>
+    </tr>
+    <tr>
+      <td>max_marker_hits</td>
+      <td>7.00000</td>
+    </tr>
+    <tr>
+      <td>max_negative_control_contaminant_reads</td>
+      <td>5.00000</td>
+    </tr>
+    <tr>
+      <td>risk_score</td>
+      <td>71.06900</td>
+    </tr>
+  </tbody>
+</table>
+
+  <h2>Top non-host taxa</h2>
+  <figure>
+    <img src="top_non_host_taxa.png" alt="Top non-host taxa">
+  </figure>
+</main>
+</body>
+</html>

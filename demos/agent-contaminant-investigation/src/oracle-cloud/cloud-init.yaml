@@ -17,6 +17,7 @@ write_files:
       DESEQ_DEMO_MODE=false
       REDIS_URL=redis://redis:6379/0
       RUNS_DIR=/app/runs
+      UPLOADS_DIR=/app/uploads
       MINIO_ROOT_USER=deseq
       MINIO_ROOT_PASSWORD=replace-with-a-long-random-password
 

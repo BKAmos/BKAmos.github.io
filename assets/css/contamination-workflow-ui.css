@@ -1,0 +1,75 @@
+.contam-app {
+  margin: 1.5rem 0 2rem;
+  padding: 1rem;
+  border: 1px solid rgba(21, 120, 120, 0.22);
+  border-radius: 0.45rem;
+  background: #f8fcfc;
+}
+
+.contam-panel {
+  padding: 1rem;
+  border: 1px solid rgba(21, 120, 120, 0.18);
+  border-radius: 0.35rem;
+  background: #fff;
+  margin-bottom: 1rem;
+}
+
+.contam-demo-note {
+  padding: 1rem;
+  border: 1px solid rgba(21, 120, 120, 0.28);
+  border-left: 4px solid #1e6b6b;
+  border-radius: 0.35rem;
+  background: #eef7f7;
+  margin-bottom: 1rem;
+}
+
+.contam-demo-note h2 {
+  margin-top: 0;
+}
+
+.contam-demo-note p {
+  margin-bottom: 0;
+}
+
+.contam-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 0.65rem;
+}
+
+.contam-grid input,
+.contam-grid select {
+  display: block;
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+.contam-status {
+  margin-top: 0.8rem;
+  padding: 0.65rem;
+  border-left: 4px solid #1e6b6b;
+  background: #eef7f7;
+}
+
+.contam-job {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: 0.25rem 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.contam-pre {
+  white-space: pre-wrap;
+  background: #f7fbfb;
+  border: 1px solid #d7e6e6;
+  border-radius: 0.25rem;
+  padding: 0.65rem;
+}
+
+.contam-artifact-image {
+  display: block;
+  max-width: 100%;
+  margin-top: 0.4rem;
+  border: 1px solid #d7e6e6;
+  border-radius: 0.25rem;
+}

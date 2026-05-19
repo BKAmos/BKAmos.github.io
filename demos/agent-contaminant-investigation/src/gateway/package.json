@@ -1,0 +1,22 @@
+{
+  "name": "deseq-mcp-gateway",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "latest",
+    "agents": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@types/json-schema": "latest",
+    "@types/node": "latest",
+    "typescript": "latest",
+    "wrangler": "latest"
+  }
+}

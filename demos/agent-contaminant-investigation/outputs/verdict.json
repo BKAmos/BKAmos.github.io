@@ -1,0 +1,10 @@
+{
+  "verdict": "contaminant_likely",
+  "confidence": 0.711,
+  "requires_reiteration": false,
+  "recommended_next_steps": [
+    "Re-sequence highest-risk samples with deeper host depletion.",
+    "Inspect negative controls for prep contamination trends.",
+    "Validate top contaminant taxa via orthogonal assay (qPCR)."
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "job_id": "sample-job",
+  "status": "completed",
+  "analysis": "agentic contamination investigation",
+  "config": {
+    "alignment_path": "E:\\Github\\BKAmos.github.io\\demos\\agent-contaminant-investigation\\data\\alignment_stats.csv",
+    "markers_path": "E:\\Github\\BKAmos.github.io\\demos\\agent-contaminant-investigation\\data\\marker_hits.csv",
+    "taxa_path": "E:\\Github\\BKAmos.github.io\\demos\\agent-contaminant-investigation\\data\\taxa_abundance.csv",
+    "metrics_path": "E:\\Github\\BKAmos.github.io\\demos\\agent-contaminant-investigation\\data\\sample_metrics.csv",
+    "qc_log_path": "E:\\Github\\BKAmos.github.io\\demos\\agent-contaminant-investigation\\data\\qc.log",
+    "output_dir": "E:\\Github\\BKAmos.github.io\\demos\\agent-contaminant-investigation\\outputs",
+    "profile": "low_contam",
+    "strictness": 0.6,
+    "max_iterations": 2,
+    "job_id": "sample-job"
+  },
+  "metrics": {
+    "sample_count": 24,
+    "mean_non_host_ratio": 0.01371,
+    "negative_controls": 4,
+    "risk_score": 71.069
+  },
+  "signals": [
+    {
+      "name": "max_non_host_ratio",
+      "value": 0.02325
+    },
+    {
+      "name": "max_marker_hits",
+      "value": 7
+    },
+    {
+      "name": "max_negative_control_contaminant_reads",
+      "value": 5
+    },
+    {
+      "name": "risk_score",
+      "value": 71.069
+    }
+  ],
+  "artifacts": [
+    "alignment_stats.csv",
+    "marker_hits.csv",
+    "taxa_abundance.csv",
+    "sample_metrics.csv",
+    "qc.log",
+    "overview.json",
+    "investigator_plan.json",
+    "evidence.json",
+    "summary.json",
+    "verdict.json",
+    "timeline.json",
+    "top_non_host_taxa.png",
+    "report.html"
+  ],
+  "summary": {
+    "executive_summary": "Investigation found elevated non-host reads and marker evidence consistent with possible foreign genetic material.",
+    "signals": [
+      {
+        "name": "max_non_host_ratio",
+        "value": 0.02325
+      },
+      {
+        "name": "max_marker_hits",
+        "value": 7
+      },
+      {
+        "name": "max_negative_control_contaminant_reads",
+        "value": 5
+      },
+      {
+        "name": "risk_score",
+        "value": 71.069
+      }
+    ],
+    "confidence": 0.711
+  },
+  "verdict": {
+    "verdict": "contaminant_likely",
+    "confidence": 0.711,
+    "requires_reiteration": false,
+    "recommended_next_steps": [
+      "Re-sequence highest-risk samples with deeper host depletion.",
+      "Inspect negative controls for prep contamination trends.",
+      "Validate top contaminant taxa via orthogonal assay (qPCR)."
+    ]
+  }
+}

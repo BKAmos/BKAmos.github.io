@@ -60,8 +60,6 @@ class DeseqRunRequest(BaseModel):
     dataset: str = Field(default="synthetic", pattern="^synthetic$")
     synthetic_profile: str = Field(default="medium", pattern="^(small|medium|large)$")
     synthetic_seed: int | None = Field(default=None, ge=0, le=2_147_483_647)
-    counts_url: str | None = None
-    metadata_url: str | None = None
     condition_column: str = "condition"
     reference_level: str = "control"
     treatment_level: str = "treated"

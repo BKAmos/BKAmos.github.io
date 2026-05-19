@@ -1,0 +1,8 @@
+{
+  "dataset": "synthetic",
+  "profile": "low_contam",
+  "sample_count": 24,
+  "synthetic_seed": 84,
+  "strictness": 0.6,
+  "max_iterations": 2
+}
