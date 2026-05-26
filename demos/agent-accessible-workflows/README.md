@@ -237,6 +237,21 @@ Expected behavior with queue mode enabled:
 
 See `src/gateway/README.md` for Wrangler deployment and MCP Inspector examples.
 
-## Oracle Cloud
+## AWS serverless (optional — preview branches only)
 
-See `src/oracle-cloud/README.md` for Terraform and cloud-init deployment notes for an Always-Free A1 VM.
+The [`src/aws-serverless/`](src/aws-serverless/README.md) folder documents an optional Free-Tier AWS Lambda deployment (API Gateway + DynamoDB + S3). **Production portfolio pages do not use it.** Keep any live AWS experiments on a feature branch with Cloudflare Pages preview deployments only—do not merge `deseq_api_url` into `main`.
+
+See also:
+
+- [`src/aws-serverless/README.md`](src/aws-serverless/README.md) — deploy/destroy runbook
+- [`docs/SERVERLESS-AWS-PLAN.md`](docs/SERVERLESS-AWS-PLAN.md) — implementation notes (optional infrastructure)
+
+### Preview-only policy for live backend experiments
+
+If you test a live API on a preview branch:
+
+1. Work on a feature branch (for example `dev-serverlessDeSeq`), not `main`.
+2. Use Cloudflare Pages **preview** builds for that branch; do not link preview URLs from production nav or sitemap.
+3. Set `deseq_api_url` only on the preview branch (or via preview-only build config)—never on `main`.
+4. Store `API_TOKEN` in Wrangler secrets or Cloudflare preview env vars; never commit tokens.
+5. Tear down AWS resources when not actively testing to avoid cost and abuse.

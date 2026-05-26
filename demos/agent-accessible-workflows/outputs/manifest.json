@@ -1,0 +1,47 @@
+{
+  "job_id": "portfolio-demo",
+  "status": "completed",
+  "analysis": "PyDESeq2 differential expression",
+  "design": "~condition",
+  "condition_column": "condition",
+  "reference_level": "control",
+  "treatment_level": "treated",
+  "batch_column": null,
+  "min_count": 10,
+  "sample_count": 8,
+  "gene_count": 98,
+  "significant_gene_count": 12,
+  "artifacts": [
+    "results.csv",
+    "top_genes.csv",
+    "volcano.png"
+  ],
+  "top_genes": [
+    {
+      "gene_id": "gene_0042",
+      "baseMean": 412.3,
+      "log2FoldChange": 1.82,
+      "lfcSE": 0.21,
+      "stat": 8.67,
+      "pvalue": 1.2e-15,
+      "padj": 3.4e-13
+    },
+    {
+      "gene_id": "gene_0077",
+      "baseMean": 289.1,
+      "log2FoldChange": -1.65,
+      "lfcSE": 0.24,
+      "stat": -6.88,
+      "pvalue": 4.5e-11,
+      "padj": 5.1e-9
+    }
+  ],
+  "dataset": "synthetic",
+  "synthetic_profile": "serverless",
+  "synthetic_request": {
+    "genes": 100,
+    "samples": 8,
+    "n_de": 20,
+    "seed": 42
+  }
+}

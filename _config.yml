@@ -13,6 +13,9 @@ exclude:
   - demos/agent-contaminant-investigation/src/gateway/node_modules
   - vendor
 
+# Optional live DESeq API (API Gateway URL). Leave empty for static portfolio demo mode.
+deseq_api_url: ""
+
 title: SciAna Consultancy
 description: Guiding business to successful outcomes through scientific strategy and data analytics
 logo: /assets/logo.png

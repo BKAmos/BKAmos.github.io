@@ -17,6 +17,23 @@
   border: 1px solid rgba(21, 120, 120, 0.18);
   border-radius: 0.35rem;
   background: #fff;
+  margin-bottom: 1rem;
+}
+
+.deseq-demo-note {
+  padding: 1rem;
+  border: 1px solid rgba(21, 120, 120, 0.28);
+  border-left: 4px solid #1e6b6b;
+  border-radius: 0.35rem;
+  background: #eef7f7;
+}
+
+.deseq-demo-note h2 {
+  margin-top: 0;
+}
+
+.deseq-demo-note p {
+  margin-bottom: 0;
 }
 
 .deseq-panel h3 {

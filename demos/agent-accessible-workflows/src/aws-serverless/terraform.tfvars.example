@@ -1,0 +1,23 @@
+aws_region    = "us-east-1"
+project_name  = "deseq-demo"
+api_token     = "change-me-to-a-long-random-string"
+
+# Build and push the worker image first, then set this URI:
+#   docker build -f src/aws-serverless/lambda/worker/Dockerfile -t deseq-worker .
+#   aws ecr create-repository --repository-name deseq-worker  # once
+#   docker tag deseq-worker:latest <account>.dkr.ecr.us-east-1.amazonaws.com/deseq-worker:latest
+#   docker push <account>.dkr.ecr.us-east-1.amazonaws.com/deseq-worker:latest
+worker_image_uri = "<account-id>.dkr.ecr.us-east-1.amazonaws.com/deseq-worker:latest"
+
+worker_memory_mb              = 2048
+worker_timeout_seconds        = 120
+worker_reserved_concurrency   = 2
+cors_allow_origin             = "*"
+artifact_url_ttl_seconds      = 3600
+job_ttl_days                  = 7
+
+# Optional branded HTTPS hostname (ACM + API Gateway custom domain).
+# Leave commented to use the default https://xxxx.execute-api... URL (already TLS).
+# api_custom_domain   = "api.example.com"
+# route53_zone_id     = "Z0123456789ABCDEFGHIJ"   # auto ACM + alias when DNS is in Route 53
+# acm_certificate_arn = ""                          # or paste ARN after manual ACM validation (Cloudflare)

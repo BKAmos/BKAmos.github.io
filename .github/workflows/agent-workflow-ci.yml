@@ -7,6 +7,7 @@ on:
       - "portfolio/agent-accessible-workflows.md"
       - "assets/js/deseq-workflow-ui.js"
       - "assets/css/deseq-workflow-ui.css"
+      - "_config.yml"
       - ".github/workflows/agent-workflow-ci.yml"
   workflow_dispatch:
     inputs:
@@ -41,6 +42,8 @@ jobs:
         run: python data/generate.py
       - name: Run local PyDESeq2 pipeline
         run: python src/run.py
+      - name: Regenerate portfolio outputs (serverless profile)
+        run: python scripts/regenerate-portfolio-outputs.py
       - name: FastAPI smoke test
         env:
           PYTHONPATH: src
@@ -56,6 +59,7 @@ jobs:
               "/tools/run_deseq",
               json={
                   "dataset": "synthetic",
+                  "synthetic_profile": "serverless",
                   "condition_column": "condition",
                   "reference_level": "control",
                   "treatment_level": "treated",
@@ -93,6 +97,21 @@ jobs:
           file: demos/agent-accessible-workflows/src/Dockerfile.worker
           push: false
           tags: deseq-worker:test
+
+  serverless-validate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: demos/agent-accessible-workflows/src/aws-serverless/terraform
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.9.0"
+      - name: Terraform validate
+        run: |
+          terraform init -backend=false
+          terraform validate
 
   gateway-typecheck:
     runs-on: ubuntu-latest

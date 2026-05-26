@@ -1,0 +1,4 @@
+gene_id,baseMean,log2FoldChange,lfcSE,stat,pvalue,padj
+gene_0042,412.3,1.82,0.21,8.67,1.2e-15,3.4e-13
+gene_0077,289.1,-1.65,0.24,-6.88,4.5e-11,5.1e-9
+gene_0012,356.0,1.51,0.23,6.57,4.8e-11,5.0e-9

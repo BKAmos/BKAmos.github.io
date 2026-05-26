@@ -39,6 +39,7 @@ SYNTHETIC_PROFILES: dict[str, dict[str, int]] = {
     "small": {"genes": 1000, "samples": 12, "n_de": 120, "seed": 42},
     "medium": {"genes": 5000, "samples": 24, "n_de": 400, "seed": 84},
     "large": {"genes": 10000, "samples": 32, "n_de": 700, "seed": 126},
+    "serverless": {"genes": 100, "samples": 8, "n_de": 20, "seed": 42},
 }
 
 app = FastAPI(
@@ -58,7 +59,7 @@ app.add_middleware(
 class DeseqRunRequest(BaseModel):
     model_config = ConfigDict(extra="forbid")
     dataset: str = Field(default="synthetic", pattern="^synthetic$")
-    synthetic_profile: str = Field(default="medium", pattern="^(small|medium|large)$")
+    synthetic_profile: str = Field(default="medium", pattern="^(small|medium|large|serverless)$")
     synthetic_seed: int | None = Field(default=None, ge=0, le=2_147_483_647)
     condition_column: str = "condition"
     reference_level: str = "control"
@@ -286,6 +287,7 @@ def run_deseq_job(job_id: str, request_payload: dict[str, Any]) -> dict[str, Any
         n_de=profile["n_de"],
         seed=profile["seed"],
     )
+    serverless = request.synthetic_profile == "serverless"
     manifest = run_deseq(
         DeseqConfig(
             counts_path=counts_path,
@@ -294,9 +296,11 @@ def run_deseq_job(job_id: str, request_payload: dict[str, Any]) -> dict[str, Any
             condition_column=request.condition_column,
             reference_level=request.reference_level,
             treatment_level=request.treatment_level,
-            batch_column=request.batch_column,
+            batch_column=None if serverless else request.batch_column,
             min_count=request.min_count,
+            n_cpus=1 if serverless else 2,
             job_id=job_id,
+            artifact_profile="serverless" if serverless else "full",
         )
     )
     manifest["dataset"] = "synthetic"

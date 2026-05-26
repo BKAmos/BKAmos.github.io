@@ -18,14 +18,58 @@
     if (config.demoMode === "true") config.demoMode = true;
   }
 
+  const sampleArtifactsBase =
+    config.sampleArtifactsBase || "/demos/agent-accessible-workflows/outputs";
+
+  function isDemoMode() {
+    return config.demoMode === true || !String(config.apiBaseUrl || "").trim();
+  }
+
+  function isAwsApi() {
+    try {
+      const host = new URL(config.apiBaseUrl).hostname;
+      return host.includes("execute-api.") && host.endsWith(".amazonaws.com");
+    } catch (_err) {
+      return false;
+    }
+  }
+
   function liveSubmitEnabled() {
     return Boolean(String(config.apiBaseUrl || "").trim() && config.demoMode !== true);
+  }
+
+  function applyProfileConstraints() {
+    const select = $("#synthetic-profile");
+    if (!select) return;
+    if (isAwsApi()) {
+      select.value = "serverless";
+      Array.from(select.options).forEach((opt) => {
+        opt.disabled = opt.value !== "serverless";
+      });
+      $("#batch-column")?.setAttribute("disabled", "disabled");
+    } else {
+      Array.from(select.options).forEach((opt) => {
+        opt.disabled = false;
+      });
+      $("#batch-column")?.removeAttribute("disabled");
+    }
+  }
+
+  function applyDemoModeUi() {
+    const tokenField = $("#api-token");
+    const tokenLabel = tokenField?.closest("label");
+    if (tokenLabel) tokenLabel.hidden = isDemoMode();
+    if (isDemoMode()) {
+      const runButton = $("#run-synthetic");
+      if (runButton) runButton.textContent = "Show sample DESeq run";
+    }
   }
 
   const state = {
     jobId: null,
     pollTimer: null,
     artifactsByName: {},
+    sampleManifest: null,
   };
 
   function $(selector) {
@@ -37,6 +81,10 @@
     if (!box) return;
     box.textContent = message;
     box.dataset.kind = kind || "info";
+  }
+
+  function delay(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
   function getFormValues() {
@@ -51,8 +99,12 @@
   }
 
   function authHeaders() {
-    const token = $("#api-token").value.trim();
+    const token = $("#api-token")?.value?.trim();
     return token ? { Authorization: `Bearer ${token}` } : {};
+  }
+
+  function sampleArtifactHref(name) {
+    return `${sampleArtifactsBase.replace(/\/$/, "")}/${encodeURIComponent(name)}`;
   }
 
   function artifactUrl(name) {
@@ -75,18 +127,28 @@
     state.artifactsByName = {};
   }
 
-  function mapArtifacts(artifacts) {
+  function mapArtifacts(artifacts, options) {
+    const sampleMode = Boolean(options?.sampleMode);
     const mapped = artifacts.map((artifact) => {
       const name = typeof artifact === "string" ? artifact : artifact.name;
-      const url = typeof artifact === "string" ? artifactUrl(name) : artifact.url || artifactUrl(name);
-      const downloadUrl =
-        typeof artifact === "string" ? artifactUrl(name) : artifact.download_url || artifact.url || artifactUrl(name);
+      let url;
+      let downloadUrl;
+      if (sampleMode) {
+        url = sampleArtifactHref(name);
+        downloadUrl = url;
+      } else {
+        url = typeof artifact === "string" ? artifactUrl(name) : artifact.url || artifactUrl(name);
+        downloadUrl =
+          typeof artifact === "string"
+            ? artifactUrl(name)
+            : artifact.download_url || artifact.url || artifactUrl(name);
+      }
       return {
         name,
         kind: typeof artifact === "string" ? "file" : artifact.kind || "file",
         contentType: typeof artifact === "string" ? "" : String(artifact.content_type || ""),
-        url: absoluteApiUrl(url),
-        downloadUrl: absoluteApiUrl(downloadUrl),
+        url: sampleMode ? url : absoluteApiUrl(url),
+        downloadUrl: sampleMode ? downloadUrl : absoluteApiUrl(downloadUrl),
       };
     });
     state.artifactsByName = mapped.reduce((acc, artifact) => {
@@ -163,13 +225,14 @@
     return control;
   }
 
-  async function renderArtifacts(artifacts, job) {
-    const mapped = mapArtifacts(artifacts);
+  async function renderArtifacts(artifacts, job, options) {
+    const sampleMode = Boolean(options?.sampleMode);
+    const mapped = mapArtifacts(artifacts, { sampleMode });
     const list = $("#live-artifacts");
     if (!list) return;
     list.innerHTML = "";
 
-    if (job?.report_url) {
+    if (job?.report_url && !sampleMode) {
       const li = document.createElement("li");
       const button = document.createElement("button");
       const reportUrl = absoluteApiUrl(job.report_url);
@@ -191,12 +254,53 @@
     $("#results-placeholder")?.classList.add("is-hidden");
   }
 
+  async function loadSampleManifest() {
+    if (state.sampleManifest) return state.sampleManifest;
+    const response = await fetch(`${sampleArtifactsBase.replace(/\/$/, "")}/manifest.json`);
+    if (!response.ok) {
+      throw new Error("Could not load the published sample manifest.");
+    }
+    state.sampleManifest = await response.json();
+    return state.sampleManifest;
+  }
+
+  async function renderSampleJob(manifest, options) {
+    const sampleMode = Boolean(options?.sampleMode);
+    state.jobId = manifest.job_id || "portfolio-demo";
+    $("#job-id").textContent = state.jobId;
+    $("#job-state").textContent = sampleMode ? "sample completed" : manifest.status || "completed";
+    $("#job-message").textContent = sampleMode
+      ? "Published sample run from committed portfolio outputs."
+      : "PyDESeq2 differential expression complete.";
+    await renderArtifacts(manifest.artifacts || [], manifest, { sampleMode });
+  }
+
+  async function submitDemoJob() {
+    hideLiveResults();
+    setStatus("Submitting DESeq job (demo)...", "info");
+    $("#job-id").textContent = "pending";
+    $("#job-state").textContent = "submitting";
+    $("#job-message").textContent = "Queueing synthetic job...";
+
+    await delay(350);
+    $("#job-state").textContent = "queued";
+    $("#job-message").textContent = "Waiting for worker...";
+    await delay(500);
+    $("#job-state").textContent = "running";
+    $("#job-message").textContent = "Running PyDESeq2 on synthetic counts...";
+    await delay(650);
+
+    const manifest = await loadSampleManifest();
+    await renderSampleJob(manifest, { sampleMode: true });
+    setStatus(
+      "Demo mode: sample run complete. Clone the repo and use start-demo for live UX, CLI, and MCP runs.",
+      "success",
+    );
+  }
+
   async function submitJob() {
-    if (!liveSubmitEnabled()) {
-      setStatus(
-        "Live API is not enabled (demo mode or missing apiBaseUrl). Use http://127.0.0.1:4000 or localhost:4000 with Docker on :8000, or unset JEKYLL_ENV=production when running `jekyll serve`.",
-        "info",
-      );
+    if (isDemoMode()) {
+      await submitDemoJob();
       return;
     }
 
@@ -227,6 +331,11 @@
       });
     } catch (err) {
       const msg = err && err.message ? err.message : String(err);
+      if (isAwsApi()) {
+        throw new Error(
+          `${msg} — Could not reach the AWS API at ${config.apiBaseUrl}. Check the URL in _config.yml (deseq_api_url), CORS, and your network.`,
+        );
+      }
       throw new Error(
         `${msg} — Is Docker Compose up? Open http://localhost:8000/healthz in a browser.`,
       );
@@ -275,14 +384,31 @@
     $("#poll-job")?.addEventListener("click", pollJob);
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", async () => {
     bindEvents();
+    applyProfileConstraints();
+    applyDemoModeUi();
     hideLiveResults();
-    if (!liveSubmitEnabled()) {
-      setStatus(
-        "Demo mode: open via localhost / 127.0.0.1 and start Docker API on port 8000 for live runs.",
-        "info",
-      );
+
+    const demoNote = $("#demo-mode-note");
+    if (demoNote) demoNote.hidden = !isDemoMode();
+
+    if (isDemoMode()) {
+      try {
+        const manifest = await loadSampleManifest();
+        await renderSampleJob(manifest, { sampleMode: true });
+        setStatus(
+          "Demo mode: published sample run loaded. Clone the repo and use start-demo for live UX, CLI, and MCP runs.",
+          "info",
+        );
+      } catch (error) {
+        setStatus(error.message, "error");
+      }
+      return;
+    }
+
+    if (isAwsApi()) {
+      setStatus("Live AWS API: serverless profile only (100 genes, ~condition design).", "info");
     } else {
       setStatus("Ready. Submit a synthetic job to generate run-specific outputs.", "info");
     }

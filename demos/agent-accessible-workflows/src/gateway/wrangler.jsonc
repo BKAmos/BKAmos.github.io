@@ -3,6 +3,8 @@
   "main": "src/index.ts",
   "compatibility_date": "2026-04-25",
   "compatibility_flags": ["nodejs_compat"],
+  // After `terraform apply`, set API_BASE_URL to the `api_base_url` output (HTTP API Gateway).
+  // Set API_JWT via `wrangler secret put API_JWT` to match Terraform `api_token`.
   "vars": {
     "API_BASE_URL": "https://api.example.com"
   },

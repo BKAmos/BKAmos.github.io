@@ -13,11 +13,12 @@
  npx wrangler secret put API_BASE_URL
  ```
 
- `API_BASE_URL` should point at the FastAPI service, for example:
+`API_BASE_URL` should point at the backend HTTP API:
 
- ```text
- https://api.example.com
- ```
+- **Local Docker:** `http://localhost:8000`
+- **AWS serverless:** the `api_base_url` Terraform output (HTTP API Gateway, no trailing slash), e.g. `https://xxxx.execute-api.us-east-1.amazonaws.com`
+
+Set `API_JWT` to the same bearer token as `API_TOKEN` / Terraform `api_token`.
 
  ## Deploy
 

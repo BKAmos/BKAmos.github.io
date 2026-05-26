@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Agent-accessible DESeq workflow
-description: Currently a work in progress. Assembing backend resources. You can download and run the mvp architecture on your local machine.
+description: Agent-orchestrated synthetic DESeq workflow with browser, REST, and MCP access surfaces. Published demo uses static sample outputs; clone locally for live runs.
 banner_logo_right: true
 ---
 
@@ -9,43 +9,56 @@ banner_logo_right: true
 
 ## Business question
 
-Can a small lab or bioinformatics team run a reproducible **DESeq differential-expression workflow** through a web UI while giving power users and AI agents the same backend through REST, CLI payloads, and MCP?
+Can an **orchestrator agent** delegate a reproducible **DESeq differential-expression workflow** to specialized tools and workers—while humans use the same pipeline through a web UI or REST/CLI?
 
-## What we can do with this
+## Agent orchestration pattern
 
-This architecture affords users of the software (employees) multiple ways of accessing the differential expression workflow. For example, if a user wanted to run a differential expression analsysis using an agent, the web page upload, or the command line, all three are viable.
+This demo shows how one bioinformatics pipeline stays consistent across three surfaces:
+
+- **Orchestrator agent** calls MCP tools (`run_deseq`, `get_job_status`, `get_deseq_results_summary`) through a Cloudflare Worker gateway.
+- **Control plane API** validates synthetic-only requests, tracks job state, and serves artifact metadata.
+- **Compute workers** run PyDESeq2 (Docker locally; optional AWS Lambda in advanced deployments).
+
+A planner agent can submit work, poll status, and summarize results without re-implementing DESeq logic—the same contract the browser UI and CLI use.
 
 ## Try the workflow
 
-This workflow demonstrates a practical pattern for analytics teams: one analysis pipeline, multiple access surfaces. A non-technical user can launch a synthetic DESeq run from the browser, a power user can automate the same run over REST/CLI, and an agent can orchestrate it through MCP tools. All three surfaces submit into the same backend job system, so results stay consistent while each audience gets the interface that fits how they work.
+Use the interactive panel below to inspect a **completed synthetic DESeq run** (volcano plot, results CSV, top genes). On the published site this loads committed sample outputs—no backend or API token required.
 
-Its biggest strength is operational consistency under different usage styles. The queue-backed worker layer allows concurrent job execution, while the UI now renders run-specific artifacts only after the submitted job completes. That makes the demo useful both as a product UX prototype and as a systems proof-of-concept for reproducible, agent-accessible bioinformatics workflows.
-
-To build this on your own desktop, start the local stack from `demos/agent-accessible-workflows` using the included quickstart scripts (`start-demo` and `verify-demo`), then open this portfolio page locally and submit runs with your generated `API_TOKEN`. The same packaged flow supports UX, CLI, and agent validation on a single workstation.
+To submit **new** runs and exercise the full orchestration loop (UX + CLI + MCP agent tools), clone the repo and start the local stack with `start-demo` / `verify-demo`.
 
 ### Run this demo on your workstation
 
-For technical reviewers, this project includes a copy-paste local package that runs UX + CLI + agent surfaces on one machine.
-
 - [Quickstart and setup](https://github.com/BKAmos/BKAmos.github.io/blob/main/demos/agent-accessible-workflows/README.md)
-- [Local validation runbook (queue + concurrency)](https://github.com/BKAmos/BKAmos.github.io/blob/main/demos/agent-accessible-workflows/runbook-local.md)
+- [Local validation runbook (queue + concurrency + MCP)](https://github.com/BKAmos/BKAmos.github.io/blob/main/demos/agent-accessible-workflows/runbook-local.md)
 - [Demo folder contents](https://github.com/BKAmos/BKAmos.github.io/tree/main/demos/agent-accessible-workflows)
 
 <script>
   window.DESEQ_WORKFLOW_CONFIG = {
     apiBaseUrl: {% if jekyll.environment == "development" %}"http://localhost:8000"{% else %}""{% endif %},
-    demoMode: {% if jekyll.environment == "development" %}false{% else %}true{% endif %}
+    demoMode: {% if jekyll.environment == "development" %}false{% else %}true{% endif %},
+    sampleArtifactsBase: "{{ '/demos/agent-accessible-workflows/outputs' | relative_url }}"
   };
 </script>
 
 <div id="deseq-app" class="deseq-app">
+  <section class="deseq-panel deseq-demo-note" id="demo-mode-note">
+    <h2>Published demo mode</h2>
+    <p>
+      This page ships with a completed synthetic DESeq run so the workflow and artifacts are visible without a backend.
+      Click <strong>Show sample DESeq run</strong> to replay the sample job flow, or clone the repo and use
+      <code>start-demo</code> / <code>verify-demo</code> to submit new runs and connect MCP agent tools locally.
+    </p>
+  </section>
+
   <section class="deseq-panel">
     <h2>1. Analysis configuration</h2>
     <div class="deseq-grid">
       <label>Synthetic workload size
         <select id="synthetic-profile">
+          <option value="serverless" selected>Serverless sample (100 genes x 8 samples)</option>
           <option value="small">Small (1,000 genes x 12 samples)</option>
-          <option value="medium" selected>Medium (5,000 genes x 24 samples)</option>
+          <option value="medium">Medium (5,000 genes x 24 samples)</option>
           <option value="large">Large (10,000 genes x 32 samples)</option>
         </select>
       </label>
@@ -56,7 +69,7 @@ For technical reviewers, this project includes a copy-paste local package that r
       <label>Minimum count filter <input id="min-count" type="number" min="0" value="10"></label>
       <label>API token <input id="api-token" type="password" placeholder="Required for live jobs"></label>
     </div>
-    <p class="portfolio-meta" style="margin-top: 0.75rem;">This demo runs synthetic-only RNA-seq jobs. No user-uploaded files are accepted in UX, CLI/API, or agent tools.</p>
+    <p class="portfolio-meta" style="margin-top: 0.75rem;">Synthetic-only RNA-seq jobs. No user-uploaded files in UX, CLI/API, or agent tools.</p>
   </section>
 
   <section class="deseq-panel">
@@ -64,7 +77,7 @@ For technical reviewers, this project includes a copy-paste local package that r
     <div class="deseq-actions">
       <button type="button" class="btn" id="run-synthetic">Run synthetic data through API</button>
     </div>
-    <div id="deseq-status" class="deseq-status" data-kind="info">Demo mode is active until a backend API URL is configured.</div>
+    <div id="deseq-status" class="deseq-status" data-kind="info">Loading published sample...</div>
     <dl class="deseq-job">
       <dt>Job ID</dt><dd id="job-id">not submitted</dd>
       <dt>Status</dt><dd id="job-state">idle</dd>
@@ -88,24 +101,25 @@ For technical reviewers, this project includes a copy-paste local package that r
 
 ## Synthetic data
 
-The live run flow supports bounded synthetic compute presets:
-- `small`: 1,000 genes x 12 samples
-- `medium`: 5,000 genes x 24 samples
-- `large`: 10,000 genes x 32 samples
+Local runs support bounded synthetic presets (`small`, `medium`, `large`, plus a trimmed `serverless` profile). The published sample uses the serverless-sized matrix (100 genes × 8 samples, `~condition` design).
 
 ## Architecture
 
-This workflow uses a single backend pipeline with multiple access surfaces:
+```text
+Orchestrator agent → MCP gateway (Cloudflare Worker)
+                  → REST API (FastAPI control plane)
+                  → job queue (Redis, optional locally)
+                  → PyDESeq2 worker containers
+                  → per-job artifacts (CSV, plots, manifest)
+```
 
-- **UX surface:** portfolio web page for guided run submission
-- **CLI/API surface:** direct REST calls and scripted batch submissions
-- **Agent surface:** Cloudflare Worker MCP gateway (`run_deseq`, status, summary tools)
-- **Control plane:** FastAPI endpoint handling auth, job submission, and artifact access
-- **Queue layer:** Redis-backed queue for concurrent job orchestration
-- **Compute layer:** Dockerized PyDESeq2 workers executing synthetic differential expression runs
-- **Artifact layer:** per-job outputs (CSV + plots + report) returned through API artifact endpoints
+| Surface | Role |
+|---------|------|
+| **Agent / MCP** | Orchestrator delegates `run_deseq`, polls `get_job_status`, summarizes with `get_deseq_results_summary` |
+| **Browser UI** | Same job contract for guided submission and artifact preview |
+| **CLI / REST** | Scripted batch submissions and automation |
 
-Flow summary: `UX / CLI / Agent -> API -> Redis queue -> Worker containers -> job artifacts -> API responses/UI rendering`
+Flow summary: `Agent / UX / CLI → API → queue (optional) → worker → artifacts → API responses`
 
 ## Optional REST example
 
@@ -118,7 +132,11 @@ curl -X POST "$API_BASE_URL/tools/run_deseq" \
 
 ## Agent tools
 
-The Cloudflare Worker exposes an MCP endpoint with tools for `run_deseq`, `get_job_status`, `get_deseq_results_summary`, and `get_synthetic_dataset_info`. `run_deseq` remains available to agents with synthetic-only inputs and profile selection.
+The Cloudflare Worker exposes MCP tools: `run_deseq`, `get_job_status`, `get_deseq_results_summary`, and `get_synthetic_dataset_info`. An orchestrator can plan analysis steps, submit synthetic jobs, poll to completion, and read structured summaries—without embedding PyDESeq2 in the agent itself.
+
+## Optional AWS deployment
+
+For experiments on a preview branch only, see [`src/aws-serverless/README.md`](https://github.com/BKAmos/BKAmos.github.io/blob/main/demos/agent-accessible-workflows/src/aws-serverless/README.md). Production portfolio pages do **not** use live AWS compute.
 
 ## Reproduce locally
 
@@ -133,4 +151,4 @@ python3 data/generate.py
 python3 src/run.py
 ```
 
-<script src="{{ '/assets/js/deseq-workflow-ui.js?v=20260429-inline-preview' | relative_url }}"></script>
+<script src="{{ '/assets/js/deseq-workflow-ui.js?v=20260526-static-demo' | relative_url }}"></script>

@@ -1,6 +1,11 @@
 """Run a PyDESeq2 differential expression job for the workflow demo."""
 from __future__ import annotations
 
+import os
+
+# See aws-serverless/lambda/worker/handler.py — required before pydeseq2/joblib import.
+os.environ.pop("JOBLIB_MULTIPROCESSING", None)
+
 import json
 import math
 import shutil
@@ -21,8 +26,10 @@ from pydeseq2.ds import DeseqStats
 if __package__ in {None, ""}:
     sys.path.append(str(Path(__file__).resolve().parents[1]))
     from worker.plots import ma_plot, pca_plot, top_genes_heatmap, volcano_plot
+    from worker.serverless_inference import ServerlessInference
 else:
     from .plots import ma_plot, pca_plot, top_genes_heatmap, volcano_plot
+    from .serverless_inference import ServerlessInference
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = ROOT / "data"
@@ -42,6 +49,11 @@ class DeseqConfig:
     min_count: int = 10
     n_cpus: int = 2
     job_id: str = "sample-job"
+    artifact_profile: str = "full"  # "full" (local Docker) or "serverless" (AWS Lambda)
+
+    @property
+    def serverless(self) -> bool:
+        return self.artifact_profile == "serverless"
 
 
 def _load_inputs(config: DeseqConfig) -> tuple[pd.DataFrame, pd.DataFrame]:
@@ -177,17 +189,30 @@ def _write_report(
 
 
 def run_deseq(config: DeseqConfig) -> dict[str, Any]:
+    if config.serverless:
+        config = DeseqConfig(
+            **{
+                **asdict(config),
+                "batch_column": None,
+                "n_cpus": 1,
+            }
+        )
+
     output_dir = Path(config.output_dir)
     if output_dir.exists():
         shutil.rmtree(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(config.counts_path, output_dir / "original_counts.csv")
-    shutil.copyfile(config.metadata_path, output_dir / "metadata.csv")
+    if not config.serverless:
+        shutil.copyfile(config.counts_path, output_dir / "original_counts.csv")
+        shutil.copyfile(config.metadata_path, output_dir / "metadata.csv")
 
     counts, metadata = _load_inputs(config)
     design = _design(config)
 
-    inference = DefaultInference(n_cpus=config.n_cpus)
+    if config.serverless:
+        inference: DefaultInference = ServerlessInference()
+    else:
+        inference = DefaultInference(n_cpus=config.n_cpus)
     dds = DeseqDataSet(**_deseq_dataset_kwargs(config, counts, metadata, design, inference))
     with open(output_dir / "pydeseq2.log", "w", encoding="utf-8") as log, contextlib.redirect_stdout(log):
         dds.deseq2()
@@ -212,54 +237,56 @@ def run_deseq(config: DeseqConfig) -> dict[str, Any]:
     results.to_csv(output_dir / "results.csv")
     top_genes.to_csv(output_dir / "top_genes.csv")
 
-    raw_counts = counts.T
-    normed_counts = pd.DataFrame(dds.layers["normed_counts"], index=counts.index, columns=counts.columns)
-    normed_counts.to_csv(output_dir / "normalized_counts.csv")
-
     volcano_plot(
         results,
         output_dir / "volcano.png",
         reference_level=config.reference_level,
         treatment_level=config.treatment_level,
     )
-    ma_plot(
-        results,
-        output_dir / "ma.png",
-        reference_level=config.reference_level,
-        treatment_level=config.treatment_level,
-    )
-    metadata_for_plots = metadata.reset_index().rename(columns={"index": "sample_id"})
-    pca_plot(
-        raw_counts,
-        metadata_for_plots,
-        output_dir / "pca.png",
-        condition_column=config.condition_column,
-        reference_level=config.reference_level,
-        treatment_level=config.treatment_level,
-    )
-    top_genes_heatmap(
-        raw_counts,
-        metadata_for_plots,
-        results,
-        output_dir / "top_genes_heatmap.png",
-        condition_column=config.condition_column,
-        batch_column=config.batch_column,
-    )
-    _write_report(output_dir, config, results, top_genes, counts, metadata)
 
-    artifacts = [
-        "original_counts.csv",
-        "results.csv",
-        "top_genes.csv",
-        "normalized_counts.csv",
-        "metadata.csv",
-        "volcano.png",
-        "ma.png",
-        "pca.png",
-        "top_genes_heatmap.png",
-        "report.html",
-        "pydeseq2.log",
-    ]
+    if config.serverless:
+        artifacts = ["results.csv", "top_genes.csv", "volcano.png"]
+    else:
+        raw_counts = counts.T
+        normed_counts = pd.DataFrame(dds.layers["normed_counts"], index=counts.index, columns=counts.columns)
+        normed_counts.to_csv(output_dir / "normalized_counts.csv")
+        ma_plot(
+            results,
+            output_dir / "ma.png",
+            reference_level=config.reference_level,
+            treatment_level=config.treatment_level,
+        )
+        metadata_for_plots = metadata.reset_index().rename(columns={"index": "sample_id"})
+        pca_plot(
+            raw_counts,
+            metadata_for_plots,
+            output_dir / "pca.png",
+            condition_column=config.condition_column,
+            reference_level=config.reference_level,
+            treatment_level=config.treatment_level,
+        )
+        top_genes_heatmap(
+            raw_counts,
+            metadata_for_plots,
+            results,
+            output_dir / "top_genes_heatmap.png",
+            condition_column=config.condition_column,
+            batch_column=config.batch_column,
+        )
+        _write_report(output_dir, config, results, top_genes, counts, metadata)
+        artifacts = [
+            "original_counts.csv",
+            "results.csv",
+            "top_genes.csv",
+            "normalized_counts.csv",
+            "metadata.csv",
+            "volcano.png",
+            "ma.png",
+            "pca.png",
+            "top_genes_heatmap.png",
+            "report.html",
+            "pydeseq2.log",
+        ]
     manifest = {
         "job_id": config.job_id,
         "status": "completed",
