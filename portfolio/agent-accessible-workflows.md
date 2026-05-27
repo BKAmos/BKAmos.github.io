@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Agent-accessible DESeq workflow
-description: Currently a work in progress. Assembing backend resources. You can download and run the mvp architecture on your local machine.
+description: Currently a work in progress. Assembling backend resources. You can download and run the MVP architecture on your local machine.
 banner_logo_right: true
 ---
 
@@ -13,7 +13,7 @@ Can a small lab or bioinformatics team run a reproducible **DESeq differential-e
 
 ## What we can do with this
 
-This architecture affords users of the software (employees) multiple ways of accessing the differential expression workflow. For example, if a user wanted to run a differential expression analsysis using an agent, the web page upload, or the command line, all three are viable.
+This architecture affords users of the software (employees) multiple ways of accessing the differential expression workflow. For example, if a user wanted to run a differential expression analysis using an agent, the web page upload, or the command line, all three are viable.
 
 ## Try the workflow
 

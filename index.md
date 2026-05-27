@@ -45,7 +45,7 @@ We aim to provide our clients with up-to-date information through human-first co
 </section>
 </div>
 
-## Dynamically innovate with a first class consultant
+## Dynamically innovate with a first-class consultant
 
 From scientific strategy to machine learning implementation, let us aid in how you innovate within your company.
 
