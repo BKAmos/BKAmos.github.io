@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+httpx
+jinja2
+pandas
+pydantic
+typing_extensions
+ruff
+pytest

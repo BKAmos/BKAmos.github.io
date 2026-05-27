@@ -5,6 +5,14 @@ description: Python + Jinja2 HTML report from synthetic weekly KPI CSVs.
 banner_logo_right: true
 ---
 
+## Cycle report agent (RNA-seq micro-loop)
+
+In addition to the business weekly KPI report below, this demo folder includes a **cycle report sub-agent** used by the [RNA-seq trust-and-DE orchestrator]({% link portfolio/agent-learning-orchestrator.md %}). After each internal orchestrator cycle, it renders `cycle_report.html` and JSON from a cycle snapshot manifest.
+
+- API: `POST /tools/run_cycle_report` (port **8002** in local stack)
+- Template: `demos/repeatable-weekly-report/src/cycle_report.html.j2`
+- See [repeatable-weekly-report README](https://github.com/BKAmos/BKAmos.github.io/blob/main/demos/repeatable-weekly-report/README.md) for agent API details
+
 ## Business question
 
 Can we replace one-off spreadsheets with a **repeatable** weekly narrative: same structure, fresh numbers?

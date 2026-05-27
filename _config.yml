@@ -11,6 +11,7 @@ plugins:
 exclude:
   - demos/agent-accessible-workflows/src/gateway/node_modules
   - demos/agent-contaminant-investigation/src/gateway/node_modules
+  - demos/agent-learning-orchestrator/src/gateway/node_modules
   - vendor
 
 title: SciAna Consultancy

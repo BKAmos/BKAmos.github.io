@@ -11,7 +11,9 @@ import sys
 import time
 import uuid
 from pathlib import Path
-from typing import Annotated, Any
+from typing import Any, Dict, Optional, Set
+
+from typing_extensions import Annotated
 from urllib.parse import quote
 
 from fastapi import Depends, FastAPI, Header, HTTPException, Query
@@ -19,7 +21,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, HTMLResponse
 from pydantic import BaseModel, ConfigDict, Field
 
-if __package__ in {None, ""}:
+if __package__ in {None, "", "api"}:
     sys.path.append(str(Path(__file__).resolve().parents[1]))
     from api.jobs import enqueue_deseq_job, get_job_payload
     from worker.run_job import DeseqConfig, run_deseq
@@ -35,7 +37,7 @@ RUNS_DIR = Path(os.getenv("RUNS_DIR", ROOT / "runs"))
 API_TOKEN = os.getenv("API_TOKEN", "dev-token")
 DEMO_MODE = os.getenv("DESEQ_DEMO_MODE", "true").lower() == "true"
 ARTIFACT_URL_TTL_SECONDS = int(os.getenv("ARTIFACT_URL_TTL_SECONDS", "3600"))
-SYNTHETIC_PROFILES: dict[str, dict[str, int]] = {
+SYNTHETIC_PROFILES: Dict[str, Dict[str, int]] = {
     "small": {"genes": 1000, "samples": 12, "n_de": 120, "seed": 42},
     "medium": {"genes": 5000, "samples": 24, "n_de": 400, "seed": 84},
     "large": {"genes": 10000, "samples": 32, "n_de": 700, "seed": 126},
@@ -57,17 +59,34 @@ app.add_middleware(
 
 class DeseqRunRequest(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    dataset: str = Field(default="synthetic", pattern="^synthetic$")
+    dataset: str = Field(default="synthetic", pattern="^(synthetic|study)$")
     synthetic_profile: str = Field(default="medium", pattern="^(small|medium|large)$")
-    synthetic_seed: int | None = Field(default=None, ge=0, le=2_147_483_647)
+    synthetic_seed: Optional[int] = Field(default=None, ge=0, le=2_147_483_647)
     condition_column: str = "condition"
     reference_level: str = "control"
     treatment_level: str = "treated"
-    batch_column: str | None = "batch"
+    batch_column: Optional[str] = "batch"
     min_count: int = Field(default=10, ge=0)
+    study_id: Optional[str] = None
+    inputs_dir: Optional[str] = None
 
 
-def _auth(authorization: Annotated[str | None, Header()] = None) -> None:
+STUDY_EXPRESSION_FILES = ("counts.csv", "metadata.csv")
+
+
+def _resolve_study_inputs(request: DeseqRunRequest) -> Path | None:
+    if not request.inputs_dir:
+        return None
+    path = Path(request.inputs_dir).resolve()
+    if not path.is_dir():
+        raise ValueError(f"inputs_dir not found: {path}")
+    for name in STUDY_EXPRESSION_FILES:
+        if not (path / name).exists():
+            raise ValueError(f"Missing {name} in inputs_dir")
+    return path
+
+
+def _auth(authorization: Annotated[Optional[str], Header()] = None) -> None:
     if DEMO_MODE:
         return
     expected = f"Bearer {API_TOKEN}"
@@ -75,7 +94,7 @@ def _auth(authorization: Annotated[str | None, Header()] = None) -> None:
         raise HTTPException(status_code=401, detail="Missing or invalid bearer token")
 
 
-def _has_valid_bearer(authorization: str | None) -> bool:
+def _has_valid_bearer(authorization: Optional[str]) -> bool:
     return DEMO_MODE or authorization == f"Bearer {API_TOKEN}"
 
 
@@ -142,7 +161,7 @@ def _make_access_token(job_id: str, artifact_name: str) -> str:
     return f"{encoded}.{_sign_payload(encoded)}"
 
 
-def _verify_access_token(token: str | None, job_id: str, artifact_name: str) -> bool:
+def _verify_access_token(token: Optional[str], job_id: str, artifact_name: str) -> bool:
     if not token or "." not in token:
         return False
     payload_part, signature_part = token.rsplit(".", 1)
@@ -160,8 +179,8 @@ def _verify_access_token(token: str | None, job_id: str, artifact_name: str) -> 
 
 
 def _require_artifact_access(
-    authorization: str | None,
-    token: str | None,
+    authorization: Optional[str],
+    token: Optional[str],
     job_id: str,
     artifact_name: str,
 ) -> None:
@@ -170,14 +189,14 @@ def _require_artifact_access(
     raise HTTPException(status_code=401, detail="Missing or invalid artifact access token")
 
 
-def _read_manifest(job_id: str) -> dict[str, Any]:
+def _read_manifest(job_id: str) -> Dict[str, Any]:
     manifest_path = _job_dir(job_id) / "manifest.json"
     if not manifest_path.exists():
         raise HTTPException(status_code=404, detail="Job not found")
     return json.loads(manifest_path.read_text(encoding="utf-8"))
 
 
-def _allowed_artifact_names(job_id: str) -> set[str]:
+def _allowed_artifact_names(job_id: str) -> Set[str]:
     manifest = _read_manifest(job_id)
     artifacts = manifest.get("artifacts", [])
     names = {artifact if isinstance(artifact, str) else artifact.get("name") for artifact in artifacts}
@@ -200,7 +219,7 @@ def _report_url(job_id: str) -> str:
     return f"/jobs/{job_id}/report?token={quote(token, safe='')}"
 
 
-def _artifact_metadata(job_id: str, artifact_name: str) -> dict[str, str]:
+def _artifact_metadata(job_id: str, artifact_name: str) -> Dict[str, str]:
     return {
         "name": artifact_name,
         "kind": _artifact_kind(artifact_name),
@@ -210,7 +229,7 @@ def _artifact_metadata(job_id: str, artifact_name: str) -> dict[str, str]:
     }
 
 
-def _with_signed_artifacts(job_id: str, payload: dict[str, Any]) -> dict[str, Any]:
+def _with_signed_artifacts(job_id: str, payload: Dict[str, Any]) -> Dict[str, Any]:
     if payload.get("status") != "completed" and payload.get("state") != "completed":
         return payload
     artifacts = payload.get("artifacts") or []
@@ -241,12 +260,12 @@ def _rewrite_report_image_sources(job_id: str, html: str) -> str:
 
 
 @app.get("/healthz")
-def healthz() -> dict[str, str]:
+def healthz() -> Dict[str, str]:
     return {"status": "ok"}
 
 
 @app.get("/")
-def root() -> dict[str, str]:
+def root() -> Dict[str, str]:
     return {
         "service": "agent-accessible-deseq-api",
         "docs": "/docs",
@@ -255,7 +274,7 @@ def root() -> dict[str, str]:
 
 
 @app.get("/synthetic-dataset")
-def synthetic_dataset() -> dict[str, Any]:
+def synthetic_dataset() -> Dict[str, Any]:
     return {
         "dataset": "synthetic",
         "counts_uri": f"file://{DATA_DIR / 'counts.csv'}",
@@ -271,21 +290,26 @@ def synthetic_dataset() -> dict[str, Any]:
         "profiles": SYNTHETIC_PROFILES,
     }
 
-def run_deseq_job(job_id: str, request_payload: dict[str, Any]) -> dict[str, Any]:
+def run_deseq_job(job_id: str, request_payload: Dict[str, Any]) -> Dict[str, Any]:
     request = DeseqRunRequest(**request_payload)
     output_dir = _job_dir(job_id)
-    profile = SYNTHETIC_PROFILES[request.synthetic_profile].copy()
-    if request.synthetic_seed is not None:
-        profile["seed"] = request.synthetic_seed
-    # Keep generated inputs outside output_dir because run_deseq() recreates output_dir.
-    inputs_dir = RUNS_DIR / "_synthetic_inputs" / job_id
-    counts_path, metadata_path, _truth_path = write_synthetic_dataset(
-        output_dir=inputs_dir,
-        genes=profile["genes"],
-        samples=profile["samples"],
-        n_de=profile["n_de"],
-        seed=profile["seed"],
-    )
+    shared_inputs = _resolve_study_inputs(request)
+    if shared_inputs:
+        counts_path = shared_inputs / "counts.csv"
+        metadata_path = shared_inputs / "metadata.csv"
+        profile = {"source": "study", "inputs_dir": str(shared_inputs)}
+    else:
+        profile = SYNTHETIC_PROFILES[request.synthetic_profile].copy()
+        if request.synthetic_seed is not None:
+            profile["seed"] = request.synthetic_seed
+        inputs_dir = RUNS_DIR / "_synthetic_inputs" / job_id
+        counts_path, metadata_path, _truth_path = write_synthetic_dataset(
+            output_dir=inputs_dir,
+            genes=profile["genes"],
+            samples=profile["samples"],
+            n_de=profile["n_de"],
+            seed=profile["seed"],
+        )
     manifest = run_deseq(
         DeseqConfig(
             counts_path=counts_path,
@@ -299,15 +323,19 @@ def run_deseq_job(job_id: str, request_payload: dict[str, Any]) -> dict[str, Any
             job_id=job_id,
         )
     )
-    manifest["dataset"] = "synthetic"
+    manifest["dataset"] = request.dataset
     manifest["synthetic_profile"] = request.synthetic_profile
     manifest["synthetic_request"] = profile
+    if request.study_id:
+        manifest["study_id"] = request.study_id
+    if shared_inputs:
+        manifest["inputs_dir"] = str(shared_inputs)
     (output_dir / "manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     return manifest
 
 
 @app.post("/tools/run_deseq")
-def submit_deseq(request: DeseqRunRequest, _: None = Depends(_auth)) -> dict[str, Any]:
+def submit_deseq(request: DeseqRunRequest, _: None = Depends(_auth)) -> Dict[str, Any]:
     job_id = uuid.uuid4().hex[:12]
     if os.getenv("ENABLE_RQ", "false").lower() == "true":
         enqueue_deseq_job(job_id, request.model_dump())
@@ -327,7 +355,7 @@ def submit_deseq(request: DeseqRunRequest, _: None = Depends(_auth)) -> dict[str
 
 
 @app.get("/jobs/{job_id}")
-def get_job(job_id: str, _: None = Depends(_auth)) -> dict[str, Any]:
+def get_job(job_id: str, _: None = Depends(_auth)) -> Dict[str, Any]:
     queued = get_job_payload(job_id) if os.getenv("ENABLE_RQ", "false").lower() == "true" else None
     if queued:
         return _with_signed_artifacts(job_id, queued)
@@ -337,8 +365,8 @@ def get_job(job_id: str, _: None = Depends(_auth)) -> dict[str, Any]:
 @app.get("/jobs/{job_id}/report")
 def get_report(
     job_id: str,
-    token: str | None = Query(default=None),
-    authorization: Annotated[str | None, Header()] = None,
+    token: Optional[str] = Query(default=None),
+    authorization: Annotated[Optional[str], Header()] = None,
 ) -> HTMLResponse:
     _require_artifact_access(authorization, token, job_id, "report.html")
     if "report.html" not in _allowed_artifact_names(job_id):
@@ -357,9 +385,9 @@ def get_report(
 def get_artifact(
     job_id: str,
     artifact_name: str,
-    token: str | None = Query(default=None),
+    token: Optional[str] = Query(default=None),
     download: bool = Query(default=False),
-    authorization: Annotated[str | None, Header()] = None,
+    authorization: Annotated[Optional[str], Header()] = None,
 ) -> FileResponse:
     _require_artifact_access(authorization, token, job_id, artifact_name)
     if artifact_name not in _allowed_artifact_names(job_id):

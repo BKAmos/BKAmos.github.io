@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+httpx
+pydantic
+typing_extensions
+jinja2
+numpy
+pandas
+ruff
+pytest

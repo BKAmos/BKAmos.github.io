@@ -7,6 +7,10 @@ banner_logo_right: true
 
 <link rel="stylesheet" href="{{ '/assets/css/contamination-workflow-ui.css' | relative_url }}">
 
+## Run as component
+
+This contamination agent is the QC gate in the [RNA-seq trust-and-DE learning loop]({% link portfolio/agent-learning-orchestrator.md %}). Run investigations standalone here, or invoke via the orchestrator as part of the trust-before-expression micro-loop.
+
 ## Question
 
 Can a lab team triage likely foreign genetic material or contamination signals using one local workflow that supports browser UX, CLI, and agent tools?

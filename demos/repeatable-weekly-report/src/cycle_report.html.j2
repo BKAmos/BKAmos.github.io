@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ title }}</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; line-height: 1.5; color: #24292f; }
+    h1, h2 { color: #0969da; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+    th, td { border: 1px solid #d0d7de; padding: 0.5rem 0.75rem; text-align: left; }
+    th { background: #f6f8fa; }
+    .meta { color: #57606a; font-size: 0.95rem; }
+    .pill { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px; background: #ddf4ff; }
+    pre { background: #f6f8fa; padding: 1rem; overflow-x: auto; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h1>{{ title }}</h1>
+  <p class="meta">Job <span class="pill">{{ job_id }}</span> · Cycle {{ snapshot.cycle_number }}</p>
+
+  <h2>Contamination QC</h2>
+  <table>
+    <tr><th>Job ID</th><td>{{ snapshot.contamination.job_id or "n/a" }}</td></tr>
+    <tr><th>Verdict</th><td>{{ snapshot.contamination.verdict or "pending" }}</td></tr>
+    <tr><th>Confidence</th><td>{{ snapshot.contamination.confidence or "n/a" }}</td></tr>
+    <tr><th>Profile</th><td>{{ snapshot.contamination.params.profile }}</td></tr>
+    <tr><th>Strictness</th><td>{{ snapshot.contamination.params.strictness }}</td></tr>
+  </table>
+
+  <h2>Differential expression</h2>
+  <table>
+    <tr><th>Job ID</th><td>{{ snapshot.expression.job_id or "n/a" }}</td></tr>
+    <tr><th>Top genes (count)</th><td>{{ snapshot.expression.top_genes_count }}</td></tr>
+    <tr><th>Profile</th><td>{{ snapshot.expression.params.synthetic_profile }}</td></tr>
+    <tr><th>Min count</th><td>{{ snapshot.expression.params.min_count }}</td></tr>
+  </table>
+  {% if snapshot.expression.top_genes %}
+  <p><strong>Top genes:</strong> {{ snapshot.expression.top_genes | join(", ") }}</p>
+  {% endif %}
+
+  {% if snapshot.stability %}
+  <h2>Stability check</h2>
+  <table>
+    <tr><th>Jaccard overlap (top {{ snapshot.stability.top_n }})</th><td>{{ snapshot.stability.jaccard }}</td></tr>
+    <tr><th>Stable</th><td>{{ snapshot.stability.stable }}</td></tr>
+    <tr><th>Overlap count</th><td>{{ snapshot.stability.overlap_count }}</td></tr>
+  </table>
+  {% endif %}
+
+  {% if snapshot.adaptations_applied %}
+  <h2>Adaptations applied</h2>
+  <ul>
+    {% for item in snapshot.adaptations_applied %}
+    <li>Cycle {{ item.cycle }}: {{ item.change }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  <h2>Raw snapshot</h2>
+  <pre>{{ snapshot | tojson(indent=2) }}</pre>
+</body>
+</html>

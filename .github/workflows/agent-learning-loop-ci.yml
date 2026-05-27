@@ -1,0 +1,246 @@
+name: Agent learning loop component
+
+on:
+  pull_request:
+    paths:
+      - "demos/agent-learning-orchestrator/**"
+      - "demos/repeatable-weekly-report/src/api/**"
+      - "demos/repeatable-weekly-report/src/run_cycle_report.py"
+      - "demos/repeatable-weekly-report/src/cycle_report.html.j2"
+      - "demos/repeatable-weekly-report/tests/**"
+      - "demos/repeatable-weekly-report/requirements-agent.txt"
+      - "demos/agent-accessible-workflows/src/api/**"
+      - "demos/agent-accessible-workflows/src/worker/**"
+      - "demos/agent-accessible-workflows/tests/**"
+      - "demos/agent-accessible-workflows/requirements.txt"
+      - "demos/agent-contaminant-investigation/src/api/**"
+      - "demos/agent-contaminant-investigation/src/worker/**"
+      - "demos/agent-contaminant-investigation/tests/**"
+      - "demos/agent-contaminant-investigation/requirements.txt"
+      - "demos/agent-contaminant-investigation/src/.env.example"
+      - "demos/agent-contaminant-investigation/src/docker-compose.yml"
+      - "_includes/site-nav.html"
+      - "_config.yml"
+      - "Gemfile"
+      - "portfolio/agent-learning-orchestrator.md"
+      - "portfolio/agentic-orchestration.md"
+      - "portfolio/index.md"
+      - "assets/js/learning-loop-ui.js"
+      - "assets/css/learning-loop-ui.css"
+      - ".github/workflows/agent-learning-loop-ci.yml"
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+jobs:
+  orchestrator-tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: demos/agent-learning-orchestrator
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+          cache-dependency-path: demos/agent-learning-orchestrator/requirements.txt
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Lint orchestrator Python
+        run: ruff check src tests
+      - name: Run orchestrator unit tests
+        env:
+          PYTHONPATH: src
+        run: pytest tests/ -q
+
+  report-api-smoke:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: demos/repeatable-weekly-report
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+          cache-dependency-path: demos/repeatable-weekly-report/requirements-agent.txt
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-agent.txt
+      - name: Lint report agent Python
+        run: ruff check src/api src/run_cycle_report.py tests
+      - name: Run report agent tests
+        env:
+          PYTHONPATH: src
+        run: pytest tests/ -q
+
+  contamination-tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: demos/agent-contaminant-investigation
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+          cache-dependency-path: |
+            demos/agent-contaminant-investigation/requirements.txt
+            demos/agent-learning-orchestrator/requirements.txt
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -r ../agent-learning-orchestrator/requirements.txt
+      - name: Lint contamination Python
+        run: ruff check src tests
+      - name: Run contamination tests
+        env:
+          PYTHONPATH: src:../agent-learning-orchestrator/src
+          CONTAM_DEMO_MODE: "true"
+          ARTIFACT_STORAGE: filesystem
+        run: pytest tests/ -q
+
+  deseq-study-input-tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: demos/agent-accessible-workflows
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+          cache-dependency-path: |
+            demos/agent-accessible-workflows/requirements.txt
+            demos/agent-learning-orchestrator/requirements.txt
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -r ../agent-learning-orchestrator/requirements.txt
+      - name: Run DESeq shared-study tests
+        env:
+          PYTHONPATH: src:../agent-learning-orchestrator/src
+          DESEQ_DEMO_MODE: "true"
+        run: pytest tests/ -q
+
+  orchestrator-gateway-typecheck:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: demos/agent-learning-orchestrator/src/gateway
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: demos/agent-learning-orchestrator/src/gateway/package-lock.json
+      - run: npm ci
+      - run: npm run typecheck
+
+  jekyll-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Build static site
+        run: bundle exec jekyll build
+
+  full-loop-e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+          cache-dependency-path: |
+            demos/agent-accessible-workflows/requirements.txt
+            demos/agent-contaminant-investigation/requirements.txt
+            demos/repeatable-weekly-report/requirements-agent.txt
+            demos/agent-learning-orchestrator/requirements.txt
+      - name: Install full-loop dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r demos/agent-accessible-workflows/requirements.txt
+          pip install -r demos/agent-contaminant-investigation/requirements.txt
+          pip install -r demos/repeatable-weekly-report/requirements-agent.txt
+          pip install -r demos/agent-learning-orchestrator/requirements.txt
+      - name: Run full learning-loop smoke
+        shell: bash
+        env:
+          STUDIES_DIR: ${{ github.workspace }}/demos/_shared_studies
+        run: |
+          set -euo pipefail
+          (cd demos/agent-accessible-workflows/src && PYTHONPATH=. DESEQ_DEMO_MODE=true python -m uvicorn api.main:app --port 8000 > /tmp/deseq.log 2>&1) &
+          (cd demos/agent-contaminant-investigation/src && PYTHONPATH=. CONTAM_DEMO_MODE=true ARTIFACT_STORAGE=filesystem python -m uvicorn api.main:app --port 8001 > /tmp/contam.log 2>&1) &
+          (cd demos/repeatable-weekly-report/src && PYTHONPATH=. REPORT_DEMO_MODE=true python -m uvicorn api.main:app --port 8002 > /tmp/report.log 2>&1) &
+          (cd demos/agent-learning-orchestrator/src && PYTHONPATH=. ORCHESTRATOR_DEMO_MODE=true DESEQ_API_BASE=http://127.0.0.1:8000 CONTAM_API_BASE=http://127.0.0.1:8001 REPORT_API_BASE=http://127.0.0.1:8002 STUDIES_DIR="$STUDIES_DIR" python -m uvicorn api.main:app --port 8003 > /tmp/orchestrator.log 2>&1) &
+          python - <<'PY'
+          import json
+          import time
+          import urllib.error
+          import urllib.request
+
+          services = {
+              "deseq": "http://127.0.0.1:8000/healthz",
+              "contamination": "http://127.0.0.1:8001/healthz",
+              "report": "http://127.0.0.1:8002/healthz",
+              "orchestrator": "http://127.0.0.1:8003/healthz",
+          }
+          deadline = time.time() + 90
+          for name, url in services.items():
+              while True:
+                  try:
+                      with urllib.request.urlopen(url, timeout=5) as response:
+                          payload = json.loads(response.read().decode("utf-8"))
+                      assert payload.get("status") == "ok"
+                      break
+                  except (urllib.error.URLError, TimeoutError, AssertionError):
+                      if time.time() > deadline:
+                          raise RuntimeError(f"{name} did not become healthy")
+                      time.sleep(2)
+
+          body = json.dumps(
+              {
+                  "max_internal_cycles": 1,
+                  "contamination": {
+                      "profile": "clean",
+                      "sample_count": 12,
+                      "synthetic_seed": 42,
+                      "strictness": 0.6,
+                      "max_iterations": 1,
+                  },
+                  "deseq": {
+                      "synthetic_profile": "small",
+                      "min_count": 5,
+                  },
+              }
+          ).encode("utf-8")
+          request = urllib.request.Request(
+              "http://127.0.0.1:8003/tools/start_component",
+              data=body,
+              headers={"Content-Type": "application/json"},
+              method="POST",
+          )
+          with urllib.request.urlopen(request, timeout=180) as response:
+              payload = json.loads(response.read().decode("utf-8"))
+          summary = payload["component_summary"]
+          assert summary["study"]["study_id"]
+          assert summary["trust"]["contamination_verdict"]
+          assert summary["expression"]["deseq_job_id"]
+          assert "parent_handoff" in summary
+          print(json.dumps({"status": payload["status"], "action": summary["parent_handoff"]["recommended_action"]}, indent=2))
+          PY

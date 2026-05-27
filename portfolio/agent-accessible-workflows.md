@@ -1,11 +1,15 @@
 ---
 layout: default
 title: Agent-accessible DESeq workflow
-description: Currently a work in progress. Assembing backend resources. You can download and run the mvp architecture on your local machine.
+description: Synthetic DESeq workflow exposed through browser UX, REST/CLI, and agent tooling for local bioinformatics runs.
 banner_logo_right: true
 ---
 
 <link rel="stylesheet" href="{{ '/assets/css/deseq-workflow-ui.css' | relative_url }}">
+
+## Run as component
+
+This page stays in the **Agentic** portfolio track because it demonstrates one workflow exposed through three access surfaces: browser UX, REST/CLI, and agent tooling. The same DESeq agent can also be delegated by the [Agentic Orchestration trust-and-DE loop]({% link portfolio/agent-learning-orchestrator.md %}).
 
 ## Business question
 

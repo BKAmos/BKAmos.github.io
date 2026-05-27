@@ -34,7 +34,7 @@ services:
     environment:
       API_TOKEN: ${API_TOKEN:-dev-token}
       CORS_ALLOW_ORIGINS: ${CORS_ALLOW_ORIGINS:-*}
-      DESEQ_DEMO_MODE: ${DESEQ_DEMO_MODE:-false}
+      CONTAM_DEMO_MODE: ${CONTAM_DEMO_MODE:-false}
       ENABLE_RQ: ${ENABLE_RQ:-false}
       REDIS_URL: redis://redis:6379/0
       RUNS_DIR: /app/runs
@@ -67,6 +67,7 @@ services:
       dockerfile: src/Dockerfile.worker
     environment:
       API_TOKEN: ${API_TOKEN:-dev-token}
+      CONTAM_DEMO_MODE: ${CONTAM_DEMO_MODE:-false}
       REDIS_URL: redis://redis:6379/0
       RUNS_DIR: /app/runs
       UPLOADS_DIR: /app/uploads

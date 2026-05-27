@@ -14,7 +14,7 @@ write_files:
     owner: ubuntu:ubuntu
     content: |
       API_TOKEN=change-me-before-public-use
-      DESEQ_DEMO_MODE=false
+      CONTAM_DEMO_MODE=false
       REDIS_URL=redis://redis:6379/0
       RUNS_DIR=/app/runs
       UPLOADS_DIR=/app/uploads
@@ -33,5 +33,5 @@ runcmd:
   - chown -R ubuntu:ubuntu /opt/deseq-workflow
   - su - ubuntu -c 'git clone https://github.com/BKAmos/BKAmos.github.io.git /opt/deseq-workflow/repo || true'
   - su - ubuntu -c 'cd /opt/deseq-workflow/repo && git fetch origin cursor/deseq-ui-mcp-workflow-532c && git checkout cursor/deseq-ui-mcp-workflow-532c'
-  - su - ubuntu -c 'cp /opt/deseq-workflow/.env /opt/deseq-workflow/repo/demos/agent-accessible-workflows/src/.env'
-  - su - ubuntu -c 'cd /opt/deseq-workflow/repo/demos/agent-accessible-workflows/src && docker compose --env-file .env up -d --build'
+  - su - ubuntu -c 'cp /opt/deseq-workflow/.env /opt/deseq-workflow/repo/demos/agent-contaminant-investigation/src/.env'
+  - su - ubuntu -c 'cd /opt/deseq-workflow/repo/demos/agent-contaminant-investigation/src && docker compose --env-file .env up -d --build'

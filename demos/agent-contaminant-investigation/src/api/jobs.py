@@ -7,20 +7,21 @@ import uuid
 from pathlib import Path
 from typing import Any
 
-import redis
-from rq import Queue
-
 ROOT = Path(__file__).resolve().parents[2]
 RUNS_DIR = Path(os.getenv("RUNS_DIR", ROOT / "runs"))
 REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379/0")
 QUEUE_NAME = os.getenv("QUEUE_NAME", "contam")
 
 
-def redis_conn() -> redis.Redis:
+def redis_conn() -> Any:
+    import redis
+
     return redis.Redis.from_url(REDIS_URL)
 
 
-def queue() -> Queue:
+def queue() -> Any:
+    from rq import Queue
+
     return Queue(QUEUE_NAME, connection=redis_conn())
 
 

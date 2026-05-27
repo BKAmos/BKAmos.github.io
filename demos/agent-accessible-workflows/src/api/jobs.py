@@ -5,18 +5,19 @@ import json
 import os
 from typing import Any
 
-import redis
-from rq import Queue
-
 REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379/0")
 QUEUE_NAME = os.getenv("QUEUE_NAME", "deseq")
 
 
-def redis_conn() -> redis.Redis:
+def redis_conn() -> Any:
+    import redis
+
     return redis.Redis.from_url(REDIS_URL)
 
 
-def queue() -> Queue:
+def queue() -> Any:
+    from rq import Queue
+
     return Queue(QUEUE_NAME, connection=redis_conn())
 
 

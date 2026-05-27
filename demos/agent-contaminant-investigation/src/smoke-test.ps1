@@ -33,14 +33,14 @@ function Read-DotEnv {
 }
 
 $envVars = Read-DotEnv -Path $EnvFile
-$dmFlag = $envVars['DESEQ_DEMO_MODE']
+$dmFlag = $envVars['CONTAM_DEMO_MODE']
 if ([string]::IsNullOrWhiteSpace($dmFlag)) { $dmFlag = 'false' }
 $demoMode = $dmFlag.ToLower() -eq 'true'
 $token = $envVars['API_TOKEN']
 
 if (-not $demoMode) {
     if (-not $token) {
-        throw 'DESEQ_DEMO_MODE is not true and API_TOKEN is missing from .env'
+        throw 'CONTAM_DEMO_MODE is not true and API_TOKEN is missing from .env'
     }
 }
 

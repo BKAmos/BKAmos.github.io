@@ -1,0 +1,23 @@
+{
+  "name": "learning-loop-mcp-gateway",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-04-25",
+  "compatibility_flags": ["nodejs_compat"],
+  "vars": {
+    "API_BASE_URL": "http://127.0.0.1:8003"
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "MCP_OBJECT",
+        "class_name": "LearningLoopMcpAgent"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["LearningLoopMcpAgent"]
+    }
+  ]
+}

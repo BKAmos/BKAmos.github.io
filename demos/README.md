@@ -32,9 +32,10 @@ Artifacts are written to `outputs/` (and sometimes `data/*.csv`). The portfolio 
 | `segmentation-explainable` | K-means + profiles |
 | `margin-whatif` | Price/cost scenarios |
 | `multimodal-support-signals` | Text + tabular fusion, k-means, weekly mix |
-| `repeatable-weekly-report` | Jinja2 HTML report (EN + ES) |
+| `repeatable-weekly-report` | Jinja2 HTML report (EN + ES) + optional cycle report agent API |
 | `agent-accessible-workflows` | DESeq UI + MCP/API workflow with synthetic RNA-seq |
 | `agent-contaminant-investigation` | Agentic contamination triage with guarded evidence workflow |
+| `agent-learning-orchestrator` | RNA-seq trust-and-DE micro-loop (Contamination → DESeq → Report → handoff) |
 | `scientific-bioinformatics-de` | Toy DE + volcano (BH-FDR) |
 | `scientific-cheminformatics-similarity` | Fingerprints + Tanimoto + PCA (no RDKit) |
 | `scientific-predictive-dose-response` | Hill fit + bootstrap band |
@@ -42,4 +43,8 @@ Artifacts are written to `outputs/` (and sometimes `data/*.csv`). The portfolio 
 | `scientific-generative-sequences` | PWM + latent motif strength |
 | `scientific-multimodal-biology` | Expression + imaging + clinical CCA |
 
-`agent-accessible-workflows` and `agent-contaminant-investigation` have their own `requirements.txt` files because their API/queue stacks are heavier than the shared plotting/science dependencies above.
+`agent-accessible-workflows`, `agent-contaminant-investigation`, and `agent-learning-orchestrator` have their own `requirements.txt` files because their API/queue stacks are heavier than the shared plotting/science dependencies above.
+
+## Agentic component model
+
+The **agent-learning-orchestrator** demo is a composable micro-loop: it delegates to contamination, DESeq, and cycle-report sub-agents, runs ≤3 internal reflect/adapt cycles, and emits [`component_summary.json`](agent-learning-orchestrator/outputs/component_summary.json) for a future parent orchestrator. Schema: [`agent-learning-orchestrator/COMPONENT_SUMMARY_SCHEMA.md`](agent-learning-orchestrator/COMPONENT_SUMMARY_SCHEMA.md). Sub-agents remain independently runnable.

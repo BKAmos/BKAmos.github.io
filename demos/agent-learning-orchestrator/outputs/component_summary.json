@@ -1,0 +1,81 @@
+{
+  "component_id": "rna-seq-trust-de",
+  "component_version": "0.1.0",
+  "component_run_id": "sample-run",
+  "status": "finalized",
+  "confidence": 0.84,
+  "internal_cycles_run": 2,
+  "max_internal_cycles": 3,
+  "study": {
+    "study_id": "sample-study",
+    "study_inputs_dir": "demos/_shared_studies/sample-study",
+    "requested_contam_profile": "low_contam",
+    "effective_contam_profile": "clean",
+    "deseq_profile": "medium"
+  },
+  "trust": {
+    "contamination_verdict": "no_strong_contamination_signal",
+    "contamination_job_id": "contam-sample",
+    "artifacts": ["verdict.json", "timeline.json"]
+  },
+  "expression": {
+    "deseq_job_id": "deseq-sample-2",
+    "top_genes_count": 10,
+    "top_genes": ["GENE_12", "GENE_04", "GENE_19", "GENE_07", "GENE_31", "GENE_02", "GENE_44", "GENE_08", "GENE_15", "GENE_27"],
+    "params_used": {
+      "synthetic_profile": "medium",
+      "min_count": 5,
+      "condition_column": "condition",
+      "reference_level": "control",
+      "treatment_level": "treated",
+      "batch_column": "batch"
+    },
+    "artifacts": ["results.csv", "volcano.png", "top_genes.csv"]
+  },
+  "stability": {
+    "top_n": 10,
+    "previous_genes": ["GENE_01", "GENE_02", "GENE_03", "GENE_04", "GENE_05", "GENE_06", "GENE_07", "GENE_08", "GENE_09", "GENE_10"],
+    "current_genes": ["GENE_12", "GENE_04", "GENE_19", "GENE_07", "GENE_31", "GENE_02", "GENE_44", "GENE_08", "GENE_15", "GENE_27"],
+    "jaccard": 0.3333,
+    "stable": false,
+    "overlap_count": 4
+  },
+  "report": {
+    "job_id": "report-sample",
+    "artifacts": ["cycle_report.html", "cycle_report.json"]
+  },
+  "cycles": [
+    {
+      "cycle_number": 1,
+      "contamination_verdict": "no_strong_contamination_signal",
+      "deseq_job_id": "deseq-sample-1",
+      "top_genes_count": 10,
+      "stability": null,
+      "adaptations_from_previous": []
+    },
+    {
+      "cycle_number": 2,
+      "contamination_verdict": "no_strong_contamination_signal",
+      "deseq_job_id": "deseq-sample-2",
+      "top_genes_count": 10,
+      "stability": {
+        "jaccard": 0.3333,
+        "stable": false
+      },
+      "adaptations_from_previous": []
+    }
+  ],
+  "reflection": {
+    "decision": "finalize",
+    "reason": "Contamination clean; DE stabilized after min_count adaptation.",
+    "adaptations_applied": [
+      {"cycle": 1, "change": "min_count 10 → 5 (stability retry)"}
+    ]
+  },
+  "parent_handoff": {
+    "recommended_action": "proceed_to_downstream",
+    "blocking_issues": [],
+    "suggested_next_components": ["pathway-interpretation", "multimodal-validation"],
+    "notes": "Synthetic demo only; parent should map actions to real study context."
+  }
+}

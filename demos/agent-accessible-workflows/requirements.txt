@@ -13,4 +13,6 @@ boto3
 python-multipart
 requests
 httpx
+typing_extensions
 ruff
+pytest

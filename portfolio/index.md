@@ -5,7 +5,7 @@ description: Business, scientific, and agentic examples built as reproducible sy
 banner_logo_right: true
 ---
 
-The portfolio is split into three tracks. **Business** mirrors common analytics decisions such as forecasting, experiments, segmentation, and reporting. **Scientific** showcases biology- and chemistry-flavored workflows built on synthetic data. **Agentic** contains workflows designed for multiple access surfaces, including UI, REST/CLI, and agent tooling.
+The portfolio is split into four tracks. **Business** mirrors common analytics decisions such as forecasting, experiments, segmentation, and reporting. **Scientific** showcases biology- and chemistry-flavored workflows built on synthetic data. **Agentic** contains single-workflow demos designed for multiple access surfaces, including UI, REST/CLI, and agent tooling. **Agentic Orchestration** contains multi-agent coordination examples that compose those surfaces into larger workflows.
 
 <div class="home-industries" markdown="0">
 <section class="home-industry">
@@ -18,7 +18,11 @@ The portfolio is split into three tracks. **Business** mirrors common analytics 
 </section>
 <section class="home-industry">
 <h2 class="home-industry-title"><a href="{% link portfolio/agent-accessible-workflows.md %}">Agentic</a></h2>
-<p>Two workflows: an agent-accessible DESeq demo and a local-first contamination investigation workflow with interactive stage-by-stage evidence.</p>
+<p>Single-workflow agent-accessible demos. The <a href="{% link portfolio/agent-accessible-workflows.md %}">DESeq workflow</a> demonstrates one synthetic bioinformatics pipeline exposed through browser UX, REST/CLI, and MCP-style agent tools.</p>
+</section>
+<section class="home-industry">
+<h2 class="home-industry-title"><a href="{% link portfolio/agentic-orchestration.md %}">Agentic Orchestration</a></h2>
+<p>Multi-agent coordination demos. The <a href="{% link portfolio/agent-learning-orchestrator.md %}">RNA-seq trust-and-DE learning loop</a> coordinates contamination QC, DESeq, and cycle reporting, then emits <code>component_summary.json</code> for parent handoff.</p>
 </section>
 </div>
 
