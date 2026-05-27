@@ -23,6 +23,22 @@ python3 src/run.py
 
 Artifacts are written to `outputs/` (and sometimes `data/*.csv`). The portfolio pages embed files from `outputs/` via site-relative URLs.
 
+## Regenerate all simple demo outputs
+
+From the repo root (Python 3.11+, `demos/requirements.txt` installed):
+
+```bash
+./scripts/regenerate_portfolio_outputs.sh
+```
+
+Windows PowerShell:
+
+```powershell
+.\scripts\regenerate_portfolio_outputs.ps1
+```
+
+Set `PORTFOLIO_PYTHON` if your default `python` is older than 3.11. Commit updated files under `demos/*/outputs/` before deploying.
+
 ## Demos
 
 | Slug | Topic |

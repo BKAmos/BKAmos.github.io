@@ -35,14 +35,3 @@ Reproducible **Python** demos using **synthetic data** shaped like biological an
 </div>
 
 <p class="portfolio-meta">Dependencies: <code>demos/requirements.txt</code>. Run <code>python3 data/generate.py</code> then <code>python3 src/run.py</code> in each demo folder.</p>
-
-## Navigation
-
-<p class="home-page-nav">
-  <a href="{{ '/' | relative_url }}" class="btn">Home</a>
-  <a href="{% link portfolio/index.md %}" class="btn">Portfolio overview</a>
-  <a href="{% link portfolio/business.md %}" class="btn">Business questions</a>
-  <a href="{% link about.md %}" class="btn">About</a>
-  <a href="{% link services.md %}" class="btn">Services</a>
-  <a href="{% link contact.md %}" class="btn">Contact</a>
-</p>

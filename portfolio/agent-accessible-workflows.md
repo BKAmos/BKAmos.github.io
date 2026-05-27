@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Agent-accessible DESeq workflow
-description: Currently a work in progress. Assembling backend resources. You can download and run the MVP architecture on your local machine.
+description: Synthetic DESeq workflow via browser UI, REST API, and MCP—Docker Compose locally, static plots on the portfolio page.
 banner_logo_right: true
 ---
 

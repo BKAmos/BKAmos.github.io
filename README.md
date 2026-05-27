@@ -16,3 +16,5 @@ Use these settings when creating the Pages project:
 For detailed instructions (including custom domain setup), see:
 
 - [`CLOUDFLARE_PAGES_SETUP.md`](./CLOUDFLARE_PAGES_SETUP.md)
+
+Preview deployments: push the `trimmed` branch (or open a PR) to get a Cloudflare Pages preview URL before merging to `main`.

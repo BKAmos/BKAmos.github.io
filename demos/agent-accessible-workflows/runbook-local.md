@@ -27,7 +27,7 @@ cd demos\agent-accessible-workflows
 Expected:
 
 - API health URL prints: `http://localhost:8000/healthz`
-- `docker compose ps` shows `api`, `redis`, `minio`, and multiple `worker` containers up
+- `docker compose ps` shows `api`, `redis`, and multiple `worker` containers up
 - token is printed as `API_TOKEN (...)`
 
 ## 2) Verify baseline health

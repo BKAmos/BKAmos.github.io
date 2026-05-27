@@ -35,14 +35,3 @@ Small, reproducible **Python** demos illustrating how scientific and data workfl
 </div>
 
 <p class="portfolio-meta">All demos share dependencies listed in <code>demos/requirements.txt</code>. Run instructions are in <code>demos/README.md</code> and each demo folder.</p>
-
-## Navigation
-
-<p class="home-page-nav">
-  <a href="{{ '/' | relative_url }}" class="btn">Home</a>
-  <a href="{% link portfolio/index.md %}" class="btn">Portfolio overview</a>
-  <a href="{% link portfolio/scientific.md %}" class="btn">Scientific portfolio</a>
-  <a href="{% link about.md %}" class="btn">About</a>
-  <a href="{% link services.md %}" class="btn">Services</a>
-  <a href="{% link contact.md %}" class="btn">Contact</a>
-</p>

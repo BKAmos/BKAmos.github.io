@@ -23,13 +23,3 @@ The portfolio is split into three tracks. **Business** mirrors common analytics 
 </div>
 
 <p class="portfolio-meta">Source for every demo lives under <code>demos/</code> in the <a href="https://github.com/BKAmos/BKAmos.github.io">GitHub repository</a>. Use the nested <strong>Portfolio</strong> menu above for direct links to each piece.</p>
-
-## Navigation
-
-<p class="home-page-nav">
-  <a href="{{ '/' | relative_url }}" class="btn">Home</a>
-  <a href="{% link about.md %}" class="btn">About</a>
-  <a href="{% link services.md %}" class="btn">Services</a>
-  <a href="{% link portfolio/index.md %}" class="btn">Portfolio</a>
-  <a href="{% link contact.md %}" class="btn">Contact</a>
-</p>

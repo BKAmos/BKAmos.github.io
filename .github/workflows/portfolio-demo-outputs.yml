@@ -1,0 +1,50 @@
+name: Portfolio demo outputs
+
+on:
+  pull_request:
+    branches: [main, trimmed]
+    paths:
+      - "demos/**"
+      - "scripts/regenerate_portfolio_outputs.*"
+      - ".github/workflows/portfolio-demo-outputs.yml"
+  push:
+    branches: [trimmed]
+    paths:
+      - "demos/**"
+      - "scripts/regenerate_portfolio_outputs.*"
+
+jobs:
+  regenerate-and-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+          cache-dependency-path: demos/requirements.txt
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r demos/requirements.txt
+      - name: Regenerate simple demo outputs
+        run: bash scripts/regenerate_portfolio_outputs.sh
+      - name: Verify expected portfolio PNGs exist
+        run: |
+          set -euo pipefail
+          missing=0
+          check() { [[ -f "$1" ]] || { echo "Missing: $1"; missing=1; }; }
+          check demos/forecasting-uncertainty/outputs/forecast.png
+          check demos/ab-testing-decisions/outputs/ab_summary.png
+          check demos/segmentation-explainable/outputs/segmentation.png
+          check demos/margin-whatif/outputs/margin_scenarios.png
+          check demos/multimodal-support-signals/outputs/multimodal_clusters.png
+          check demos/scientific-bioinformatics-de/outputs/volcano.png
+          check demos/scientific-cheminformatics-similarity/outputs/pca_landscape.png
+          check demos/scientific-predictive-dose-response/outputs/dose_response_fit.png
+          check demos/scientific-structural-contacts/outputs/contact_map.png
+          check demos/scientific-generative-sequences/outputs/motif_composition.png
+          check demos/scientific-generative-sequences/outputs/score_histograms.png
+          check demos/scientific-generative-sequences/outputs/latent_interpolation.png
+          check demos/scientific-multimodal-biology/outputs/cca_scatter.png
+          [[ "$missing" -eq 0 ]]
