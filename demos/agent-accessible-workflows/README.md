@@ -164,7 +164,6 @@ Services:
 - API: `http://localhost:8000`
 - Redis: internal queue
 - Worker: RQ worker running PyDESeq2 jobs
-- MinIO: `http://localhost:9001` for local object-storage parity
 
 Windows: after the stack is up, run `.\smoke-test.ps1` from this directory (see **API smoke test**).
 
@@ -236,7 +235,3 @@ Expected behavior with queue mode enabled:
 ## Cloudflare MCP gateway
 
 See `src/gateway/README.md` for Wrangler deployment and MCP Inspector examples.
-
-## Oracle Cloud
-
-See `src/oracle-cloud/README.md` for Terraform and cloud-init deployment notes for an Always-Free A1 VM.

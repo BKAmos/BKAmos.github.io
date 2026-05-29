@@ -29,6 +29,9 @@ demos/agent-accessible-workflows/src/aws-serverless/terraform/terraform.tfvars
 demos/agent-accessible-workflows/data/counts.csv
 demos/agent-accessible-workflows/data/metadata.csv
 demos/agent-accessible-workflows/data/truth.csv
+demos/agent-accessible-workflows/outputs/pydeseq2.log
+demos/agent-accessible-workflows/src/tmp-run.json
+demos/agent-accessible-workflows/src/tmp-agent-run.json
 _site/
 .sass-cache/
 .jekyll-cache/

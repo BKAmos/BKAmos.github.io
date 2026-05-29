@@ -8,6 +8,8 @@ This repository is configured to build as a Jekyll site on Cloudflare Pages.
 2. Choose **Connect to Git** and select this GitHub repository.
 3. Select the production branch: `main`.
 
+**Preview builds:** Cloudflare Pages also builds non-production branches (for example `trimmed`) and pull requests. Use that preview URL to review site changes before merging to `main`.
+
 ## 2) Build configuration
 
 Use these settings in Cloudflare Pages:
